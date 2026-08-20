@@ -1,0 +1,1333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index,follow">
+<title>Shelf - RetroSai Shelves</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235cc8ff'/%3E%3Cg fill='%230d0f13'%3E%3Crect x='7' y='7' width='4' height='14' rx='1'/%3E%3Crect x='13' y='9' width='4' height='12' rx='1'/%3E%3Crect x='19' y='6' width='4' height='15' rx='1'/%3E%3Crect x='6' y='23' width='20' height='3' rx='1.5'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+
+/* RetroSai Shelves - one viewer's shelf, routed by ?u=<login>.
+   ===========================================================================
+   THE PAGE IS COMMITTED TO ONE LOOK: a dim room with warm light falling across
+   wooden boards. That is deliberate, not an oversight. The whole illusion here
+   is lit wood and cast shadow, and neither survives being inverted onto white;
+   it is also what makes this a sibling of RetroSai Achievements, which is
+   dark-only for the same kind of reason. Every colour below is stated
+   explicitly - nothing is left to inherit from the host - so the page holds up
+   on any background and in any system theme.
+
+   HOW THE SHELF IS BUILT, because it is not obvious from the markup
+   ---------------------------------------------------------------------------
+   A row of boxes and the board it stands on are ONE element, `.plank`, using
+   plain flex-wrap. Every direct child (`.slot`) is exactly `--rowh` tall, so
+   every wrapped row is exactly `--rowh` tall too, which means the row PITCH is
+   a constant: `--rowh + --air`. That constant is what lets the boards be a
+   single `repeating-linear-gradient` on the container instead of one element
+   per row. No JS measures anything, no board can drift out of alignment, and a
+   resize re-wraps the boxes and re-aligns the boards in the same reflow.
+
+   `padding-bottom:var(--air)` is load-bearing: the board for the LAST row is
+   painted below that row, i.e. outside the content box, and would be clipped
+   without it.
+
+   The box itself is sized by its ART: `height` comes from the platform (a PS1
+   jewel case really is shorter than a Genesis box) and `width` is left to the
+   image, so a landscape SNES box and a tall Super Famicom box keep their own
+   shapes. `aspect-ratio: auto <n>` reserves the platform's typical shape until
+   the real image reports its own. Nothing is ever cropped or stretched.
+   =========================================================================== */
+
+:root{
+  /* house palette, shared with the index and with RetroSai Achievements */
+  --bg:#0b0e12; --panel:#171b22; --panel2:#1d222b; --line:#2a313d;
+  --ink:#eef1f5; --ink2:#a7b1bf; --ink3:#6f7a8a;
+  --accent:#5cc8ff; --gold:#f2b134; --good:#5fd08a;
+
+  /* the room */
+  --wall:#171c23; --wall2:#0d1015;
+  --board-top:#c39a63; --board-lit:#a37c4d; --board:#6d5233; --board2:#42311e;
+  --board-edge:#1a1109;
+  --post:#563f29; --post2:#2e2118;
+  --brass:#d8bd8a;
+
+  --radius:14px; --gap:20px;
+  --base:198px;        /* height of a full-size (DVD-case) box; everything scales off this */
+  --air:38px;          /* wall visible under each board: board thickness + its shadow */
+  --tight:5px;         /* gap between neighbouring boxes on a board */
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:400 18px/1.5 "Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  padding-bottom:64px;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-weight:650;letter-spacing:-.01em}
+h2{font-size:1.35rem;margin-bottom:14px}
+.wrap{max-width:1500px;margin:0 auto;padding:0 24px}
+header.top{
+  position:sticky;top:0;z-index:30;background:rgba(11,14,18,.94);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(8px);
+}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:78px}
+.brand{display:flex;align-items:center;gap:12px;font-size:1.3rem;font-weight:650}
+.brand .mark{
+  width:38px;height:38px;border-radius:11px;background:var(--accent);
+  display:grid;place-items:center;flex:0 0 auto
+}
+.brand .mark svg{width:24px;height:24px;display:block}
+.brand .thin{color:var(--ink2);font-weight:400}
+.spacer{flex:1}
+.who{color:var(--ink2);font-size:.95rem}
+.who a:hover{color:var(--ink)}
+select,input[type=search],button{
+  font:inherit;color:var(--ink);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:10px 14px
+}
+input[type=search]{min-width:min(300px,52vw)}
+select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px}
+button{cursor:pointer}
+button:hover{border-color:#3d4757}
+main{padding-top:28px}
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;margin-bottom:var(--gap)
+}
+.muted{color:var(--ink2)}
+.dim{color:var(--ink3)}
+.tiny{font-size:.85rem}
+.back{color:var(--ink2);font-size:.95rem;display:inline-block;margin-bottom:12px}
+.back:hover{color:var(--ink)}
+
+/* owner hero */
+.hero{display:flex;gap:22px;align-items:center;flex-wrap:wrap;
+  border-left:4px solid var(--accent)}
+.avatar{width:84px;height:84px;border-radius:20px;flex:0 0 auto;display:grid;
+  place-items:center;font-size:2.2rem;font-weight:700;color:#08222f;
+  letter-spacing:-.02em}
+.owner{font-size:2.1rem;line-height:1.15;overflow-wrap:anywhere}
+.ownersub{color:var(--ink2);margin-top:4px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;
+  margin-bottom:var(--gap)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px}
+.stat .n{font-size:2.6rem;font-weight:700;line-height:1.05;letter-spacing:-.02em;
+  overflow-wrap:anywhere}
+.stat .n.small{font-size:1.45rem;line-height:1.2;padding-top:.3rem}
+.stat .l{color:var(--ink2);font-size:.95rem;margin-top:6px}
+.stat .s{color:var(--ink3);font-size:.85rem;margin-top:2px}
+.stat.accent .n{color:var(--accent)} .stat.gold .n{color:var(--gold)}
+.stat.good .n{color:var(--good)}
+
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:20px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+  padding:9px 18px;font-size:.95rem}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);
+  color:#08222f;font-weight:600}
+
+/* ---- the shelf unit ------------------------------------------------------
+   A dim room: back wall, two uprights, warm light spilling in from above and a
+   vignette at the corners so the boxes sit inside something rather than on a
+   flat panel. */
+.unit{
+  position:relative;overflow:hidden;
+  border:1px solid #2b2318;border-radius:16px;
+  padding:26px 26px 8px;
+  background:
+    radial-gradient(150% 62% at 50% -12%, rgba(255,206,140,.13), rgba(255,206,140,0) 62%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.014) 0 2px, rgba(0,0,0,0) 2px 9px),
+    linear-gradient(180deg, var(--wall) 0%, var(--wall2) 100%);
+  box-shadow:
+    inset 0 0 90px 30px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 30px 70px -40px #000;
+}
+/* the two uprights the boards rest between */
+.unit::before,.unit::after{
+  content:"";position:absolute;top:0;bottom:0;width:14px;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg, var(--post2) 0%, var(--post) 45%, #1d150e 100%);
+  box-shadow:0 0 18px rgba(0,0,0,.6);
+}
+.unit::before{left:0}
+.unit::after{right:0;transform:scaleX(-1)}
+
+.bay{position:relative}
+.bay + .bay{margin-top:30px}
+.bayhead{display:flex;align-items:baseline;gap:12px;margin:0 0 11px}
+.bayhead .nm{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass);font-weight:600;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+.bayhead .rule{flex:1;height:1px;min-width:20px;
+  background:linear-gradient(90deg, rgba(216,189,138,.35), rgba(216,189,138,0))}
+.bayhead .ct{font-size:.76rem;color:#8c7f6a;font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+
+/* one wrapped row == one board. See the note at the top of this file. */
+.plank{
+  display:flex;flex-wrap:wrap;align-items:flex-end;
+  column-gap:var(--tight);row-gap:var(--air);
+  margin:0 -12px;padding:0 12px var(--air);
+  background-repeat:repeat-y;
+  background-image:
+    /* grain, drawn across everything: invisible on the dark wall, reads as wood
+       on the lit face of the board, which is the only place it matters */
+    repeating-linear-gradient(90deg,
+      rgba(255,240,214,.05) 0 1px, rgba(0,0,0,.07) 1px 2px,
+      rgba(0,0,0,0) 2px 7px, rgba(0,0,0,.05) 7px 8px, rgba(0,0,0,0) 8px 17px),
+    repeating-linear-gradient(180deg,
+    /* nothing above the board: that is where the boxes stand */
+    rgba(0,0,0,0)              0,
+    rgba(0,0,0,0)              var(--rowh),
+    /* the board's top surface, seen almost edge-on and catching the light */
+    var(--board-top)           var(--rowh),
+    var(--board-lit)           calc(var(--rowh) + 4px),
+    /* its front edge, falling away into shadow */
+    var(--board)               calc(var(--rowh) + 6px),
+    var(--board2)              calc(var(--rowh) + 14px),
+    var(--board-edge)          calc(var(--rowh) + 17px),
+    /* the shadow the board throws down the wall behind the next row */
+    rgba(0,0,0,.72)            calc(var(--rowh) + 18px),
+    rgba(0,0,0,.28)            calc(var(--rowh) + 26px),
+    rgba(0,0,0,0)              calc(var(--rowh) + 34px),
+    rgba(0,0,0,0)              calc(var(--rowh) + var(--air)));
+}
+.slot{height:var(--rowh);display:flex;align-items:flex-end;flex:0 0 auto}
+
+/* A bookend closes a board that did not fill up. It is the difference between
+   a shelf with three games on it and a shelf that looks broken. */
+.bookend{
+  position:relative;z-index:1;flex:0 0 auto;width:9px;margin-left:3px;
+  border-radius:1px 2px 0 0;
+  background:linear-gradient(90deg,#20262e 0%,#4d5766 42%,#171b21 100%);
+  box-shadow:2px 4px 8px -3px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,244,224,.22);
+}
+.bookend::after{
+  content:"";position:absolute;left:0;right:-15px;bottom:0;height:4px;
+  border-radius:0 2px 2px 0;
+  background:linear-gradient(180deg,#424c5a 0%,#161a20 100%);
+  box-shadow:0 3px 5px -2px rgba(0,0,0,.85);
+}
+
+/* ---- a box standing on the board ---------------------------------------- */
+/* WIDTH IS NEVER LEFT TO THE IMAGE. A box sized by its content measures its
+   `<img>` at the image's NATURAL width while flex works out where rows break -
+   percentage/derived heights do not participate in intrinsic sizing - so a
+   220px-wide thumbnail drawn 450px wide made rows overflow the unit. An explicit
+   `aspect-ratio` against a definite height gives flex a definite width to wrap
+   on. It starts at the platform's typical shape and is replaced with the art's
+   OWN ratio the moment the image reports it (see boxFor), so nothing is cropped,
+   nothing is stretched, and there is no zero-width flash on the way there. */
+.box{
+  position:relative;height:var(--boxh);aspect-ratio:var(--ar,.75);
+  flex:0 0 auto;display:block;
+  padding:0;border:0;font:inherit;color:inherit;text-align:left;
+  background:#0c0f14;border-radius:1px 3px 3px 1px;
+  /* the light is up and to the left, so every box throws a little to the right */
+  box-shadow:3px 5px 8px -5px rgba(0,0,0,.9);
+  transform-origin:bottom center;transform:rotate(var(--tilt,0deg));
+  transition:transform .14s ease, filter .14s ease, box-shadow .14s ease;
+  cursor:pointer;
+}
+.box:hover{box-shadow:6px 16px 22px -10px rgba(0,0,0,.95)}
+.box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  display:block;border-radius:inherit}
+/* the sliver of the box's own side face, so it reads as an object with a
+   thickness rather than a picture of one */
+.box .side{
+  position:absolute;left:-3px;top:2px;bottom:0;width:3px;border-radius:1px 0 0 1px;
+  background:linear-gradient(90deg,
+    hsl(var(--hue,215) 10% 5%) 0%,
+    hsl(var(--hue,215) 13% 17%) 60%,
+    hsl(var(--hue,215) 11% 10%) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,232,200,.18);
+}
+/* light on the top edge, the fall-off down the front, and the shadow the board
+   above throws across this box's shoulders */
+.box .face{
+  position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(101deg,
+    rgba(255,255,255,.24) 0 1px, rgba(255,255,255,.09) 1px 2.5%,
+    rgba(255,255,255,0) 15%, rgba(0,0,0,0) 66%, rgba(0,0,0,.40) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,236,208,.20),
+    inset 0 0 0 1px rgba(0,0,0,.6),
+    inset 0 11px 13px -11px rgba(0,0,0,.9),
+    inset 0 -9px 14px -10px rgba(0,0,0,.95);
+}
+/* where the box meets the board: a hard core right at the join and a soft pool
+   spreading onto the wood. This is the cue that decides whether the whole thing
+   reads as objects on a shelf or as pictures in a grid. */
+.box .foot{
+  position:absolute;left:-10%;right:-10%;top:100%;height:17px;pointer-events:none;
+  background:
+    radial-gradient(42% 62% at 50% 0, rgba(0,0,0,var(--shade,.9)), rgba(0,0,0,0) 72%),
+    radial-gradient(78% 118% at 50% 0, rgba(0,0,0,.6), rgba(0,0,0,0) 74%);
+}
+.box .pip{
+  position:absolute;top:5px;right:5px;width:7px;height:7px;border-radius:50%;
+  background:var(--gold);box-shadow:0 0 0 1.5px rgba(0,0,0,.6), 0 0 5px rgba(242,177,52,.55);
+}
+.box .plate{
+  position:absolute;left:0;right:0;bottom:0;padding:16px 7px 5px;border-radius:inherit;
+  background:linear-gradient(0deg, rgba(5,7,10,.95) 0 55%, rgba(5,7,10,0) 100%);
+  color:#f2f5f8;font-size:.7rem;line-height:1.22;font-weight:600;
+  opacity:0;transition:opacity .12s ease;pointer-events:none;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical
+}
+.box:hover{transform:rotate(var(--tilt,0deg)) translateY(-7px) scale(1.015);z-index:5}
+.box:hover .plate,.box:focus-visible .plate{opacity:1}
+.box:focus-visible{z-index:5}
+.box[aria-pressed=true]{z-index:5;filter:brightness(1.12)}
+.box[aria-pressed=true] .face{box-shadow:inset 0 0 0 2px var(--accent),
+  inset 0 9px 11px -9px rgba(0,0,0,.85)}
+/* the box at the end of a part-filled board leans, the way it does in life */
+.slot.lean .box{transform:rotate(var(--lean,7deg));transform-origin:bottom right}
+.slot.lean .box:hover{transform:rotate(var(--lean,7deg)) translateY(-7px) scale(1.015)}
+
+/* a case with no art: a blank sleeve with the title set on it. Deliberate
+   object, not a hole in the shelf. */
+.box.blank,.box.cart{container-type:inline-size}
+.box.blank .sleeve,.box.cart .sleeve{
+  position:absolute;inset:0;border-radius:inherit;overflow:hidden;
+  display:flex;flex-direction:column;
+  background:linear-gradient(157deg, hsl(var(--hue,215) 17% 27%) 0%,
+             hsl(var(--hue,215) 20% 15%) 62%, hsl(var(--hue,215) 22% 11%) 100%);
+}
+.box.blank .band{height:13%;min-height:9px;flex:0 0 auto;
+  background:linear-gradient(180deg, hsl(var(--hue,215) 48% 46%),
+             hsl(var(--hue,215) 45% 33%));
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,.4)}
+.box.blank .ttl{
+  flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
+  padding:6% 8%;text-align:center;font-weight:650;letter-spacing:-.01em;
+  color:#e9edf3;text-shadow:0 1px 3px rgba(0,0,0,.7);
+  font-size:11px;line-height:1.16;overflow:hidden;
+  overflow-wrap:anywhere;hyphens:auto;
+}
+.box.blank .ttl{font-size:clamp(8px, 10.5cqw, 15px)}
+.box.blank .sys{flex:0 0 auto;padding:0 8% 7%;text-align:center;
+  font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:hsl(var(--hue,215) 30% 72%);opacity:.8;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.box.blank .sys{font-size:clamp(6px, 5.4cqw, 10px)}
+
+/* cart/disc art standing in for a box front: shown as a loose cart propped in a
+   blank case, because a cartridge is not a box and should not pretend to be. */
+.box.cart .sleeve{background:linear-gradient(160deg,#242a33 0%,#161a20 70%,#10131a 100%)}
+.box.cart img{position:absolute;left:7%;right:7%;top:9%;bottom:auto;
+  width:86%;height:69%;object-fit:contain;object-position:center;
+  border-radius:2px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.65))}
+.box.cart .ttl{position:absolute;left:0;right:0;bottom:0;padding:5% 8% 7%;
+  text-align:center;font-size:clamp(7px, 8cqw, 12px);line-height:1.15;font-weight:600;
+  color:#d7dee7;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical}
+.box.cart .band{position:absolute;left:0;right:0;top:0;height:5px;
+  background:hsl(var(--hue,215) 45% 40%)}
+
+/* ---- the pulled-out box -------------------------------------------------- */
+.peek{
+  position:fixed;z-index:40;right:24px;bottom:24px;width:min(370px,calc(100vw - 48px));
+  background:#151920;border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 28px 60px -20px #000, 0 0 0 1px rgba(0,0,0,.5);
+  padding:16px 18px 18px;display:flex;gap:15px;
+}
+.peek[hidden]{display:none}
+.peek .art{flex:0 0 auto;width:96px;display:flex;align-items:flex-end;justify-content:center}
+.peek .art img{max-width:96px;max-height:132px;width:auto;height:auto;display:block;
+  border-radius:2px;box-shadow:0 8px 16px -6px rgba(0,0,0,.9)}
+.peek .body{flex:1;min-width:0}
+.peek .t{font-weight:650;font-size:1.05rem;line-height:1.25;overflow-wrap:anywhere;
+  padding-right:20px}
+.peek .m{color:var(--ink2);font-size:.86rem;margin-top:7px;line-height:1.45}
+.peek .m b{color:var(--ink);font-weight:600}
+.peek .x{position:absolute;top:8px;right:9px;background:none;border:0;padding:6px 9px;
+  color:var(--ink3);font-size:1.05rem;line-height:1;border-radius:8px}
+.peek .x:hover{color:var(--ink);background:var(--panel2)}
+.tag{border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.72rem;
+  text-transform:uppercase;letter-spacing:.06em;color:var(--ink2);white-space:nowrap;
+  display:inline-block}
+.tag.rare{border-color:#5a4520;color:var(--gold)}
+
+/* ---- list view: the sane way to read 300 titles -------------------------- */
+.list{display:grid;grid-template-columns:1fr;gap:7px}
+.lrow{display:flex;align-items:center;gap:13px;background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 14px 8px 8px;
+  width:100%;text-align:left}
+.lrow:hover{border-color:#41506a;background:#212734}
+.lrow[aria-pressed=true]{border-color:var(--accent);background:#1b2430}
+.lrow .th{width:38px;height:38px;flex:0 0 auto;display:flex;align-items:center;
+  justify-content:center;background:#0b0d11;border-radius:7px;overflow:hidden}
+.lrow .th img{max-width:100%;max-height:100%;width:auto;height:auto;display:block}
+.lrow .th .mini{width:14px;height:20px;border-radius:2px;
+  background:hsl(var(--hue,215) 40% 45%)}
+.lrow .no{width:3.1rem;flex:0 0 auto;text-align:right;color:var(--ink3);
+  font-size:.8rem;font-variant-numeric:tabular-nums}
+.lrow .t{flex:1;min-width:0;font-weight:600;font-size:.97rem;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.lrow .p{flex:0 0 auto;color:var(--ink2);font-size:.8rem;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis;max-width:34vw}
+
+/* ---- empty / unknown states --------------------------------------------- */
+.notice{background:#1b2028;border:1px solid var(--line);border-left:4px solid var(--gold);
+  border-radius:10px;padding:14px 18px;color:var(--ink2);font-size:.94rem;
+  margin-bottom:var(--gap)}
+.notice b{color:var(--ink)}
+.suggest{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px;
+  margin-top:16px}
+.sug{display:flex;align-items:center;gap:11px;background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.sug:hover{border-color:#41506a;background:#212734}
+.sug .sp{width:6px;align-self:stretch;border-radius:3px;flex:0 0 auto}
+.sug .nm{flex:1;min-width:0;font-weight:600;overflow:hidden;text-overflow:ellipsis;
+  white-space:nowrap}
+.sug .ct{color:var(--accent);font-weight:650;font-variant-numeric:tabular-nums}
+.empty{color:var(--ink2);padding:14px 0}
+/* an empty shelf still gets its board drawn - the point is the room to grow */
+.emptybay{height:calc(var(--base) * .5)}
+.emptynote{position:absolute;left:0;right:0;top:34%;text-align:center;
+  color:#7d7361;font-size:.9rem;letter-spacing:.04em;pointer-events:none}
+footer.foot{color:var(--ink3);font-size:.85rem;padding:26px 0 0;
+  border-top:1px solid var(--line);margin-top:var(--gap)}
+
+@media (max-width:900px){
+  :root{--base:152px;--air:28px;--tight:6px}
+  .peek{right:12px;left:12px;bottom:12px;width:auto}
+}
+@media (max-width:760px){
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  header.top .wrap{height:auto;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+  .panel{padding:18px}
+  .unit{padding:18px 18px 6px;border-radius:13px}
+  .unit::before,.unit::after{width:9px}
+  .plank{margin:0 -9px;padding-left:9px;padding-right:9px}
+  .owner{font-size:1.7rem}
+  .stat .n{font-size:2.1rem}
+  input[type=search]{min-width:100%}
+  .controls select{flex:1;min-width:44%}
+}
+@media (max-width:420px){ :root{--base:128px;--air:24px} }
+@media (min-width:1600px){ body{font-size:19px}; :root{--base:212px} }
+/* a touch screen has no hover; the lift would fire on tap and fight the card */
+@media (hover:none){
+  .box:hover{transform:rotate(var(--tilt,0deg))}
+  .slot.lean .box:hover{transform:rotate(var(--lean,7deg))}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .box,.slot.lean .box{transform:none!important}
+}
+
+</style>
+</head>
+<body>
+<script id="sitedata" type="application/json">{"channel":"retrosaieno","games":[],"generated_at":1787229554,"page":"shelf","page_size":60,"shelves":{},"site":"RetroSai Shelves","stats":{"art":0,"art_box":0,"art_cart":0,"art_none":0,"entries":0,"first_ts":0,"games":0,"last_ts":0,"platforms":0,"viewers":0},"tagline":"Every game you were in the room for."}</script>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><g fill="#0d0f13"><rect x="7" y="7" width="4" height="14" rx="1"/><rect x="13" y="9" width="4" height="12" rx="1"/><rect x="19" y="6" width="4" height="15" rx="1"/><rect x="6" y="23" width="20" height="3" rx="1.5"/></g></svg></span>
+      <span>RetroSai <span class="thin">Shelves</span></span>
+    </a>
+    <div class="spacer"></div>
+    <div class="who"><a href="./">All shelves</a></div>
+  </div>
+</header>
+<main class="wrap">
+  <div id="page"></div>
+  <footer class="foot" id="foot"></footer>
+</main>
+<script>
+
+var NODE = document.getElementById('sitedata');
+var DATA = JSON.parse(NODE.textContent);
+
+function q(sel, root){ return (root||document).querySelector(sel); }
+function el(tag, cls, text){
+  var node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined && text !== null) node.textContent = String(text);
+  return node;
+}
+function num(v){ return (v === null || v === undefined) ? '0' : Number(v).toLocaleString(); }
+function plural(n, one, many){ return num(n) + ' ' + (Number(n) === 1 ? one : many); }
+
+/* The ONE normalization boundary on the client, mirroring arcade_config.norm_login:
+   an unstripped "@" already split real balances once in this codebase, and a
+   viewer pasting "@FruHara" into the URL must land on the same shelf as "fruhara". */
+function normLogin(s){
+  return String(s == null ? '' : s).trim().replace(/^@+/, '').trim().toLowerCase();
+}
+
+function stampDate(t){
+  if (!t) return '';
+  return new Date(t * 1000).toLocaleDateString(undefined,
+    {day:'numeric', month:'short', year:'numeric'});
+}
+function stampFull(t){
+  if (!t) return '';
+  return new Date(t * 1000).toLocaleString();
+}
+
+/* One stable colour per system, derived from its name, so a console looks the
+   same on every page and no colour table has to be maintained by hand. */
+function hueOf(name){
+  var h = 0, s = String(name || '');
+  for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+  return h;
+}
+function spineColor(name){
+  if (!name) return 'hsl(215 12% 42%)';
+  return 'hsl(' + hueOf(name) + ' 62% 56%)';
+}
+/* A second, independent hash: the tilt of a box must not be a function of its
+   colour, or every SNES box on the shelf would lean the same way. */
+function jitter(seed){
+  var h = 2166136261, s = String(seed || '');
+  for (var i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i); h = (h * 16777619) >>> 0;
+  }
+  return h / 4294967296;
+}
+function systemLabel(p){ return p || 'Unknown system'; }
+function shelfHref(login){ return 'shelf.html?u=' + encodeURIComponent(login); }
+
+/* ---------- how big a box is ----------------------------------------------
+   Two numbers per system: how TALL the box is relative to a 7.5-inch DVD case,
+   and the typical width/height of its art. The heights are the real physical
+   ones - a PS1 jewel case is two thirds the height of a GameCube case and the
+   shelf should say so. The aspect ratios are the measured medians of this
+   library's own scans (Super Famicom really is 0.55, a Famicom box really is
+   1.40 wide), and are only a placeholder shape: once an image loads, its own
+   proportions win.
+   First match wins, so the specific entries come before the general ones. */
+var METRICS = [
+  [/neo ?geo ?pocket|wonderswan|game ?gear|\blynx\b|n-?gage/,        .80, .78],
+  [/neo ?geo/,                                                      1.16, .68],
+  [/playstation ?portable|\bpsp\b/,                                  .89, .58],
+  [/playstation ?vita|\bps ?vita\b/,                                 .72, .78],
+  [/playstation ?[45]|\bps[45]\b/,                                   .90, .80],
+  [/playstation ?3|\bps3\b/,                                         .90, .87],
+  [/playstation ?2|\bps2\b/,                                        1.00, .70],
+  [/playstation|\bpsx\b|\bps1\b/,                                    .66,1.00],
+  [/dreamcast/,                                                      .66,1.00],
+  [/saturn ?jp|saturn ?\(j/,                                         .66,1.00],
+  [/saturn/,                                                         .93, .60],
+  [/sega ?cd|mega ?cd/,                                              .93, .66],
+  [/turbografx ?-?cd|turbo ?cd|pc ?engine ?cd|pc-?fx|3do|cd-?i/,     .93, .52],
+  [/master system|mark ?iii/,                                        .93, .71],
+  [/genesis|mega ?drive|32x|sg-?1000/,                              1.00, .71],
+  [/game ?boy ?advance|\bgba\b/,                                     .68,1.00],
+  [/game ?boy/,                                                      .66,1.00],
+  [/\b3ds\b|nintendo ?ds|\bnds\b|\bdsi\b/,                           .65,1.12],
+  [/switch/,                                                         .74,1.00],
+  [/wii ?u|\bwii\b/,                                                1.00, .71],
+  [/gamecube|\bgcn\b/,                                              1.00, .71],
+  [/nintendo ?64|\bn64\b/,                                           .70,1.37],
+  [/super ?famicom|\bsfc\b/,                                         .95, .55],
+  [/super nintendo|\bsnes\b/,                                        .70,1.37],
+  [/famicom ?disk/,                                                  .78, .97],
+  [/famicom/,                                                        .72,1.40],
+  [/nintendo entertainment|\bnes\b/,                                 .93, .73],
+  [/xbox/,                                                          1.00, .71],
+  [/pc ?engine|turbografx/,                                          .66,1.00],
+  [/virtual ?boy/,                                                   .70,1.01],
+  [/jaguar|colecovision|intellivision|atari|vectrex|odyssey/,        .88, .73],
+  [/amiga ?cd|cd32/,                                                 .66,1.00],
+  [/ms-?dos|windows|\bsteam\b|amiga|commodore|apple|\bpc\b/,         .95, .90]
+];
+var METRIC_DEFAULT = [.88, .78];
+
+var metricCache = {};
+function metric(platform){
+  var key = String(platform || '');
+  if (metricCache[key]) return metricCache[key];
+  var low = key.toLowerCase(), hit = METRIC_DEFAULT;
+  for (var i = 0; i < METRICS.length; i++) {
+    if (METRICS[i][0].test(low)) { hit = [METRICS[i][1], METRICS[i][2]]; break; }
+  }
+  metricCache[key] = hit;
+  return hit;
+}
+
+function statTile(n, label, sub, cls, small){
+  var tile = el('div', 'stat' + (cls ? ' ' + cls : ''));
+  tile.appendChild(el('div', 'n' + (small ? ' small' : ''), n));
+  tile.appendChild(el('div', 'l', label));
+  if (sub) tile.appendChild(el('div', 's', sub));
+  return tile;
+}
+
+function paintFoot(){
+  q('#foot').textContent = (DATA.site || 'RetroSai Shelves')
+    + ' - static snapshot generated ' + stampFull(DATA.generated_at)
+    + '. Recorded live on twitch.tv/' + (DATA.channel || 'retrosaieno')
+    + '. No live data, no tracking, no requests off this page.';
+}
+
+/* ---------- data access ----------------------------------------------------
+   shelves[login] is an array of [gameIndex, first_ts, stream_day]; games[i]
+   describes the game. That indirection is what lets one blob carry every
+   viewer's shelf without repeating a title once per viewer.
+
+   readGame() is deliberately tolerant about the shape of a game entry. The
+   published blob has always been a positional array, the art fields were added
+   to it afterwards, and the index and shelf blobs carry different extras in the
+   middle. So: read the three fields that have always been there by position,
+   then pick the art off the tail by what the value LOOKS like rather than by
+   where it sits. An object entry is read by name. Either way a game with no art
+   is a normal, expected case - it gets a blank case with its title on it. */
+function readGame(raw){
+  var g = {title:'?', platform:'', shelves:0, art:'', kind:''};
+  if (!raw) return g;
+  if (Object.prototype.toString.call(raw) === '[object Array]') {
+    g.title = String(raw[0] == null ? '?' : raw[0]);
+    g.platform = String(raw[1] == null ? '' : raw[1]);
+    g.shelves = Number(raw[2]) || 0;
+    for (var k = 3; k < raw.length; k++) {
+      var v = raw[k];
+      if (typeof v !== 'string') continue;
+      if (v === 'box' || v === 'cart') g.kind = v;
+      else if (/\.(webp|png|jpe?g|avif|gif)$/i.test(v)) g.art = v;
+    }
+  } else {
+    g.title = String(raw.title == null ? '?' : raw.title);
+    g.platform = String(raw.platform == null ? '' : raw.platform);
+    g.shelves = Number(raw.shelves != null ? raw.shelves : raw.count) || 0;
+    g.art = typeof raw.art === 'string' ? raw.art : '';
+    g.kind = (raw.art_kind === 'box' || raw.art_kind === 'cart') ? raw.art_kind : '';
+  }
+  if (g.art && !g.kind) g.kind = 'box';
+  return g;
+}
+
+var GAMES = null;
+function gameList(){
+  if (GAMES) return GAMES;
+  GAMES = (DATA.games || []).map(readGame);
+  return GAMES;
+}
+
+function entriesFor(login){
+  var raw = (DATA.shelves || {})[login];
+  if (!raw) return null;
+  var games = gameList();
+  return raw.map(function(e){
+    var g = games[e[0]] || readGame(null);
+    return {title:g.title, platform:g.platform, shelves:g.shelves,
+            art:g.art, kind:g.kind, ts:e[1] || 0, day:e[2] || ''};
+  });
+}
+
+function allViewers(){
+  var out = [];
+  var shelves = DATA.shelves || {};
+  for (var login in shelves) {
+    if (Object.prototype.hasOwnProperty.call(shelves, login)) {
+      out.push([login, shelves[login].length]);
+    }
+  }
+  return out.sort(function(a,b){ return b[1]-a[1] || a[0].localeCompare(b[0]); });
+}
+
+/* ---------- states ---------- */
+
+function viewerPicker(container, prefill){
+  var wrap = el('div');
+  var input = document.createElement('input');
+  input.type = 'search';
+  input.placeholder = 'Type a Twitch name...';
+  input.setAttribute('aria-label', 'Find a shelf');
+  input.autocomplete = 'off';
+  if (prefill) input.value = prefill;
+  wrap.appendChild(input);
+  var list = el('div', 'suggest');
+  var viewers = allViewers();
+  var note = el('div', 'muted tiny');
+  note.style.marginTop = '14px';
+  wrap.appendChild(note);
+  wrap.appendChild(list);
+
+  function paint(){
+    var needle = normLogin(input.value);
+    var hits = viewers.filter(function(v){
+      return !needle || v[0].indexOf(needle) >= 0;
+    });
+    /* Never dead-end on a miss: a name with no shelf falls back to the biggest
+       shelves so there is always something to click. */
+    var missed = needle && !hits.length;
+    if (missed) hits = viewers;
+    note.textContent = !viewers.length ? ''
+      : missed ? ('No shelf matches "' + needle + '". The deepest shelves so far:')
+      : (needle ? '' : 'The deepest shelves so far:');
+
+    list.textContent = '';
+    hits.slice(0, 24).forEach(function(v){
+      var a = el('a', 'sug');
+      a.href = shelfHref(v[0]);
+      var sp = el('div', 'sp');
+      sp.style.background = spineColor(v[0]);
+      a.appendChild(sp);
+      a.appendChild(el('div', 'nm', v[0]));
+      a.appendChild(el('div', 'ct', v[1]));
+      list.appendChild(a);
+    });
+    if (!hits.length) {
+      list.appendChild(el('div', 'empty', 'No shelves recorded yet.'));
+    }
+  }
+  var timer = null;
+  input.addEventListener('input', function(){
+    clearTimeout(timer); timer = setTimeout(paint, 150);
+  });
+  paint();
+  container.appendChild(wrap);
+}
+
+function renderNoUser(page){
+  var panel = el('section', 'panel');
+  panel.appendChild(el('h2', null, 'Whose shelf?'));
+  panel.appendChild(el('p', 'muted',
+    'Every shelf lives at its own address - add ?u=yourname to this page, or '
+    + 'pick one below. Chat can also just type !shelf.'));
+  viewerPicker(panel, '');
+  page.appendChild(panel);
+}
+
+function renderUnknown(page, login, rawParam){
+  var note = el('div', 'notice');
+  note.appendChild(el('b', null, 'No shelf for "' + (rawParam || login) + '" yet. '));
+  note.appendChild(el('span', null,
+    'Shelves start themselves: follow the channel, then be in chat when the game '
+    + 'changes. The next game that goes up is the first one on your shelf. '
+    + '(Only followers who were actually present get counted - it is a record of '
+    + 'what you were there for, not a checklist.)'));
+  page.appendChild(note);
+
+  var panel = el('section', 'panel');
+  panel.appendChild(el('h2', null, 'Looking for a different name?'));
+  viewerPicker(panel, '');
+  page.appendChild(panel);
+}
+
+/* An empty shelf still gets a unit with a board in it: the message is "there is
+   room here", which an empty grey box does not say. */
+function renderEmpty(page, login){
+  page.appendChild(heroFor(login, []));
+  var note = el('div', 'notice');
+  note.appendChild(el('b', null, 'This shelf is empty. '));
+  note.appendChild(el('span', null,
+    'It gets its first game the moment the stream switches titles while you are '
+    + 'in chat.'));
+  page.appendChild(note);
+
+  var unit = el('div', 'unit');
+  var bay = el('div', 'bay');
+  var plank = el('div', 'plank emptybay');
+  plank.style.setProperty('--rowh', 'calc(var(--base) * .5)');
+  bay.appendChild(plank);
+  var msg = el('div', 'emptynote', 'the first one goes here');
+  bay.appendChild(msg);
+  unit.appendChild(bay);
+  page.appendChild(unit);
+}
+
+function initials(login){
+  return String(login || '?').slice(0, 2).toUpperCase();
+}
+
+function heroFor(login, entries){
+  var hero = el('section', 'panel hero');
+  var av = el('div', 'avatar', initials(login));
+  av.style.background = spineColor(login);
+  hero.appendChild(av);
+  var body = el('div');
+  body.style.flex = '1';
+  body.style.minWidth = '0';
+  body.appendChild(el('h1', 'owner', login));
+  var first = entries.length ? entries[entries.length - 1].ts : 0;
+  body.appendChild(el('div', 'ownersub', entries.length
+    ? (plural(entries.length, 'game', 'games') + ' witnessed  ·  collecting since '
+       + stampDate(first))
+    : 'no games shelved yet'));
+  hero.appendChild(body);
+  return hero;
+}
+
+/* ---------- the shelf ---------- */
+
+var state = {q:'', platform:'', sort:'recent', view:'shelf', group:true,
+             entries:[], login:''};
+
+var SORTS = {
+  recent:   function(a,b){ return b.ts-a.ts || a.title.localeCompare(b.title); },
+  oldest:   function(a,b){ return a.ts-b.ts || a.title.localeCompare(b.title); },
+  title:    function(a,b){ return a.title.localeCompare(b.title); },
+  rare:     function(a,b){ return a.shelves-b.shelves || a.title.localeCompare(b.title); }
+};
+
+var EAGER = 18;      /* the first screenful is fetched eagerly; the rest is lazy */
+var painted = 0;
+
+/* Fewer than this many games on a system does not earn its own board. Nobody
+   devotes a shelf to their two Atari games; they go in with everything else,
+   and the shelf stops looking like a page of half-empty rows. */
+var MIN_BAY = 4;
+
+function boxFor(e){
+  var m = metric(e.platform);
+  var hue = hueOf(e.platform);
+  var wobble = jitter(e.title + '|' + e.platform);
+
+  var slot = el('div', 'slot');
+  var box = document.createElement('button');
+  box.type = 'button';
+  box.className = 'box';
+  box.style.setProperty('--boxh', 'calc(var(--base) * ' + m[0] + ')');
+  box.style.setProperty('--ar', m[1]);
+  box.style.setProperty('--hue', hue);
+  box.style.setProperty('--tilt', ((wobble * 1.4) - .7).toFixed(2) + 'deg');
+  box.style.setProperty('--shade', (.66 + wobble * .26).toFixed(2));
+  box.setAttribute('aria-pressed', 'false');
+  box.title = e.title + ' - ' + systemLabel(e.platform);
+
+  if (e.art && e.kind !== 'cart') {
+    var im = document.createElement('img');
+    im.src = e.art;
+    im.alt = e.title + ' box art';
+    im.decoding = 'async';
+    im.loading = (painted < EAGER) ? 'eager' : 'lazy';
+    /* The box starts at the platform's typical shape and takes the art's own
+       shape as soon as the file reports one. A Super Famicom box and an SNES box
+       are not the same rectangle and neither is squeezed into the other. */
+    trueShape(box, im);
+    /* A missing file must never show as a broken image: fall back to the same
+       blank case a game with no art gets. */
+    im.addEventListener('error', function(){ toBlank(box, e); }, {once:true});
+    box.appendChild(im);
+  } else if (e.art) {
+    buildCart(box, e);
+  } else {
+    buildBlank(box, e);
+  }
+
+  box.appendChild(el('div', 'side'));
+  box.appendChild(el('div', 'face'));
+  box.appendChild(el('div', 'foot'));
+  if (e.shelves === 1) {
+    var pip = el('div', 'pip');
+    pip.title = 'Nobody else was in the room for this one.';
+    box.appendChild(pip);
+  }
+  box.appendChild(el('div', 'plate', e.title));
+  box.addEventListener('click', function(){ openPeek(box, e); });
+
+  slot.appendChild(box);
+  painted++;
+  return slot;
+}
+
+/* Hand the box the art's real proportions. Cached images are already complete
+   by the time this runs, so check before waiting for an event that will never
+   fire. */
+function trueShape(box, im){
+  function apply(){
+    if (im.naturalWidth > 0 && im.naturalHeight > 0) {
+      box.style.aspectRatio = im.naturalWidth + ' / ' + im.naturalHeight;
+    }
+  }
+  if (im.complete) apply();
+  else im.addEventListener('load', apply, {once:true});
+}
+
+function buildBlank(box, e){
+  box.classList.add('blank');
+  var sleeve = el('div', 'sleeve');
+  sleeve.appendChild(el('div', 'band'));
+  sleeve.appendChild(el('div', 'ttl', e.title));
+  sleeve.appendChild(el('div', 'sys', systemLabel(e.platform)));
+  box.insertBefore(sleeve, box.firstChild);
+}
+
+function buildCart(box, e){
+  box.classList.add('cart');
+  var sleeve = el('div', 'sleeve');
+  box.appendChild(sleeve);
+  var im = document.createElement('img');
+  im.src = e.art;
+  im.alt = e.title + ' cartridge art';
+  im.decoding = 'async';
+  im.loading = (painted < EAGER) ? 'eager' : 'lazy';
+  im.addEventListener('error', function(){ toBlank(box, e); }, {once:true});
+  box.appendChild(im);
+  box.appendChild(el('div', 'band'));
+  box.appendChild(el('div', 'ttl', e.title));
+}
+
+/* Strip whatever art treatment failed and rebuild the box as a blank case. */
+function toBlank(box, e){
+  box.classList.remove('cart');
+  box.style.aspectRatio = '';   /* back to the platform's shape */
+  var kill = box.querySelectorAll('img, .sleeve, .band, .ttl');
+  for (var i = 0; i < kill.length; i++) kill[i].parentNode.removeChild(kill[i]);
+  buildBlank(box, e);
+}
+
+/* ---------- the pulled-out box ---------- */
+
+var peek = null, peekBox = null;
+
+function closePeek(){
+  if (peek) peek.hidden = true;
+  if (peekBox) { peekBox.setAttribute('aria-pressed', 'false'); peekBox = null; }
+}
+
+function openPeek(box, e){
+  if (peekBox === box) { closePeek(); return; }
+  if (!peek) {
+    peek = el('div', 'peek');
+    peek.setAttribute('role', 'dialog');
+    peek.setAttribute('aria-label', 'Game details');
+    document.body.appendChild(peek);
+  }
+  if (peekBox) peekBox.setAttribute('aria-pressed', 'false');
+  peekBox = box;
+  box.setAttribute('aria-pressed', 'true');
+
+  peek.textContent = '';
+  var x = el('button', 'x', '✕');
+  x.setAttribute('aria-label', 'Close');
+  x.addEventListener('click', closePeek);
+  peek.appendChild(x);
+
+  var art = el('div', 'art');
+  if (e.art) {
+    var im = document.createElement('img');
+    im.src = e.art; im.alt = ''; im.decoding = 'async';
+    art.appendChild(im);
+  } else {
+    var chip = el('div');
+    chip.style.cssText = 'width:66px;height:88px;border-radius:3px;'
+      + 'background:linear-gradient(157deg,hsl(' + hueOf(e.platform) + ' 17% 27%),'
+      + 'hsl(' + hueOf(e.platform) + ' 22% 12%));box-shadow:0 8px 16px -6px #000';
+    art.appendChild(chip);
+  }
+  peek.appendChild(art);
+
+  var body = el('div', 'body');
+  body.appendChild(el('div', 't', e.title));
+  var meta = el('div', 'm');
+  meta.appendChild(el('div', null, systemLabel(e.platform)));
+  var when = el('div');
+  when.appendChild(el('b', null, '#' + num(e.no)));
+  when.appendChild(el('span', null, ' on this shelf  ·  ' + stampDate(e.ts)));
+  meta.appendChild(when);
+  meta.appendChild(el('div', null, e.shelves === 1
+    ? 'Nobody else was in the room for this one.'
+    : 'On ' + plural(e.shelves, 'shelf', 'shelves') + '.'));
+  if (e.kind === 'cart') {
+    meta.appendChild(el('div', 'dim', 'No box front on file - that is the cartridge.'));
+  } else if (!e.art) {
+    meta.appendChild(el('div', 'dim', 'No art on file for this one yet.'));
+  }
+  body.appendChild(meta);
+  peek.appendChild(body);
+  peek.hidden = false;
+}
+
+document.addEventListener('keydown', function(ev){
+  if (ev.key === 'Escape') closePeek();
+});
+document.addEventListener('click', function(ev){
+  if (!peek || peek.hidden) return;
+  if (peek.contains(ev.target)) return;
+  var node = ev.target;
+  while (node) { if (node === peekBox) return; node = node.parentNode; }
+  closePeek();
+}, true);
+
+/* ---------- dressing the end of a board -------------------------------------
+   Two touches that need real layout, so they run after paint and after the
+   images have settled. Both only ever look at the LAST box of each board, never
+   at all of them.
+
+     - a BOOKEND, whenever a board did not fill up. This is what makes a
+       three-game shelf read as a shelf that has been started rather than as one
+       that failed to load.
+     - a LEAN on the box beside it, but only when that box has a neighbour on the
+       same board. One box propped at an angle on an otherwise empty board reads
+       as broken; a box leaning against the bookend at the end of a row reads as
+       a shelf somebody actually uses.
+
+   Removal happens for every board first and measurement second, so nothing is
+   measured against a layout that still contains last pass's furniture. */
+function dressEnds(){
+  var planks = document.querySelectorAll('.plank'), p, old;
+  for (p = 0; p < planks.length; p++) {
+    old = planks[p].querySelector('.bookend');
+    if (old) planks[p].removeChild(old);
+    var slots = planks[p].children;
+    for (var i = 0; i < slots.length; i++) slots[i].classList.remove('lean');
+  }
+  for (p = 0; p < planks.length; p++) {
+    var kids = planks[p].children;
+    if (!kids.length) continue;
+    var last = kids[kids.length - 1];
+    /* captured BEFORE the bookend goes in: `kids` is live, and appending to it
+       shifts every index read afterwards. */
+    var prev = kids.length > 1 ? kids[kids.length - 2] : null;
+    var box = last.querySelector ? last.querySelector('.box') : null;
+    if (!box) continue;
+    var room = planks[p].clientWidth
+             - (last.offsetLeft - planks[p].offsetLeft + last.offsetWidth);
+    if (room < 30) continue;
+
+    var end = el('div', 'bookend');
+    end.style.height = Math.round(box.offsetHeight * 0.52) + 'px';
+    planks[p].appendChild(end);
+    /* Arithmetic on clientWidth is not proof it fits - padding, the gap and
+       sub-pixel widths all get a vote. Ask the layout instead: a bookend that
+       wrapped onto a row of its own draws a whole extra board under an empty
+       shelf, which is exactly the "looks broken" this was added to prevent.
+       Compare BOTTOM edges, not tops: everything on a board is bottom-aligned,
+       and the bookend is deliberately shorter than the boxes, so its top never
+       matches theirs even when it is standing right beside them. */
+    if (end.offsetTop + end.offsetHeight !== last.offsetTop + last.offsetHeight) {
+      planks[p].removeChild(end);
+      continue;
+    }
+
+    if (prev && prev.offsetTop === last.offsetTop) {
+      last.classList.add('lean');
+      /* Small. A box tipped much further reads as falling over rather than as
+         one nobody straightened, and lifts its far corner off the board. */
+      box.style.setProperty('--lean',
+        (3.2 + jitter(last.textContent) * 2.4).toFixed(1) + 'deg');
+    }
+  }
+}
+
+/* ---------- painting ---------- */
+
+function filtered(){
+  return state.entries.filter(function(e){
+    if (state.platform && systemLabel(e.platform) !== state.platform) return false;
+    if (!state.q) return true;
+    return e.title.toLowerCase().indexOf(state.q) >= 0
+        || systemLabel(e.platform).toLowerCase().indexOf(state.q) >= 0;
+  }).sort(SORTS[state.sort] || SORTS.recent);
+}
+
+function bayFor(label, count, items, rowUnits){
+  var bay = el('div', 'bay');
+  if (label) {
+    var head = el('div', 'bayhead');
+    head.appendChild(el('div', 'nm', label));
+    head.appendChild(el('div', 'rule'));
+    head.appendChild(el('div', 'ct', plural(count, 'game', 'games')));
+    bay.appendChild(head);
+  }
+  var plank = el('div', 'plank');
+  plank.style.setProperty('--rowh', 'calc(var(--base) * ' + rowUnits + ')');
+  var frag = document.createDocumentFragment();
+  items.forEach(function(e){ frag.appendChild(boxFor(e)); });
+  plank.appendChild(frag);
+  bay.appendChild(plank);
+  return bay;
+}
+
+function paintShelfView(box, all){
+  var unit = el('div', 'unit');
+  if (state.group) {
+    /* Grouped by system, which is how a real collection ends up arranged - and
+       it has a second, structural payoff: one system per board means one box
+       height per board, so no vertical space is wasted on a shelf of jewel
+       cases sharing a row with DVD cases. */
+    var bins = {}, order = [];
+    all.forEach(function(e){
+      var k = systemLabel(e.platform);
+      if (!bins[k]) { bins[k] = []; order.push(k); }
+      bins[k].push(e);
+    });
+    order.sort(function(a,b){ return bins[b].length - bins[a].length
+                                  || a.localeCompare(b); });
+    var thin = [];
+    order.forEach(function(k){
+      if (bins[k].length < MIN_BAY) { thin.push(k); return; }
+      unit.appendChild(bayFor(k, bins[k].length, bins[k],
+                              metric(bins[k][0].platform)[0]));
+    });
+    if (thin.length) {
+      var mixed = [];
+      thin.forEach(function(k){ mixed = mixed.concat(bins[k]); });
+      mixed.sort(SORTS[state.sort] || SORTS.recent);
+      var top = 0.5;
+      mixed.forEach(function(e){ top = Math.max(top, metric(e.platform)[0]); });
+      /* One straggler system keeps its own name; several share a board and get
+         an honest label for what that board is. */
+      unit.appendChild(bayFor(thin.length === 1 ? thin[0] : 'Everything else',
+                              mixed.length, mixed, top));
+    }
+  } else {
+    /* One long shelf. Boards must clear the tallest thing standing on them, so
+       the row height is the tallest box in the whole run; the shorter cases sit
+       at the bottom of their slot with headroom above, exactly as they do on a
+       real mixed shelf. */
+    var tallest = 0.5;
+    all.forEach(function(e){ tallest = Math.max(tallest, metric(e.platform)[0]); });
+    unit.appendChild(bayFor('', all.length, all, tallest));
+  }
+  box.appendChild(unit);
+}
+
+function paintListView(box, all){
+  var list = el('div', 'list');
+  var frag = document.createDocumentFragment();
+  all.forEach(function(e){
+    var row = document.createElement('button');
+    row.type = 'button';
+    row.className = 'lrow';
+    row.setAttribute('aria-pressed', 'false');
+    row.style.setProperty('--hue', hueOf(e.platform));
+    var th = el('div', 'th');
+    if (e.art) {
+      var im = document.createElement('img');
+      im.src = e.art; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+      im.addEventListener('error', function(){
+        th.textContent = ''; th.appendChild(el('div', 'mini'));
+      }, {once:true});
+      th.appendChild(im);
+    } else {
+      th.appendChild(el('div', 'mini'));
+    }
+    row.appendChild(th);
+    row.appendChild(el('div', 'no', '#' + num(e.no)));
+    row.appendChild(el('div', 't', e.title));
+    row.appendChild(el('div', 'p', systemLabel(e.platform)));
+    if (e.shelves === 1) {
+      var tag = el('div', 'tag rare', 'only you');
+      row.appendChild(tag);
+    }
+    row.addEventListener('click', function(){ openPeek(row, e); });
+    frag.appendChild(row);
+  });
+  list.appendChild(frag);
+  box.appendChild(list);
+}
+
+function paintShelf(){
+  closePeek();
+  var all = filtered();
+  var box = q('#shelf');
+  box.textContent = '';
+  painted = 0;
+
+  if (!all.length) {
+    box.appendChild(el('div', 'empty', 'Nothing on this shelf matches that.'));
+  } else if (state.view === 'list') {
+    paintListView(box, all);
+  } else {
+    paintShelfView(box, all);
+  }
+  q('#shelfcount').textContent = plural(all.length, 'game', 'games');
+  if (state.view === 'shelf' && all.length) {
+    if (window.requestAnimationFrame) requestAnimationFrame(dressEnds);
+    else dressEnds();
+  }
+}
+
+function renderShelf(page, login, entries){
+  state.login = login;
+  state.entries = entries;
+
+  /* A collection number fixed to the entry, not to its position in whatever the
+     reader happens to have sorted or filtered by. Entries arrive newest first,
+     so counting down makes #1 the first game this viewer was ever here for -
+     which is the one worth having a number. */
+  entries.forEach(function(e, i){ e.no = entries.length - i; });
+
+  page.appendChild(heroFor(login, entries));
+
+  var systems = {};
+  entries.forEach(function(e){
+    var k = systemLabel(e.platform);
+    systems[k] = (systems[k] || 0) + 1;
+  });
+  var systemNames = Object.keys(systems).sort();
+  var topSystem = systemNames.slice().sort(function(a,b){
+    return systems[b]-systems[a] || a.localeCompare(b); })[0];
+  var rare = entries.filter(function(e){ return e.shelves === 1; }).length;
+  var oldest = entries[entries.length - 1];
+
+  var stats = el('section', 'stats');
+  stats.appendChild(statTile(num(entries.length), 'games on this shelf',
+    rare ? (num(rare) + ' nobody else saw') : 'one entry per game, ever', 'accent'));
+  stats.appendChild(statTile(num(systemNames.length), 'systems',
+    topSystem ? ('most on ' + topSystem) : '', 'gold'));
+  stats.appendChild(statTile(entries[0].title, 'latest addition',
+    stampDate(entries[0].ts), '', true));
+  if (entries.length > 1) {
+    stats.appendChild(statTile(oldest.title, 'the first one, #1',
+      stampDate(oldest.ts), 'good', true));
+  } else {
+    stats.appendChild(statTile('#1', 'the first one',
+      'the shelf starts here', 'good'));
+  }
+  page.appendChild(stats);
+
+  var panel = el('section', 'panel');
+  var head = el('h2', null, 'The shelf ');
+  var count = el('span', 'muted tiny');
+  count.id = 'shelfcount';
+  head.appendChild(count);
+  panel.appendChild(head);
+
+  var controls = el('div', 'controls');
+  var search = document.createElement('input');
+  search.type = 'search'; search.autocomplete = 'off';
+  search.placeholder = 'Search this shelf...';
+  search.setAttribute('aria-label', 'Search this shelf');
+  controls.appendChild(search);
+
+  var psel = document.createElement('select');
+  psel.setAttribute('aria-label', 'Filter by system');
+  var optAll = document.createElement('option');
+  optAll.value = ''; optAll.textContent = 'All systems';
+  psel.appendChild(optAll);
+  systemNames.forEach(function(name){
+    var o = document.createElement('option');
+    o.value = name; o.textContent = name + ' (' + systems[name] + ')';
+    psel.appendChild(o);
+  });
+  controls.appendChild(psel);
+
+  var ssel = document.createElement('select');
+  ssel.setAttribute('aria-label', 'Sort');
+  [['recent','Newest first'],['oldest','Oldest first'],['title','Title A-Z'],
+   ['rare','Rarest first']].forEach(function(pair){
+    var o = document.createElement('option');
+    o.value = pair[0]; o.textContent = pair[1];
+    ssel.appendChild(o);
+  });
+  controls.appendChild(ssel);
+
+  controls.appendChild(el('div', 'spacer'));
+
+  /* Grouping only earns its keep when there are at least two systems with
+     enough games to fill a board. Three games on three systems become three
+     boards holding one box each, which reads as a page that failed; the same
+     three standing together on one board read as a collection somebody has
+     started. The toggle is still there either way. */
+  var bayable = 0;
+  systemNames.forEach(function(k){ if (systems[k] >= MIN_BAY) bayable++; });
+  state.group = bayable >= 2;
+
+  var groupChip = el('button', 'chip',
+    state.group ? 'Grouped by system' : 'One long shelf');
+  groupChip.setAttribute('aria-pressed', state.group ? 'true' : 'false');
+  groupChip.addEventListener('click', function(){
+    state.group = !state.group;
+    groupChip.setAttribute('aria-pressed', state.group ? 'true' : 'false');
+    groupChip.textContent = state.group ? 'Grouped by system' : 'One long shelf';
+    paintShelf();
+  });
+
+  var chips = el('div', 'chips');
+  [['shelf','Shelf'],['list','List']].forEach(function(pair){
+    var chip = el('button', 'chip', pair[1]);
+    chip.setAttribute('aria-pressed', pair[0] === state.view ? 'true' : 'false');
+    chip.addEventListener('click', function(){
+      state.view = pair[0];
+      Array.prototype.forEach.call(chips.children, function(other){
+        other.setAttribute('aria-pressed', other === chip ? 'true' : 'false');
+      });
+      groupChip.hidden = (state.view !== 'shelf');
+      paintShelf();
+    });
+    chips.appendChild(chip);
+  });
+  controls.appendChild(groupChip);
+  controls.appendChild(chips);
+  panel.appendChild(controls);
+  page.appendChild(panel);
+
+  /* The unit sits OUTSIDE the panel: a shelf against the wall of the room, not
+     a widget inside a card. */
+  var host = el('div');
+  host.id = 'shelf';
+  page.appendChild(host);
+
+  var timer = null;
+  search.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      state.q = search.value.trim().toLowerCase();
+      paintShelf();
+    }, 180);
+  });
+  psel.addEventListener('change', function(){
+    state.platform = psel.value; paintShelf();
+  });
+  ssel.addEventListener('change', function(){
+    state.sort = ssel.value; paintShelf();
+  });
+
+  paintShelf();
+
+  /* Re-wrapping changes which box ends a board. Only recompute when the width
+     actually moved - a phone fires resize on every scroll as the URL bar hides. */
+  var lastW = window.innerWidth, rtimer = null;
+  window.addEventListener('resize', function(){
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    clearTimeout(rtimer);
+    rtimer = setTimeout(function(){
+      if (state.view === 'shelf') dressEnds();
+    }, 160);
+  });
+  /* Images settling change the wrap too; one pass once everything is in. */
+  window.addEventListener('load', function(){
+    if (state.view === 'shelf') dressEnds();
+  });
+}
+
+/* ---------- entry ---------- */
+
+function init(){
+  var page = q('#page');
+  if (DATA.placeholder) {
+    page.appendChild(el('div', 'notice',
+      'This is the un-rendered template. arcade_publish_shelves.py fills in the data.'));
+    return;
+  }
+  paintFoot();
+
+  var raw = '';
+  try {
+    raw = new URLSearchParams(window.location.search).get('u') || '';
+  } catch (e) { raw = ''; }
+  var login = normLogin(raw);
+
+  if (!login) { renderNoUser(page); return; }
+
+  document.title = login + ' - ' + (DATA.site || 'RetroSai Shelves');
+  var entries = entriesFor(login);
+  if (entries === null) { renderUnknown(page, login, raw); return; }
+  if (!entries.length) { renderEmpty(page, login); return; }
+
+  var back = el('a', 'back', '← All shelves');
+  back.href = './';
+  page.appendChild(back);
+  renderShelf(page, login, entries);
+}
+
+init();
+</script>
+</body>
+</html>

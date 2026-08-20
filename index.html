@@ -1,0 +1,1017 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="index,follow">
+<title>RetroSai Shelves</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%235cc8ff'/%3E%3Cg fill='%230d0f13'%3E%3Crect x='7' y='7' width='4' height='14' rx='1'/%3E%3Crect x='13' y='9' width='4' height='12' rx='1'/%3E%3Crect x='19' y='6' width='4' height='15' rx='1'/%3E%3Crect x='6' y='23' width='20' height='3' rx='1.5'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+
+/* RetroSai Shelves - the front page.
+   ===========================================================================
+   Same room, same boards, same boxes as shelf.html: this page is the channel's
+   whole collection standing against a wall, and a viewer's own page is the
+   subset they were in the room for.
+
+   The shelf machinery below is deliberately a COPY of the one in shelf.html
+   rather than a shared file. These are two standalone static pages, spliced
+   separately by arcade_publish_shelves.py, and a shared stylesheet would be a
+   second request on a site whose whole point is that it makes none. Keep the
+   two in step by hand; the geometry note at the top of shelf.html explains why
+   the boards are drawn the way they are.
+
+   Committed to one look - a dim room, warm light, wooden boards - with every
+   colour stated explicitly, so the page holds on any host background.
+   =========================================================================== */
+
+:root{
+  --bg:#0b0e12; --panel:#171b22; --panel2:#1d222b; --line:#2a313d;
+  --ink:#eef1f5; --ink2:#a7b1bf; --ink3:#6f7a8a;
+  --accent:#5cc8ff; --gold:#f2b134; --good:#5fd08a;
+
+  --wall:#171c23; --wall2:#0d1015;
+  --board-top:#c39a63; --board-lit:#a37c4d; --board:#6d5233; --board2:#42311e;
+  --board-edge:#1a1109;
+  --post:#563f29; --post2:#2e2118;
+  --brass:#d8bd8a;
+
+  --radius:14px; --gap:20px;
+  --base:198px; --air:38px; --tight:5px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:400 18px/1.5 "Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  padding-bottom:64px;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-weight:650;letter-spacing:-.01em}
+h2{font-size:1.35rem;margin-bottom:14px}
+.wrap{max-width:1500px;margin:0 auto;padding:0 24px}
+header.top{
+  position:sticky;top:0;z-index:30;background:rgba(11,14,18,.94);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(8px);
+}
+header.top .wrap{display:flex;align-items:center;gap:20px;height:78px}
+.brand{display:flex;align-items:center;gap:12px;font-size:1.3rem;font-weight:650}
+.brand .mark{
+  width:38px;height:38px;border-radius:11px;background:var(--accent);
+  display:grid;place-items:center;flex:0 0 auto
+}
+.brand .mark svg{width:24px;height:24px;display:block}
+.brand .thin{color:var(--ink2);font-weight:400}
+.spacer{flex:1}
+.who{display:flex;align-items:center;gap:10px;color:var(--ink2);font-size:.95rem}
+select,input[type=search],button{
+  font:inherit;color:var(--ink);background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:10px 14px
+}
+input[type=search]{min-width:min(340px,52vw)}
+select:focus-visible,input:focus-visible,button:focus-visible,a:focus-visible{
+  outline:2px solid var(--accent);outline-offset:2px}
+button{cursor:pointer}
+button:hover{border-color:#3d4757}
+main{padding-top:28px}
+.panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;margin-bottom:var(--gap)
+}
+.muted{color:var(--ink2)}
+.dim{color:var(--ink3)}
+.tiny{font-size:.85rem}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;
+  margin-bottom:var(--gap)}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px}
+.stat .n{font-size:2.6rem;font-weight:700;line-height:1.05;letter-spacing:-.02em;
+  overflow-wrap:anywhere}
+.stat .n.small{font-size:1.45rem;line-height:1.2;padding-top:.3rem}
+.stat .l{color:var(--ink2);font-size:.95rem;margin-top:6px}
+.stat .s{color:var(--ink3);font-size:.85rem;margin-top:2px}
+.stat.accent .n{color:var(--accent)} .stat.gold .n{color:var(--gold)}
+.stat.good .n{color:var(--good)}
+
+.snapshot{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;
+  background:#1b2028;border:1px solid var(--line);border-left:4px solid var(--accent);
+  border-radius:10px;padding:12px 16px;color:var(--ink2);font-size:.92rem;
+  margin-bottom:var(--gap)}
+.snapshot b{color:var(--ink);font-weight:600}
+
+.sectionhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 14px}
+.sectionhead h2{margin:0}
+
+/* leaderboard */
+.board{display:flex;flex-direction:column;gap:8px}
+.row{display:flex;align-items:center;gap:14px;background:var(--panel2);
+  border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.row:hover{border-color:#41506a;background:#212734}
+.rank{width:2.2rem;flex:0 0 auto;text-align:right;color:var(--ink3);
+  font-variant-numeric:tabular-nums;font-weight:650}
+.row.p1 .rank{color:var(--gold)} .row.p2 .rank{color:#cfd6e0}
+.row.p3 .rank{color:#c98b4b}
+.row .nm{font-weight:620;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .grow{flex:1;min-width:0}
+.row .ct{color:var(--accent);font-weight:650;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.minibar{height:6px;border-radius:99px;background:#0b0d11;margin-top:7px;overflow:hidden}
+.minibar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+
+.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+  padding:9px 18px;font-size:.95rem}
+.chip[aria-pressed=true]{background:var(--accent);border-color:var(--accent);
+  color:#08222f;font-weight:600}
+.cols{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px}
+.gamerow{display:flex;align-items:center;gap:12px;background:var(--panel2);
+  border:1px solid var(--line);border-radius:10px;padding:11px 14px}
+.gamerow .sp{width:6px;align-self:stretch;border-radius:3px;flex:0 0 auto}
+.gamerow .th{width:34px;height:34px;flex:0 0 auto;display:flex;align-items:center;
+  justify-content:center;background:#0b0d11;border-radius:6px;overflow:hidden}
+.gamerow .th img{max-width:100%;max-height:100%;width:auto;height:auto;display:block}
+.gamerow .t{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gamerow .m{color:var(--ink3);font-size:.82rem;margin-top:1px;overflow:hidden;
+  text-overflow:ellipsis;white-space:nowrap}
+.gamerow .grow{flex:1;min-width:0}
+.gamerow .ct{color:var(--accent);font-weight:650;white-space:nowrap;
+  font-variant-numeric:tabular-nums}
+.tag{border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.75rem;
+  text-transform:uppercase;letter-spacing:.06em;color:var(--ink2);white-space:nowrap}
+.empty{color:var(--ink2);padding:14px 0}
+footer.foot{color:var(--ink3);font-size:.85rem;padding:26px 0 0;
+  border-top:1px solid var(--line);margin-top:var(--gap)}
+
+/* ---- the shelf unit: identical geometry to shelf.html -------------------- */
+.unit{
+  position:relative;overflow:hidden;
+  border:1px solid #2b2318;border-radius:16px;
+  padding:26px 26px 8px;margin-bottom:var(--gap);
+  background:
+    radial-gradient(150% 62% at 50% -12%, rgba(255,206,140,.13), rgba(255,206,140,0) 62%),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.014) 0 2px, rgba(0,0,0,0) 2px 9px),
+    linear-gradient(180deg, var(--wall) 0%, var(--wall2) 100%);
+  box-shadow:
+    inset 0 0 90px 30px rgba(0,0,0,.55),
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 30px 70px -40px #000;
+}
+.unit::before,.unit::after{
+  content:"";position:absolute;top:0;bottom:0;width:14px;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg, var(--post2) 0%, var(--post) 45%, #1d150e 100%);
+  box-shadow:0 0 18px rgba(0,0,0,.6);
+}
+.unit::before{left:0}
+.unit::after{right:0;transform:scaleX(-1)}
+
+.bay{position:relative}
+.bay + .bay{margin-top:30px}
+.bayhead{display:flex;align-items:baseline;gap:12px;margin:0 0 11px}
+.bayhead .nm{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--brass);font-weight:600;white-space:nowrap;overflow:hidden;
+  text-overflow:ellipsis}
+.bayhead .rule{flex:1;height:1px;min-width:20px;
+  background:linear-gradient(90deg, rgba(216,189,138,.35), rgba(216,189,138,0))}
+.bayhead .ct{font-size:.76rem;color:#8c7f6a;font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+
+.plank{
+  display:flex;flex-wrap:wrap;align-items:flex-end;
+  column-gap:var(--tight);row-gap:var(--air);
+  margin:0 -12px;padding:0 12px var(--air);
+  background-repeat:repeat-y;
+  background-image:
+    repeating-linear-gradient(90deg,
+      rgba(255,240,214,.05) 0 1px, rgba(0,0,0,.07) 1px 2px,
+      rgba(0,0,0,0) 2px 7px, rgba(0,0,0,.05) 7px 8px, rgba(0,0,0,0) 8px 17px),
+    repeating-linear-gradient(180deg,
+      rgba(0,0,0,0)              0,
+      rgba(0,0,0,0)              var(--rowh),
+      var(--board-top)           var(--rowh),
+      var(--board-lit)           calc(var(--rowh) + 4px),
+      var(--board)               calc(var(--rowh) + 6px),
+      var(--board2)              calc(var(--rowh) + 14px),
+      var(--board-edge)          calc(var(--rowh) + 17px),
+      rgba(0,0,0,.72)            calc(var(--rowh) + 18px),
+      rgba(0,0,0,.28)            calc(var(--rowh) + 26px),
+      rgba(0,0,0,0)              calc(var(--rowh) + 34px),
+      rgba(0,0,0,0)              calc(var(--rowh) + var(--air)));
+}
+.slot{height:var(--rowh);display:flex;align-items:flex-end;flex:0 0 auto}
+.bookend{
+  position:relative;z-index:1;flex:0 0 auto;width:9px;margin-left:3px;
+  border-radius:1px 2px 0 0;
+  background:linear-gradient(90deg,#20262e 0%,#4d5766 42%,#171b21 100%);
+  box-shadow:2px 4px 8px -3px rgba(0,0,0,.9), inset 0 1px 0 rgba(255,244,224,.22);
+}
+.bookend::after{
+  content:"";position:absolute;left:0;right:-15px;bottom:0;height:4px;
+  border-radius:0 2px 2px 0;
+  background:linear-gradient(180deg,#424c5a 0%,#161a20 100%);
+  box-shadow:0 3px 5px -2px rgba(0,0,0,.85);
+}
+
+.box{
+  position:relative;height:var(--boxh);aspect-ratio:var(--ar,.75);
+  flex:0 0 auto;display:block;
+  background:#0c0f14;border-radius:1px 3px 3px 1px;
+  box-shadow:3px 5px 8px -5px rgba(0,0,0,.9);
+  transform-origin:bottom center;transform:rotate(var(--tilt,0deg));
+  transition:transform .14s ease, box-shadow .14s ease;
+}
+.box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;
+  display:block;border-radius:inherit}
+.box .side{
+  position:absolute;left:-3px;top:2px;bottom:0;width:3px;border-radius:1px 0 0 1px;
+  background:linear-gradient(90deg,
+    hsl(var(--hue,215) 10% 5%) 0%, hsl(var(--hue,215) 13% 17%) 60%,
+    hsl(var(--hue,215) 11% 10%) 100%);
+  box-shadow:inset 0 1px 0 rgba(255,232,200,.18);
+}
+.box .face{
+  position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(101deg,
+    rgba(255,255,255,.24) 0 1px, rgba(255,255,255,.09) 1px 2.5%,
+    rgba(255,255,255,0) 15%, rgba(0,0,0,0) 66%, rgba(0,0,0,.40) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,236,208,.20),
+    inset 0 0 0 1px rgba(0,0,0,.6),
+    inset 0 11px 13px -11px rgba(0,0,0,.9),
+    inset 0 -9px 14px -10px rgba(0,0,0,.95);
+}
+.box .foot{
+  position:absolute;left:-10%;right:-10%;top:100%;height:17px;pointer-events:none;
+  background:
+    radial-gradient(42% 62% at 50% 0, rgba(0,0,0,var(--shade,.9)), rgba(0,0,0,0) 72%),
+    radial-gradient(78% 118% at 50% 0, rgba(0,0,0,.6), rgba(0,0,0,0) 74%);
+}
+.box .plate{
+  position:absolute;left:0;right:0;bottom:0;padding:16px 7px 5px;border-radius:inherit;
+  background:linear-gradient(0deg, rgba(5,7,10,.95) 0 55%, rgba(5,7,10,0) 100%);
+  color:#f2f5f8;font-size:.7rem;line-height:1.22;font-weight:600;
+  opacity:0;transition:opacity .12s ease;pointer-events:none;
+  overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical
+}
+.box:hover{transform:rotate(var(--tilt,0deg)) translateY(-7px) scale(1.015);z-index:5;
+  box-shadow:6px 16px 22px -10px rgba(0,0,0,.95)}
+.box:hover .plate{opacity:1}
+.slot.lean .box{transform:rotate(var(--lean,5deg));transform-origin:bottom right}
+.slot.lean .box:hover{transform:rotate(var(--lean,5deg)) translateY(-7px) scale(1.015)}
+
+.box.blank,.box.cart{container-type:inline-size}
+.box.blank .sleeve,.box.cart .sleeve{
+  position:absolute;inset:0;border-radius:inherit;overflow:hidden;
+  display:flex;flex-direction:column;
+  background:linear-gradient(157deg, hsl(var(--hue,215) 17% 27%) 0%,
+             hsl(var(--hue,215) 20% 15%) 62%, hsl(var(--hue,215) 22% 11%) 100%);
+}
+.box.blank .band{height:13%;min-height:9px;flex:0 0 auto;
+  background:linear-gradient(180deg, hsl(var(--hue,215) 48% 46%),
+             hsl(var(--hue,215) 45% 33%));
+  box-shadow:inset 0 -1px 0 rgba(0,0,0,.4)}
+.box.blank .ttl{
+  flex:1;min-height:0;display:flex;align-items:center;justify-content:center;
+  padding:6% 8%;text-align:center;font-weight:650;letter-spacing:-.01em;
+  color:#e9edf3;text-shadow:0 1px 3px rgba(0,0,0,.7);
+  font-size:11px;line-height:1.16;overflow:hidden;
+  overflow-wrap:anywhere;hyphens:auto;
+}
+.box.blank .ttl{font-size:clamp(8px, 10.5cqw, 15px)}
+.box.blank .sys{flex:0 0 auto;padding:0 8% 7%;text-align:center;
+  font-size:8px;letter-spacing:.1em;text-transform:uppercase;
+  color:hsl(var(--hue,215) 30% 72%);opacity:.8;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.box.blank .sys{font-size:clamp(6px, 5.4cqw, 10px)}
+
+.box.cart .sleeve{background:linear-gradient(160deg,#242a33 0%,#161a20 70%,#10131a 100%)}
+.box.cart img{position:absolute;left:7%;right:7%;top:9%;bottom:auto;
+  width:86%;height:69%;object-fit:contain;object-position:center;
+  border-radius:2px;filter:drop-shadow(0 6px 8px rgba(0,0,0,.65))}
+.box.cart .ttl{position:absolute;left:0;right:0;bottom:0;padding:5% 8% 7%;
+  text-align:center;font-size:clamp(7px, 8cqw, 12px);line-height:1.15;font-weight:600;
+  color:#d7dee7;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;
+  -webkit-box-orient:vertical}
+.box.cart .band{position:absolute;left:0;right:0;top:0;height:5px;
+  background:hsl(var(--hue,215) 45% 40%)}
+
+@media (max-width:900px){ :root{--base:152px;--air:28px;--tight:6px} }
+@media (max-width:760px){
+  body{font-size:17px}
+  .wrap{padding:0 16px}
+  header.top .wrap{height:auto;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+  .panel{padding:18px}
+  .unit{padding:18px 18px 6px;border-radius:13px}
+  .unit::before,.unit::after{width:9px}
+  .plank{margin:0 -9px;padding-left:9px;padding-right:9px}
+  .cols{grid-template-columns:1fr}
+  .stat .n{font-size:2.1rem}
+  input[type=search]{min-width:100%}
+  .controls select{flex:1;min-width:44%}
+}
+@media (max-width:420px){ :root{--base:128px;--air:24px} }
+@media (min-width:1600px){ body{font-size:19px}; :root{--base:212px} }
+@media (hover:none){
+  .box:hover{transform:rotate(var(--tilt,0deg))}
+  .slot.lean .box:hover{transform:rotate(var(--lean,5deg))}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .box,.slot.lean .box{transform:none!important}
+}
+
+</style>
+</head>
+<body>
+<script id="sitedata" type="application/json">{"channel":"retrosaieno","games":[],"generated_at":1787229554,"page":"index","page_size":60,"site":"RetroSai Shelves","stats":{"art":0,"art_box":0,"art_cart":0,"art_none":0,"entries":0,"first_ts":0,"games":0,"last_ts":0,"platforms":0,"viewers":0},"tagline":"Every game you were in the room for.","top":[],"viewers":[]}</script>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><g fill="#0d0f13"><rect x="7" y="7" width="4" height="14" rx="1"/><rect x="13" y="9" width="4" height="12" rx="1"/><rect x="19" y="6" width="4" height="15" rx="1"/><rect x="6" y="23" width="20" height="3" rx="1.5"/></g></svg></span>
+      <span>RetroSai <span class="thin">Shelves</span></span>
+    </a>
+    <div class="spacer"></div>
+    <div class="who" id="who"></div>
+  </div>
+</header>
+<main class="wrap">
+
+<div class="snapshot" id="snapshot"></div>
+
+<section>
+  <div class="sectionhead">
+    <h2>Lately on stream</h2>
+    <span class="muted tiny" id="latelysub"></span>
+  </div>
+  <div id="lately"></div>
+</section>
+
+<section class="stats" id="stats"></section>
+
+<section class="panel">
+  <h2>Find your shelf</h2>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Your Twitch name..." autocomplete="off"
+           aria-label="Search viewers">
+    <div class="spacer"></div>
+    <label class="muted tiny" for="sort">Sort</label>
+    <select id="sort">
+      <option value="count">Most games</option>
+      <option value="recent">Most recent</option>
+      <option value="first">Longest-running</option>
+      <option value="login">Name A-Z</option>
+    </select>
+  </div>
+  <div id="viewers" class="cols"></div>
+  <div id="viewersmore" style="margin-top:16px"></div>
+</section>
+
+<section class="panel">
+  <h2>Deepest shelves <span class="muted tiny">most games witnessed</span></h2>
+  <div id="board" class="board"></div>
+</section>
+
+<section>
+  <div class="sectionhead">
+    <h2>Everything that has been on <span id="gamecount" class="muted tiny"></span></h2>
+  </div>
+  <div class="controls">
+    <input id="gq" type="search" placeholder="Search games..." autocomplete="off"
+           aria-label="Search games">
+    <select id="gsort" aria-label="Sort games">
+      <option value="recent">Most recent</option>
+      <option value="count">Most witnessed</option>
+      <option value="title">Title A-Z</option>
+      <option value="platform">System</option>
+    </select>
+    <div class="spacer"></div>
+    <div class="chips" id="gview">
+      <button class="chip" data-view="shelf" aria-pressed="true">Shelf</button>
+      <button class="chip" data-view="list" aria-pressed="false">List</button>
+    </div>
+  </div>
+  <div id="games"></div>
+</section>
+
+<footer class="foot" id="foot"></footer>
+</main>
+<script>
+
+var NODE = document.getElementById('sitedata');
+var DATA = JSON.parse(NODE.textContent);
+
+function q(sel, root){ return (root||document).querySelector(sel); }
+function el(tag, cls, text){
+  var node = document.createElement(tag);
+  if (cls) node.className = cls;
+  if (text !== undefined && text !== null) node.textContent = String(text);
+  return node;
+}
+function num(v){ return (v === null || v === undefined) ? '0' : Number(v).toLocaleString(); }
+function plural(n, one, many){ return num(n) + ' ' + (Number(n) === 1 ? one : many); }
+
+/* Dates are formatted against the SNAPSHOT, not the reader's clock: this page
+   does not update itself, so anything phrased as "2h ago" would quietly become
+   a lie. Same rule the achievements site uses. */
+function stampDate(t){
+  if (!t) return '';
+  return new Date(t * 1000).toLocaleDateString(undefined,
+    {day:'numeric', month:'short', year:'numeric'});
+}
+function stampFull(t){
+  if (!t) return '';
+  return new Date(t * 1000).toLocaleString();
+}
+
+/* One stable colour per system, derived from its name, so a console looks the
+   same on every page and no colour table has to be maintained by hand. */
+function hueOf(name){
+  var h = 0, s = String(name || '');
+  for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) % 360;
+  return h;
+}
+function spineColor(name){
+  if (!name) return 'hsl(215 12% 42%)';
+  return 'hsl(' + hueOf(name) + ' 62% 56%)';
+}
+/* A second, independent hash: the tilt of a box must not be a function of its
+   colour, or every Genesis box on the wall would lean the same way. */
+function jitter(seed){
+  var h = 2166136261, s = String(seed || '');
+  for (var i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i); h = (h * 16777619) >>> 0;
+  }
+  return h / 4294967296;
+}
+function shelfHref(login){ return 'shelf.html?u=' + encodeURIComponent(login); }
+function systemLabel(p){ return p || 'Unknown system'; }
+
+/* How tall a box is relative to a 7.5-inch DVD case, and the typical width of
+   its art. Identical to the table in shelf.html - see the long note there. */
+var METRICS = [
+  [/neo ?geo ?pocket|wonderswan|game ?gear|\blynx\b|n-?gage/,        .80, .78],
+  [/neo ?geo/,                                                      1.16, .68],
+  [/playstation ?portable|\bpsp\b/,                                  .89, .58],
+  [/playstation ?vita|\bps ?vita\b/,                                 .72, .78],
+  [/playstation ?[45]|\bps[45]\b/,                                   .90, .80],
+  [/playstation ?3|\bps3\b/,                                         .90, .87],
+  [/playstation ?2|\bps2\b/,                                        1.00, .70],
+  [/playstation|\bpsx\b|\bps1\b/,                                    .66,1.00],
+  [/dreamcast/,                                                      .66,1.00],
+  [/saturn ?jp|saturn ?\(j/,                                         .66,1.00],
+  [/saturn/,                                                         .93, .60],
+  [/sega ?cd|mega ?cd/,                                              .93, .66],
+  [/turbografx ?-?cd|turbo ?cd|pc ?engine ?cd|pc-?fx|3do|cd-?i/,     .93, .52],
+  [/master system|mark ?iii/,                                        .93, .71],
+  [/genesis|mega ?drive|32x|sg-?1000/,                              1.00, .71],
+  [/game ?boy ?advance|\bgba\b/,                                     .68,1.00],
+  [/game ?boy/,                                                      .66,1.00],
+  [/\b3ds\b|nintendo ?ds|\bnds\b|\bdsi\b/,                           .65,1.12],
+  [/switch/,                                                         .74,1.00],
+  [/wii ?u|\bwii\b/,                                                1.00, .71],
+  [/gamecube|\bgcn\b/,                                              1.00, .71],
+  [/nintendo ?64|\bn64\b/,                                           .70,1.37],
+  [/super ?famicom|\bsfc\b/,                                         .95, .55],
+  [/super nintendo|\bsnes\b/,                                        .70,1.37],
+  [/famicom ?disk/,                                                  .78, .97],
+  [/famicom/,                                                        .72,1.40],
+  [/nintendo entertainment|\bnes\b/,                                 .93, .73],
+  [/xbox/,                                                          1.00, .71],
+  [/pc ?engine|turbografx/,                                          .66,1.00],
+  [/virtual ?boy/,                                                   .70,1.01],
+  [/jaguar|colecovision|intellivision|atari|vectrex|odyssey/,        .88, .73],
+  [/amiga ?cd|cd32/,                                                 .66,1.00],
+  [/ms-?dos|windows|\bsteam\b|amiga|commodore|apple|\bpc\b/,         .95, .90]
+];
+var METRIC_DEFAULT = [.88, .78];
+var metricCache = {};
+function metric(platform){
+  var key = String(platform || '');
+  if (metricCache[key]) return metricCache[key];
+  var low = key.toLowerCase(), hit = METRIC_DEFAULT;
+  for (var i = 0; i < METRICS.length; i++) {
+    if (METRICS[i][0].test(low)) { hit = [METRICS[i][1], METRICS[i][2]]; break; }
+  }
+  metricCache[key] = hit;
+  return hit;
+}
+
+/* A game entry, read tolerantly. The published blob is OBJECTS today - a game
+   carries an OPTIONAL "art" field and "optional" does not fit in a positional
+   array - but it was positional before thumbnails existed, and a cached copy of
+   this page can outlive either shape. So: read the fields that have always been
+   there, and for an array pick the art off the tail by what the value LOOKS
+   like rather than by where it sits. */
+function readGame(raw){
+  var g = {title:'?', platform:'', count:0, first:0, last:0, art:'', kind:''};
+  if (!raw) return g;
+  if (Object.prototype.toString.call(raw) === '[object Array]') {
+    g.title = String(raw[0] == null ? '?' : raw[0]);
+    g.platform = String(raw[1] == null ? '' : raw[1]);
+    g.count = Number(raw[2]) || 0;
+    g.first = Number(raw[3]) || 0;
+    g.last = Number(raw[4]) || 0;
+    for (var k = 3; k < raw.length; k++) {
+      var v = raw[k];
+      if (typeof v !== 'string') continue;
+      if (v === 'box' || v === 'cart') g.kind = v;
+      else if (/\.(webp|png|jpe?g|avif|gif)$/i.test(v)) g.art = v;
+    }
+    /* an older publisher hung the art on the array as properties, not items */
+    if (!g.art && typeof raw.art === 'string') g.art = raw.art;
+    if (!g.kind && typeof raw.art_kind === 'string') g.kind = raw.art_kind;
+  } else {
+    g.title = String(raw.title == null ? '?' : raw.title);
+    g.platform = String(raw.platform == null ? '' : raw.platform);
+    g.count = Number(raw.count != null ? raw.count : raw.shelves) || 0;
+    g.first = Number(raw.first_ts) || 0;
+    g.last = Number(raw.last_ts) || 0;
+    g.art = typeof raw.art === 'string' ? raw.art : '';
+    g.kind = raw.art_kind === 'cart' ? 'cart' : (raw.art_kind === 'box' ? 'box' : '');
+  }
+  if (g.art && g.kind !== 'cart') g.kind = 'box';
+  return g;
+}
+
+var GAMES = null;
+function gameList(){
+  if (GAMES) return GAMES;
+  GAMES = (DATA.games || []).map(readGame);
+  return GAMES;
+}
+
+function statTile(n, label, sub, cls, small){
+  var tile = el('div', 'stat' + (cls ? ' ' + cls : ''));
+  tile.appendChild(el('div', 'n' + (small ? ' small' : ''), n));
+  tile.appendChild(el('div', 'l', label));
+  if (sub) tile.appendChild(el('div', 's', sub));
+  return tile;
+}
+
+function paintChrome(){
+  document.title = DATA.site || 'RetroSai Shelves';
+  var who = q('#who');
+  who.textContent = '';
+  who.appendChild(el('span', null, DATA.tagline || ''));
+
+  var snap = q('#snapshot');
+  snap.textContent = '';
+  snap.appendChild(el('b', null, 'How this works'));
+  snap.appendChild(el('span', null,
+    'Every time the game changes on stream, whoever is in chat AND follows the '
+    + 'channel gets that game added to their shelf. Nothing to claim, nothing to type.'));
+  snap.appendChild(el('span', 'dim', 'Snapshot taken ' + stampFull(DATA.generated_at)));
+
+  q('#foot').textContent = (DATA.site || 'RetroSai Shelves')
+    + ' - static snapshot generated ' + stampFull(DATA.generated_at)
+    + '. Recorded live on twitch.tv/' + (DATA.channel || 'retrosaieno')
+    + '. No live data, no tracking, no requests off this page.';
+}
+
+function paintStats(){
+  var s = DATA.stats || {};
+  var box = q('#stats');
+  box.textContent = '';
+  box.appendChild(statTile(num(s.viewers), 'shelves',
+    'viewers who were here for a game', 'accent'));
+  box.appendChild(statTile(num(s.games), 'games recorded',
+    'across ' + plural(s.platforms, 'system', 'systems'), 'gold'));
+  box.appendChild(statTile(num(s.entries), 'games shelved',
+    'one per viewer, per game'));
+  box.appendChild(statTile(s.first_ts ? stampDate(s.first_ts) : '-',
+    'collecting since',
+    s.last_ts ? ('newest entry ' + stampDate(s.last_ts)) : '', 'good', true));
+}
+
+/* ---------- boxes ----------------------------------------------------------
+   The same object as on a viewer's shelf, minus the click: this page is a wall
+   to look at, and every game on it also has a text row in the list view for
+   anyone who would rather read than browse. */
+
+var painted = 0;
+var EAGER = 14;      /* the first screenful is fetched eagerly; the rest is lazy */
+
+function boxFor(g){
+  var m = metric(g.platform);
+  var wobble = jitter(g.title + '|' + g.platform);
+  var slot = el('div', 'slot');
+  var box = el('div', 'box');
+  box.style.setProperty('--boxh', 'calc(var(--base) * ' + m[0] + ')');
+  box.style.setProperty('--ar', m[1]);
+  box.style.setProperty('--hue', hueOf(g.platform));
+  box.style.setProperty('--tilt', ((wobble * 1.4) - .7).toFixed(2) + 'deg');
+  box.style.setProperty('--shade', (.66 + wobble * .26).toFixed(2));
+  box.title = g.title + ' - ' + systemLabel(g.platform)
+            + ' - on ' + plural(g.count, 'shelf', 'shelves');
+
+  if (g.art && g.kind !== 'cart') {
+    var im = document.createElement('img');
+    im.src = g.art;
+    im.alt = g.title + ' box art';
+    im.decoding = 'async';
+    im.loading = (painted < EAGER) ? 'eager' : 'lazy';
+    trueShape(box, im);
+    /* A missing file must never show as a broken image: fall back to the same
+       blank case a game with no art gets. */
+    im.addEventListener('error', function(){ toBlank(box, g); }, {once:true});
+    box.appendChild(im);
+  } else if (g.art) {
+    buildCart(box, g);
+  } else {
+    buildBlank(box, g);
+  }
+  box.appendChild(el('div', 'side'));
+  box.appendChild(el('div', 'face'));
+  box.appendChild(el('div', 'foot'));
+  box.appendChild(el('div', 'plate', g.title));
+  slot.appendChild(box);
+  painted++;
+  return slot;
+}
+
+/* Hand the box the art's real proportions. Cached images are already complete
+   by the time this runs, so check before waiting for an event that never fires. */
+function trueShape(box, im){
+  function apply(){
+    if (im.naturalWidth > 0 && im.naturalHeight > 0) {
+      box.style.aspectRatio = im.naturalWidth + ' / ' + im.naturalHeight;
+    }
+  }
+  if (im.complete) apply();
+  else im.addEventListener('load', apply, {once:true});
+}
+
+function buildBlank(box, g){
+  box.classList.add('blank');
+  var sleeve = el('div', 'sleeve');
+  sleeve.appendChild(el('div', 'band'));
+  sleeve.appendChild(el('div', 'ttl', g.title));
+  sleeve.appendChild(el('div', 'sys', systemLabel(g.platform)));
+  box.insertBefore(sleeve, box.firstChild);
+}
+
+function buildCart(box, g){
+  box.classList.add('cart');
+  box.appendChild(el('div', 'sleeve'));
+  var im = document.createElement('img');
+  im.src = g.art;
+  im.alt = g.title + ' cartridge art';
+  im.decoding = 'async';
+  im.loading = (painted < EAGER) ? 'eager' : 'lazy';
+  im.addEventListener('error', function(){ toBlank(box, g); }, {once:true});
+  box.appendChild(im);
+  box.appendChild(el('div', 'band'));
+  box.appendChild(el('div', 'ttl', g.title));
+}
+
+/* Strip whatever art treatment failed and rebuild the box as a blank case. */
+function toBlank(box, g){
+  box.classList.remove('cart');
+  box.style.aspectRatio = '';
+  var kill = box.querySelectorAll('img, .sleeve, .band, .ttl');
+  for (var i = 0; i < kill.length; i++) kill[i].parentNode.removeChild(kill[i]);
+  buildBlank(box, g);
+}
+
+function bayFor(label, count, items, rowUnits){
+  var bay = el('div', 'bay');
+  if (label) {
+    var head = el('div', 'bayhead');
+    head.appendChild(el('div', 'nm', label));
+    head.appendChild(el('div', 'rule'));
+    head.appendChild(el('div', 'ct', plural(count, 'game', 'games')));
+    bay.appendChild(head);
+  }
+  var plank = el('div', 'plank');
+  plank.style.setProperty('--rowh', 'calc(var(--base) * ' + rowUnits + ')');
+  var frag = document.createDocumentFragment();
+  items.forEach(function(g){ frag.appendChild(boxFor(g)); });
+  plank.appendChild(frag);
+  bay.appendChild(plank);
+  return bay;
+}
+
+/* Boards must clear the tallest thing standing on them. */
+function tallestOf(items){
+  var top = 0.5;
+  items.forEach(function(g){ top = Math.max(top, metric(g.platform)[0]); });
+  return top;
+}
+
+/* A bookend closes a board that did not fill up, and the box beside it leans
+   against it. Needs real layout, so it runs after paint; it only ever touches
+   the last box of each board. Compare BOTTOM edges, not tops: everything on a
+   board is bottom-aligned and the bookend is deliberately shorter, so its top
+   never matches theirs even when it is standing right beside them. */
+function dressEnds(){
+  var planks = document.querySelectorAll('.plank'), p, old;
+  for (p = 0; p < planks.length; p++) {
+    old = planks[p].querySelector('.bookend');
+    if (old) planks[p].removeChild(old);
+    var slots = planks[p].children;
+    for (var i = 0; i < slots.length; i++) slots[i].classList.remove('lean');
+  }
+  for (p = 0; p < planks.length; p++) {
+    var kids = planks[p].children;
+    if (!kids.length) continue;
+    var last = kids[kids.length - 1];
+    /* captured BEFORE the bookend goes in: `kids` is live. */
+    var prev = kids.length > 1 ? kids[kids.length - 2] : null;
+    var box = last.querySelector ? last.querySelector('.box') : null;
+    if (!box) continue;
+    var room = planks[p].clientWidth
+             - (last.offsetLeft - planks[p].offsetLeft + last.offsetWidth);
+    if (room < 30) continue;
+    var end = el('div', 'bookend');
+    end.style.height = Math.round(box.offsetHeight * 0.52) + 'px';
+    planks[p].appendChild(end);
+    if (end.offsetTop + end.offsetHeight !== last.offsetTop + last.offsetHeight) {
+      planks[p].removeChild(end);
+      continue;
+    }
+    if (prev && prev.offsetTop === last.offsetTop) {
+      last.classList.add('lean');
+      box.style.setProperty('--lean',
+        (3.2 + jitter(last.textContent) * 2.4).toFixed(1) + 'deg');
+    }
+  }
+}
+
+function settle(){
+  if (window.requestAnimationFrame) requestAnimationFrame(dressEnds);
+  else dressEnds();
+}
+
+/* ---------- lately ---------- */
+
+function paintLately(){
+  var games = gameList().slice().sort(function(a,b){
+    return b.last - a.last || a.title.localeCompare(b.title); });
+  var host = q('#lately');
+  host.textContent = '';
+  if (!games.length) {
+    q('#latelysub').textContent = '';
+    host.appendChild(el('div', 'empty', 'Nothing has been recorded yet.'));
+    return;
+  }
+  var recent = games.slice(0, 14);
+  q('#latelysub').textContent = 'the last ' + recent.length
+    + ' games to go up, newest first';
+  var unit = el('div', 'unit');
+  unit.appendChild(bayFor('', recent.length, recent, tallestOf(recent)));
+  host.appendChild(unit);
+}
+
+/* ---------- viewers ---------- */
+
+var vstate = {q:'', sort:'count', shown:DATA.page_size || 60};
+
+function viewerRow(v){
+  var a = el('a', 'gamerow');
+  a.href = shelfHref(v[0]);
+  var sp = el('div', 'sp');
+  sp.style.background = spineColor(v[0]);
+  a.appendChild(sp);
+  var body = el('div', 'grow');
+  body.appendChild(el('div', 't', v[0]));
+  body.appendChild(el('div', 'm', stampDate(v[2]) + ' – ' + stampDate(v[3])));
+  a.appendChild(body);
+  a.appendChild(el('div', 'ct', num(v[1])));
+  a.title = v[0] + ' - ' + plural(v[1], 'game', 'games');
+  return a;
+}
+
+var VSORT = {
+  count:  function(a,b){ return b[1]-a[1] || a[0].localeCompare(b[0]); },
+  recent: function(a,b){ return b[3]-a[3] || b[1]-a[1]; },
+  first:  function(a,b){ return a[2]-b[2] || b[1]-a[1]; },
+  login:  function(a,b){ return a[0].localeCompare(b[0]); }
+};
+
+function paintViewers(){
+  var all = (DATA.viewers || []).filter(function(v){
+    return !vstate.q || v[0].indexOf(vstate.q) >= 0;
+  }).sort(VSORT[vstate.sort] || VSORT.count);
+
+  var box = q('#viewers');
+  box.textContent = '';
+  var page = all.slice(0, vstate.shown);
+  page.forEach(function(v){ box.appendChild(viewerRow(v)); });
+  if (!page.length) {
+    box.appendChild(el('div', 'empty', vstate.q
+      ? 'No shelf yet for anything matching "' + vstate.q + '". Follow the channel '
+        + 'and hang out during a game change - yours starts itself.'
+      : 'No shelves recorded yet.'));
+  }
+  var more = q('#viewersmore');
+  more.textContent = '';
+  if (all.length > page.length) {
+    var left = all.length - page.length;
+    var b = el('button', null, 'Show more (' + num(left) + ' left)');
+    b.addEventListener('click', function(){
+      vstate.shown += (DATA.page_size || 60); paintViewers();
+    });
+    more.appendChild(b);
+  }
+}
+
+/* ---------- leaderboard ---------- */
+
+function paintBoard(){
+  var box = q('#board');
+  box.textContent = '';
+  var top = DATA.top || [];
+  if (!top.length) { box.appendChild(el('div','empty','Nothing shelved yet.')); return; }
+  var max = top[0][1] || 1;
+  top.forEach(function(t, i){
+    var a = el('a', 'row' + (i < 3 ? ' p' + (i+1) : ''));
+    a.href = shelfHref(t[0]);
+    a.appendChild(el('div', 'rank', '#' + (i+1)));
+    var body = el('div', 'grow');
+    body.appendChild(el('div', 'nm', t[0]));
+    var bar = el('div', 'minibar');
+    var fill = el('i');
+    fill.style.width = Math.max(3, Math.round(100 * t[1] / max)) + '%';
+    bar.appendChild(fill);
+    body.appendChild(bar);
+    a.appendChild(body);
+    a.appendChild(el('div', 'ct', plural(t[1], 'game', 'games')));
+    box.appendChild(a);
+  });
+}
+
+/* ---------- every game ---------- */
+
+var gstate = {q:'', sort:'recent', view:'shelf'};
+
+/* Fewer than this many games on a system does not earn its own board; they go
+   in with everything else. Same rule as a viewer's shelf. */
+var MIN_BAY = 4;
+
+var GSORT = {
+  recent:   function(a,b){ return b.last-a.last || a.title.localeCompare(b.title); },
+  count:    function(a,b){ return b.count-a.count || a.title.localeCompare(b.title); },
+  title:    function(a,b){ return a.title.localeCompare(b.title); },
+  platform: function(a,b){ return systemLabel(a.platform).localeCompare(systemLabel(b.platform))
+                                  || a.title.localeCompare(b.title); }
+};
+
+function gameRow(g){
+  var row = el('div', 'gamerow');
+  var sp = el('div', 'sp');
+  sp.style.background = spineColor(g.platform);
+  row.appendChild(sp);
+  var th = el('div', 'th');
+  if (g.art) {
+    var im = document.createElement('img');
+    im.src = g.art; im.alt = ''; im.loading = 'lazy'; im.decoding = 'async';
+    im.addEventListener('error', function(){ th.textContent = ''; }, {once:true});
+    th.appendChild(im);
+  }
+  row.appendChild(th);
+  var body = el('div', 'grow');
+  body.appendChild(el('div', 't', g.title));
+  body.appendChild(el('div', 'm', systemLabel(g.platform) + '  ·  ' + stampDate(g.last)));
+  row.appendChild(body);
+  row.appendChild(el('div', 'ct', num(g.count)));
+  row.title = g.title + ' - on ' + plural(g.count, 'shelf', 'shelves');
+  return row;
+}
+
+function paintGames(){
+  var all = gameList().filter(function(g){
+    if (!gstate.q) return true;
+    return g.title.toLowerCase().indexOf(gstate.q) >= 0
+        || systemLabel(g.platform).toLowerCase().indexOf(gstate.q) >= 0;
+  }).sort(GSORT[gstate.sort] || GSORT.recent);
+
+  var box = q('#games');
+  box.textContent = '';
+  painted = 0;
+  q('#gamecount').textContent = plural(all.length, 'game', 'games');
+
+  if (!all.length) {
+    box.appendChild(el('div', 'empty', gstate.q
+      ? 'No game matches "' + gstate.q + '".' : 'No games recorded yet.'));
+    return;
+  }
+  if (gstate.view === 'list') {
+    var cols = el('div', 'cols');
+    var frag = document.createDocumentFragment();
+    all.forEach(function(g){ frag.appendChild(gameRow(g)); });
+    cols.appendChild(frag);
+    box.appendChild(cols);
+    return;
+  }
+
+  /* Grouped by system, biggest first, with the systems too thin to fill a board
+     sharing the last one. */
+  var unit = el('div', 'unit');
+  var bins = {}, order = [];
+  all.forEach(function(g){
+    var k = systemLabel(g.platform);
+    if (!bins[k]) { bins[k] = []; order.push(k); }
+    bins[k].push(g);
+  });
+  order.sort(function(a,b){ return bins[b].length - bins[a].length
+                                || a.localeCompare(b); });
+  var thin = [];
+  order.forEach(function(k){
+    if (bins[k].length < MIN_BAY) { thin.push(k); return; }
+    unit.appendChild(bayFor(k, bins[k].length, bins[k],
+                            metric(bins[k][0].platform)[0]));
+  });
+  if (thin.length) {
+    var mixed = [];
+    thin.forEach(function(k){ mixed = mixed.concat(bins[k]); });
+    mixed.sort(GSORT[gstate.sort] || GSORT.recent);
+    unit.appendChild(bayFor(thin.length === 1 ? thin[0] : 'Everything else',
+                            mixed.length, mixed, tallestOf(mixed)));
+  }
+  box.appendChild(unit);
+  settle();
+}
+
+/* ---------- wiring ---------- */
+
+function debounce(input, fn){
+  var timer = null;
+  input.addEventListener('input', function(){
+    clearTimeout(timer);
+    timer = setTimeout(fn, 180);
+  });
+}
+
+function init(){
+  // Older links (and PLAN.md section 4) spell a viewer's shelf as
+  // "<site>/?u=<login>". This page ignores ?u= -- only shelf.html reads it --
+  // so forward that form instead of showing the generic index and losing the
+  // viewer. !shelf now links straight to shelf.html; this keeps both working.
+  try {
+    var wanted = (new URLSearchParams(window.location.search).get('u') || '').trim();
+    if (wanted) { window.location.replace(shelfHref(wanted.replace(/^@+/, ''))); return; }
+  } catch (e) { /* no URLSearchParams: fall through to the normal index */ }
+
+  if (DATA.placeholder) {
+    q('#snapshot').textContent = 'This is the un-rendered template. '
+      + 'arcade_publish_shelves.py fills in the data.';
+    return;
+  }
+  paintChrome();
+  paintLately();
+  paintStats();
+  paintBoard();
+
+  var vq = q('#q');
+  debounce(vq, function(){
+    vstate.q = vq.value.trim().toLowerCase().replace(/^@+/, '');
+    vstate.shown = DATA.page_size || 60;
+    paintViewers();
+  });
+  q('#sort').addEventListener('change', function(){
+    vstate.sort = q('#sort').value;
+    vstate.shown = DATA.page_size || 60;
+    paintViewers();
+  });
+
+  var gq = q('#gq');
+  debounce(gq, function(){
+    gstate.q = gq.value.trim().toLowerCase();
+    paintGames();
+  });
+  q('#gsort').addEventListener('change', function(){
+    gstate.sort = q('#gsort').value;
+    paintGames();
+  });
+  var chips = q('#gview');
+  Array.prototype.forEach.call(chips.children, function(chip){
+    chip.addEventListener('click', function(){
+      gstate.view = chip.getAttribute('data-view');
+      Array.prototype.forEach.call(chips.children, function(other){
+        other.setAttribute('aria-pressed', other === chip ? 'true' : 'false');
+      });
+      paintGames();
+    });
+  });
+
+  paintViewers();
+  paintGames();
+
+  /* Re-wrapping changes which box ends a board. Only recompute when the width
+     actually moved - a phone fires resize on every scroll as the URL bar hides. */
+  var lastW = window.innerWidth, rtimer = null;
+  window.addEventListener('resize', function(){
+    if (window.innerWidth === lastW) return;
+    lastW = window.innerWidth;
+    clearTimeout(rtimer);
+    rtimer = setTimeout(dressEnds, 160);
+  });
+  window.addEventListener('load', dressEnds);
+}
+
+init();
+</script>
+</body>
+</html>
