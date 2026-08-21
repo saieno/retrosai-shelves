@@ -1,0 +1,9 @@
+# Windows leaves these behind whenever the folder is browsed.
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Half-written files from a killed publish.
+*.tmp
+.arcade_publish.*
