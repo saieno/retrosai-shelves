@@ -95,12 +95,12 @@
   {
    "art": "art/nintendo-64/mischief-makers.webp",
    "art_kind": "box",
-   "count": 48,
+   "count": 53,
    "platform": "Nintendo 64",
    "title": "Mischief Makers"
   }
  ],
- "generated_at": 1788213300,
+ "generated_at": 1788214500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -771,6 +771,13 @@
     "2026-08-31"
    ]
   ],
+  "ellionsyn": [
+   [
+    13,
+    1788213574,
+    "2026-08-31"
+   ]
+  ],
   "flyingdutchmanmario": [
    [
     2,
@@ -1219,6 +1226,11 @@
    ]
   ],
   "heyitsmetonid": [
+   [
+    13,
+    1788213453,
+    "2026-08-31"
+   ],
    [
     2,
     1788198622,
@@ -2612,6 +2624,11 @@
   ],
   "seanwillplay": [
    [
+    13,
+    1788213936,
+    "2026-08-31"
+   ],
+   [
     11,
     1788209244,
     "2026-08-31"
@@ -2799,6 +2816,13 @@
    [
     6,
     1788203684,
+    "2026-08-31"
+   ]
+  ],
+  "sl0nk0b0mb": [
+   [
+    13,
+    1788213453,
     "2026-08-31"
    ]
   ],
@@ -3176,6 +3200,13 @@
     "2026-08-31"
    ]
   ],
+  "thegamercollective": [
+   [
+    13,
+    1788213694,
+    "2026-08-31"
+   ]
+  ],
   "theroyjoy": [
    [
     2,
@@ -3417,12 +3448,12 @@
   "art_box": 14,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 622,
+  "entries": 627,
   "first_ts": 1788197811,
   "games": 14,
-  "last_ts": 1788212847,
+  "last_ts": 1788213936,
   "platforms": 9,
-  "viewers": 98
+  "viewers": 101
  },
  "tagline": "Every game you were in the room for."
 }
