@@ -11,7 +11,7 @@
   {
    "art": "art/microsoft-xbox-one/remnant-ii.webp",
    "art_kind": "box",
-   "count": 47,
+   "count": 52,
    "platform": "Microsoft Xbox One",
    "title": "Remnant II"
   },
@@ -72,7 +72,7 @@
    "title": "San Francisco Rush 2049"
   }
  ],
- "generated_at": 1788206700,
+ "generated_at": 1788207900,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -735,6 +735,13 @@
     "2026-08-31"
    ]
   ],
+  "great_ren_streams": [
+   [
+    1,
+    1788207059,
+    "2026-08-31"
+   ]
+  ],
   "guiniguy": [
    [
     1,
@@ -995,6 +1002,11 @@
    ]
   ],
   "jedi_megaman": [
+   [
+    1,
+    1788207059,
+    "2026-08-31"
+   ],
    [
     4,
     1788200086,
@@ -1424,6 +1436,13 @@
     "2026-08-31"
    ]
   ],
+  "onejayexe": [
+   [
+    1,
+    1788207300,
+    "2026-08-31"
+   ]
+  ],
   "p1tchmen": [
    [
     1,
@@ -1683,6 +1702,13 @@
    [
     2,
     1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "rogueheytheresugah": [
+   [
+    1,
+    1788207180,
     "2026-08-31"
    ]
   ],
@@ -2213,6 +2239,11 @@
   ],
   "vaatirabbit": [
    [
+    1,
+    1788207421,
+    "2026-08-31"
+   ],
+   [
     9,
     1788204906,
     "2026-08-31"
@@ -2289,12 +2320,12 @@
   "art_box": 10,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 412,
+  "entries": 417,
   "first_ts": 1788197811,
   "games": 10,
-  "last_ts": 1788206577,
+  "last_ts": 1788207421,
   "platforms": 8,
-  "viewers": 73
+  "viewers": 76
  },
  "tagline": "Every game you were in the room for."
 }
