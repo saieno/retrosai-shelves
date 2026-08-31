@@ -142,12 +142,12 @@
   {
    "art": "art/sony-playstation-2/red-faction.webp",
    "art_kind": "box",
-   "count": 57,
+   "count": 65,
    "platform": "Sony PlayStation 2",
    "title": "Red Faction"
   }
  ],
- "generated_at": 1788219300,
+ "generated_at": 1788220500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -1275,6 +1275,13 @@
     "2026-08-31"
    ]
   ],
+  "eternalarcade": [
+   [
+    20,
+    1788219850,
+    "2026-08-31"
+   ]
+  ],
   "flyingdutchmanmario": [
    [
     6,
@@ -1932,6 +1939,13 @@
     "2026-08-31"
    ]
   ],
+  "harold_the_hatter": [
+   [
+    20,
+    1788220091,
+    "2026-08-31"
+   ]
+  ],
   "heyitsmetonid": [
    [
     20,
@@ -2319,6 +2333,13 @@
     "2026-08-31"
    ]
   ],
+  "kamodobone": [
+   [
+    20,
+    1788219608,
+    "2026-08-31"
+   ]
+  ],
   "kanarietta": [
    [
     15,
@@ -2657,6 +2678,20 @@
    [
     13,
     1788205131,
+    "2026-08-31"
+   ]
+  ],
+  "lordseliph": [
+   [
+    20,
+    1788219367,
+    "2026-08-31"
+   ]
+  ],
+  "ls_sandy": [
+   [
+    20,
+    1788219971,
     "2026-08-31"
    ]
   ],
@@ -4323,6 +4358,13 @@
     "2026-08-31"
    ]
   ],
+  "shadowofnight1974": [
+   [
+    20,
+    1788219367,
+    "2026-08-31"
+   ]
+  ],
   "shaun_da_bomb": [
    [
     20,
@@ -4750,6 +4792,11 @@
   ],
   "stinkyminkie": [
    [
+    20,
+    1788220091,
+    "2026-08-31"
+   ],
+   [
     8,
     1788200086,
     "2026-08-31"
@@ -5146,6 +5193,13 @@
    [
     2,
     1788213694,
+    "2026-08-31"
+   ]
+  ],
+  "thehalloumi": [
+   [
+    20,
+    1788219367,
     "2026-08-31"
    ]
   ],
@@ -5606,12 +5660,12 @@
   "art_box": 20,
   "art_cart": 0,
   "art_none": 1,
-  "entries": 1044,
+  "entries": 1052,
   "first_ts": 1788197811,
   "games": 21,
-  "last_ts": 1788219145,
+  "last_ts": 1788220091,
   "platforms": 13,
-  "viewers": 114
+  "viewers": 121
  },
  "tagline": "Every game you were in the room for."
 }
