@@ -25,12 +25,12 @@
   {
    "art": "art/microsoft-xbox-one/forza-motorsport-7.webp",
    "art_kind": "box",
-   "count": 30,
+   "count": 40,
    "platform": "Microsoft Xbox One",
    "title": "Forza Motorsport 7"
   }
  ],
- "generated_at": 1788201300,
+ "generated_at": 1788202500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -53,6 +53,20 @@
    [
     0,
     1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "beethechaos": [
+   [
+    3,
+    1788202479,
+    "2026-08-31"
+   ]
+  ],
+  "belovedmidna": [
+   [
+    3,
+    1788201515,
     "2026-08-31"
    ]
   ],
@@ -97,6 +111,13 @@
    [
     0,
     1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "chef_eve": [
+   [
+    3,
+    1788202358,
     "2026-08-31"
    ]
   ],
@@ -513,6 +534,27 @@
     "2026-08-31"
    ]
   ],
+  "mrbeanpfc": [
+   [
+    3,
+    1788201635,
+    "2026-08-31"
+   ]
+  ],
+  "myartismyarsenal": [
+   [
+    3,
+    1788201876,
+    "2026-08-31"
+   ]
+  ],
+  "notsumei": [
+   [
+    3,
+    1788201876,
+    "2026-08-31"
+   ]
+  ],
   "p1tchmen": [
    [
     3,
@@ -536,6 +578,11 @@
    ]
   ],
   "purplevoided": [
+   [
+    3,
+    1788201997,
+    "2026-08-31"
+   ],
    [
     2,
     1788200086,
@@ -751,6 +798,20 @@
     "2026-08-31"
    ]
   ],
+  "th3_mupp3t": [
+   [
+    3,
+    1788202479,
+    "2026-08-31"
+   ]
+  ],
+  "that_one_persona": [
+   [
+    3,
+    1788202238,
+    "2026-08-31"
+   ]
+  ],
   "the_80sdude": [
    [
     2,
@@ -803,6 +864,13 @@
     1788200068,
     "2026-08-31"
    ]
+  ],
+  "yourkassie": [
+   [
+    3,
+    1788201515,
+    "2026-08-31"
+   ]
   ]
  },
  "site": "RetroSai Shelves",
@@ -811,12 +879,12 @@
   "art_box": 4,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 136,
+  "entries": 146,
   "first_ts": 1788197811,
   "games": 4,
-  "last_ts": 1788201274,
+  "last_ts": 1788202479,
   "platforms": 4,
-  "viewers": 45
+  "viewers": 54
  },
  "tagline": "Every game you were in the room for."
 }
