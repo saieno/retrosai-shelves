@@ -1,22 +1,171 @@
 {
  "channel": "retrosaieno",
- "games": [],
- "generated_at": 1787274094,
+ "games": [
+  {
+   "art": "art/sony-playstation-2/grand-theft-auto-iii.webp",
+   "art_kind": "box",
+   "count": 20,
+   "platform": "Sony PlayStation 2",
+   "title": "Grand Theft Auto III"
+  }
+ ],
+ "generated_at": 1788198300,
  "page": "shelf",
  "page_size": 60,
- "shelves": {},
+ "shelves": {
+  "ascendingphase": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "big_tx": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "contagiousbrawler": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "crimsonbuttrfly": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "crovera420": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "flyingdutchmanmario": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "fruhara": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "glytchgames": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "gypsy_darling": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "iamjenthefriend": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "jedi_megaman": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "kyriebug": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "mastermax165": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "mistressmercy": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "reunitebedpan": [
+   [
+    0,
+    1788198140,
+    "2026-08-31"
+   ]
+  ],
+  "rigswreck": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "salariedorgy": [
+   [
+    0,
+    1788198020,
+    "2026-08-31"
+   ]
+  ],
+  "star_lord90tv": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "supergamestation": [
+   [
+    0,
+    1788197811,
+    "2026-08-31"
+   ]
+  ],
+  "theroyjoy": [
+   [
+    0,
+    1788198020,
+    "2026-08-31"
+   ]
+  ]
+ },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 0,
-  "art_box": 0,
+  "art": 1,
+  "art_box": 1,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 0,
-  "first_ts": 0,
-  "games": 0,
-  "last_ts": 0,
-  "platforms": 0,
-  "viewers": 0
+  "entries": 20,
+  "first_ts": 1788197811,
+  "games": 1,
+  "last_ts": 1788198140,
+  "platforms": 1,
+  "viewers": 20
  },
  "tagline": "Every game you were in the room for."
 }
