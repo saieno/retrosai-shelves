@@ -226,6 +226,8 @@
    "title": "Mischief Makers"
   },
   {
+   "art": "art/arcade/the-first-funky-fighter.webp",
+   "art_kind": "box",
    "count": 55,
    "platform": "Arcade",
    "title": "The First Funky Fighter"
@@ -420,7 +422,7 @@
    "title": "Mortal Shell II"
   }
  ],
- "generated_at": 1788250981,
+ "generated_at": 1788256502,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -10707,10 +10709,10 @@
  },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 31,
-  "art_box": 31,
+  "art": 32,
+  "art_box": 32,
   "art_cart": 0,
-  "art_none": 1,
+  "art_none": 0,
   "entries": 1978,
   "first_ts": 1788197811,
   "games": 32,
