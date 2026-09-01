@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RetroSai Arcade Guide</title>
+<meta name="description" content="How the RetroSai stream works: Tokens, Coins, the games, the queue, the backlog, and every chat command.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --bg:#0c0f1e; --panel:#12162a; --panel2:#1d2240; --line:#2a3152;
+    --ink:#f4f6fb; --ink2:#9aa3c7; --amber:#ffb300; --amber2:#ffcf4d;
+    --token:#7dffa4; --coin:#bf94ff; --red:#ff7d7d;
+    --display:'Press Start 2P',monospace;
+    --body:'IBM Plex Sans',system-ui,'Segoe UI',Arial,sans-serif;
+    --mono:'IBM Plex Mono',Consolas,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:18px}
+  body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.6}
+  a{color:var(--amber2)}
+  a:hover{color:#ffe08a}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+
+  /* hero */
+  .hero{padding:44px 0 30px;border-bottom:2px solid var(--line);
+    background:
+      radial-gradient(90% 140% at 50% 0%, rgba(255,179,0,.09), transparent 55%),
+      linear-gradient(180deg,#141936,var(--bg))}
+  h1{font-family:var(--display);font-size:clamp(19px,3.6vw,32px);color:var(--amber2);
+     line-height:1.5;text-shadow:0 0 14px rgba(255,179,0,.45);text-wrap:balance}
+  .tag{color:var(--ink2);margin-top:12px;max-width:64ch}
+  .quick{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+  .chip{background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+        padding:7px 14px;font-size:.9rem;color:var(--ink)}
+  .chip b{color:var(--token)}
+  .chip .c{color:var(--coin)}
+
+  /* toc */
+  .toc{margin:26px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+  .toc a{display:block;background:var(--panel);border:1px solid var(--line);border-radius:10px;
+         padding:9px 12px;text-decoration:none;font-size:.9rem;color:var(--ink)}
+  .toc a:hover{border-color:var(--amber);color:var(--amber2)}
+  .toc a b{color:var(--amber);font-family:var(--mono);margin-right:6px}
+
+  /* sections */
+  section{margin:34px 0;padding:24px;background:var(--panel);border:1px solid var(--line);
+          border-radius:16px}
+  h2{font-family:var(--display);font-size:clamp(13px,2vw,17px);color:var(--amber);
+     line-height:1.6;margin-bottom:14px;text-wrap:balance}
+  h3{font-size:1.02rem;color:var(--amber2);margin:20px 0 6px}
+  p{margin:9px 0;max-width:72ch}
+  ul,ol{margin:9px 0 9px 22px;max-width:70ch}
+  li{margin:5px 0}
+  code{font-family:var(--mono);font-size:.92em;background:#0a0d19;border:1px solid var(--line);
+       border-radius:6px;padding:1px 6px;color:var(--amber2);white-space:nowrap}
+  .tok{color:var(--token);font-weight:600}
+  .coin{color:var(--coin);font-weight:600}
+  .muted{color:var(--ink2)}
+  .callout{border-left:4px solid var(--amber);background:var(--panel2);border-radius:0 10px 10px 0;
+           padding:10px 14px;margin:14px 0;max-width:72ch}
+  .callout.green{border-left-color:var(--token)}
+
+  figure{margin:16px 0;background:#0a0d19;border:1px solid var(--line);border-radius:12px;
+         overflow:hidden}
+  figure img{display:block;width:100%;height:auto}
+  figcaption{padding:8px 12px;font-size:.85rem;color:var(--ink2);border-top:1px solid var(--line)}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:720px){.cols2{grid-template-columns:1fr}}
+
+  .tablewrap{overflow-x:auto;margin:12px 0}
+  table{border-collapse:collapse;width:100%;font-size:.93rem}
+  th,td{border:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+  th{background:var(--panel2);color:var(--amber2);font-weight:600;white-space:nowrap}
+  td:first-child{white-space:nowrap}
+  tr:nth-child(even) td{background:rgba(29,34,64,.35)}
+  td b{color:var(--ink)}
+  .num{font-variant-numeric:tabular-nums}
+
+  footer{margin:40px 0 30px;padding-top:18px;border-top:2px solid var(--line);
+         color:var(--ink2);font-size:.9rem}
+  footer .links{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<div class="hero"><div class="wrap">
+  <h1>RETROSAI ARCADE GUIDE</h1>
+  <p class="tag">Everything on <a href="https://twitch.tv/retrosaieno">twitch.tv/RetroSaieno</a>
+  explained: the two currencies, the chat games, the game queue, the backlog,
+  and every command. Type <code>!features</code> in chat any time to get back here.</p>
+  <div class="quick">
+    <span class="chip">1 · Follow &amp; hang out → you earn <b>Tokens</b> automatically</span>
+    <span class="chip">2 · Spend <span class="c">Coins</span> (channel points) on the redeems</span>
+    <span class="chip">3 · <code>!tokens</code> shows your balance, <code>!spend</code> spends it</span>
+  </div>
+</div></div>
+
+<div class="wrap">
+
+<nav class="toc">
+  <a href="#currencies"><b>01</b> Coins vs Tokens</a>
+  <a href="#earning"><b>02</b> Earning Tokens</a>
+  <a href="#spending"><b>03</b> Spending Tokens</a>
+  <a href="#games"><b>04</b> The chat games</a>
+  <a href="#duels"><b>05</b> Duels</a>
+  <a href="#queue"><b>06</b> The game queue</a>
+  <a href="#backlog"><b>07</b> The backlog</a>
+  <a href="#boards"><b>08</b> High scores &amp; prize</a>
+  <a href="#shelf"><b>09</b> Your game shelf</a>
+  <a href="#redeems"><b>10</b> Coin redeems</a>
+  <a href="#commands"><b>11</b> Command list</a>
+  <a href="#sites"><b>12</b> All the pages</a>
+</nav>
+
+<section id="currencies">
+  <h2>01 · TWO CURRENCIES, ONE ARCADE</h2>
+  <p>The stream runs on two separate currencies, and they never mix:</p>
+  <ul>
+    <li><span class="coin">Coins</span> are this channel's <b>Twitch channel
+    points</b> — Twitch hands them out for watching, and you spend them on the
+    <a href="#redeems">channel-point redeems</a> (starting games, adding
+    backlog picks, check-ins, wheel spins…).</li>
+    <li><span class="tok">Tokens</span> are the channel's own <b>arcade
+    currency</b>. You earn them by being here and by winning things, and you
+    spend them in chat with commands like <code>!spend</code>,
+    <code>!powerup</code> and <code>!duel</code>. <code>!tokens</code> shows
+    your balance any time.</li>
+  </ul>
+  <figure><img src="guide_assets/tokens.webp" alt="Tokens logo card" loading="lazy">
+  <figcaption>Tokens: the RetroSai arcade currency.</figcaption></figure>
+</section>
+
+<section id="earning">
+  <h2>02 · EARNING TOKENS</h2>
+  <p><b>You must be a follower to earn</b> — following is the whole entry fee.
+  Subscribers earn <b>2×</b> on everything below except check-ins.</p>
+  <ul>
+    <li><b>Just being here:</b> <span class="tok">2 Tokens every 2 minutes</span>
+    while the stream is live. No command, it just happens (lurking counts —
+    say <code>!lurk</code> on your way to the couch).</li>
+    <li><b>Check-In</b> (a <span class="coin">Coin</span> redeem): pays
+    <span class="tok">50 × your streak bonus</span>. The streak grows
+    <b>+5% per stream day</b> and caps at <b>1.5×</b> — miss a stream and it
+    resets, so protect that streak. The first three check-ins of the night
+    get a podium bonus: <span class="tok">+30 / +20 / +10</span>.</li>
+    <li><b>Winning the games</b> — see <a href="#games">the chat games</a>:
+    trivia pays <span class="tok">25</span>, Name That Game pays
+    <span class="tok">150 / 75</span> for 1st / 2nd, Price Is Right pays
+    <span class="tok">200</span> (+<span class="tok">100</span> for a
+    near-exact price).</li>
+    <li><b>Winning duels</b> — take the other player's wager, up to
+    <span class="tok">500</span> a pop.</li>
+  </ul>
+  <figure><img src="guide_assets/earn.webp" alt="Earn card" loading="lazy">
+  <figcaption>Hang out, check in, win rounds — the balance builds itself.</figcaption></figure>
+</section>
+
+<section id="spending">
+  <h2>03 · SPENDING TOKENS</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Command</th><th>Cost</th><th>What it does</th></tr>
+    <tr><td><code>!spend queueskip</code></td><td class="num"><span class="tok">600</span></td>
+        <td>Your <b>most recent</b> game request jumps to the front of the
+        queue (one game per skip — your other requests stay put). It wears a
+        little token badge on the queue overlay.</td></tr>
+    <tr><td><code>!spend backlog &lt;game&gt;</code></td><td class="num"><span class="tok">75</span> / vote</td>
+        <td>Adds a game to <a href="#backlog">the backlog</a> — or stacks a
+        vote on it. Add <code>x3</code> (up to x10) to buy several votes at
+        once: <code>!spend backlog Chrono Trigger x3</code>.</td></tr>
+    <tr><td><code>!powerup &lt;amount&gt;</code></td><td class="num"><span class="tok">10+</span></td>
+        <td>Feed the community <b>Power Meter</b> toward the night's goal
+        (<code>!powerup all</code> throws in whatever it still needs).
+        <code>!goal</code> shows progress and pops the gauge on screen.</td></tr>
+    <tr><td><code>!duel &lt;user&gt; &lt;amount&gt;</code></td><td class="num"><span class="tok">10–500</span></td>
+        <td>Head-to-head wager — see <a href="#duels">Duels</a>.</td></tr>
+  </table></div>
+  <figure><img src="guide_assets/meter.webp" alt="Power meter overlay" loading="lazy">
+  <figcaption>The Power Meter mid-fill. When chat tops it off, something happens on stream.</figcaption></figure>
+</section>
+
+<section id="games">
+  <h2>04 · THE CHAT GAMES</h2>
+  <p>All three run right on the stream overlay. Price Is Right and Name That
+  Game are started by <span class="coin">Coin</span> redeems (200 each), so
+  chat decides when a round happens.</p>
+
+  <h3>🏷️ Price Is Right — 200 Coins</h3>
+  <ol>
+    <li>Redeem it and give the stream a moment — it prices a <b>real copy</b>
+    of a game (usually the one on screen first), which can take ~40 seconds.</li>
+    <li>The cart art and question appear: you have <b>60 seconds</b> to guess
+    with <code>!guess 24.99</code> — with or without the <code>$</code>, both
+    are fine.</li>
+    <li><b>Closest without going over wins</b> <span class="tok">200
+    Tokens</span> — land within $1.00 of the real price and you get a
+    <span class="tok">+100</span> bonus.</li>
+  </ol>
+  <div class="cols2">
+    <figure><img src="guide_assets/pir-open.webp" alt="Price Is Right round open" loading="lazy">
+    <figcaption>A round open: guesses are live.</figcaption></figure>
+    <figure><img src="guide_assets/pir-reveal.webp" alt="Price Is Right reveal" loading="lazy">
+    <figcaption>The reveal: real price, winner, payout.</figcaption></figure>
+  </div>
+
+  <h3>🕹️ Name That Game — 200 Coins</h3>
+  <ol>
+    <li>A blurred box cover appears and <b>sharpens over 75 seconds</b>; the
+    round runs 90 seconds total.</li>
+    <li><b>Guess in plain chat</b> — no command, just type the game's name.</li>
+    <li>First correct answer takes <span class="tok">150</span>, second takes
+    <span class="tok">75</span>.</li>
+  </ol>
+  <div class="callout">
+    <b>Winners are announced at the reveal, not mid-round.</b> Nothing
+    confirms a correct guess while the round runs — so copying someone else's
+    answer is just a gamble on a stranger's spelling. Titles with a subtitle
+    need both halves: “star wars” alone will not take
+    <i>Star Wars Episode I: Jedi Power Battles</i> — give it a couple of
+    words from each side.
+  </div>
+  <div class="cols2">
+    <figure><img src="guide_assets/ntg-blur.webp" alt="Name That Game blurred cover" loading="lazy">
+    <figcaption>Early round: still a mystery.</figcaption></figure>
+    <figure><img src="guide_assets/ntg-win.webp" alt="Name That Game reveal" loading="lazy">
+    <figcaption>The reveal, with the winners' podium.</figcaption></figure>
+  </div>
+
+  <h3>🧠 Trivia — free</h3>
+  <p>Trivia fires during ad breaks (so there is always something to do): a
+  question about a random game from the library appears on the lower third
+  with a 60-second countdown. Answer in plain chat — <b>every</b> correct
+  answer inside the window earns <span class="tok">25 Tokens</span>.</p>
+  <figure><img src="guide_assets/trivia.webp" alt="Trivia card" loading="lazy">
+  <figcaption>The trivia lower-third, countdown running.</figcaption></figure>
+</section>
+
+<section id="duels">
+  <h2>05 · DUELS</h2>
+  <p>Challenge anyone in chat to a straight 50/50 wager:</p>
+  <ol>
+    <li><code>!duel &lt;user&gt; &lt;amount&gt;</code> — wagers run
+    <span class="tok">10–500 Tokens</span>.</li>
+    <li>They have <b>60 seconds</b> to answer with <code>!duelaccept</code>
+    (or chicken out with <code>!dueldecline</code>).</li>
+    <li>The winner takes the whole pot — and the corner of the stream plays
+    the duel out: both avatars clash, and the winner literally slices the
+    loser's card in half.</li>
+  </ol>
+  <figure><img src="guide_assets/duel.webp" alt="Duel card" loading="lazy">
+  <figcaption>Settle it like it's 1992.</figcaption></figure>
+</section>
+
+<section id="queue">
+  <h2>06 · THE GAME QUEUE</h2>
+  <p>The queue on the right side of the stream is the list of games chat has
+  asked RetroSai to play, in order.</p>
+  <ul>
+    <li><b>Getting a game in:</b> redeem <b>Game Request</b> with
+    <span class="coin">Coins</span> and type the game you want (there is a
+    per-person cooldown — <code>!qcd</code> shows yours).</li>
+    <li><b>Checking it:</b> <code>!queue</code> (or <code>!q</code>) reads the
+    line-up out in chat; the overlay shows it live, and the
+    <a href="https://saieno.github.io/live-game-queue/">live queue page</a>
+    mirrors it on the web even when you're not watching.</li>
+    <li><b>Jumping the line:</b> <code>!spend queueskip</code>
+    (<span class="tok">600 Tokens</span>) moves your latest request to the
+    front — marked with a token badge.</li>
+    <li><b>The 888 VIP:</b> <code>!888</code> rolls 1–888. Hit exactly 888
+    and you're the reigning VIP — your requests outrank <i>everything</i>,
+    marked with the pink diamond, until someone dethrones you.</li>
+    <li>When your game gets loaded, the stream title says
+    <b>“Requested by @you”</b> — your moment in the marquee.</li>
+  </ul>
+  <figure><img src="guide_assets/queue.webp" alt="Game queue overlay" loading="lazy">
+  <figcaption>The live queue overlay, dressed for the console being played.</figcaption></figure>
+</section>
+
+<section id="backlog">
+  <h2>07 · THE BACKLOG — GETTING A GAME ON THE PILE</h2>
+  <p>The backlog is chat's wishlist of games for <b>future</b> streams — stuff
+  that deserves a proper session. The most-voted games float to the top,
+  and the whole list lives at
+  <a href="https://saieno.github.io/retrosai-backlog/">the public backlog page</a>.</p>
+  <h3>Two ways to vote</h3>
+  <ol>
+    <li><b>The redeem:</b> spend <span class="coin">500 Coins</span> on
+    <b>Add Game to Backlog</b> and type the game's name. If it's already on
+    the pile, your redeem stacks a vote on it instead — and if the name can't
+    be recognised at all, your Coins are refunded.</li>
+    <li><b>Tokens:</b> <code>!spend backlog &lt;game&gt;</code> —
+    <span class="tok">75 Tokens</span> per vote, and you can stack multiple
+    at once with <code>x2</code>…<code>x10</code> on the end.</li>
+  </ol>
+  <h3>Good to know</h3>
+  <ul>
+    <li><code>!backlogs</code> prints the current top 5 in chat.</li>
+    <li>Typo'd the name? <code>!backlogedit &lt;correct game&gt;</code>
+    re-points your most recent vote — free within 15 minutes.</li>
+    <li>Votes are counted per game, so rallying chat behind one title is
+    exactly the strategy it sounds like.</li>
+    <li>When a backlog game gets played (or gets a hard pass) it's retired
+    from the board — the page keeps the history.</li>
+  </ul>
+  <figure><img src="guide_assets/backlog.webp" alt="Backlog site" loading="lazy">
+  <figcaption>The public backlog board, cover art and all.</figcaption></figure>
+</section>
+
+<section id="boards">
+  <h2>08 · HIGH SCORES &amp; THE MONTHLY PRIZE</h2>
+  <ul>
+    <li><code>!tokenboard</code> (<code>!tlb</code>) — the seasonal <b>HIGH
+    SCORES</b> board: top Token earners, arcade style. It also slides the
+    board onto the stream.</li>
+    <li><code>!alltime</code> (<code>!atb</code>) — the all-time earners
+    board.</li>
+    <li><b>The prize:</b> each month's top earner wins a <b>$10 gift card</b>
+    (delivered by whisper — or a gift sub if the winner isn't subbed).
+    September 2026 is <b>season one</b>: it counts everything since launch,
+    then October starts fresh.</li>
+  </ul>
+  <figure><img src="guide_assets/highscore.webp" alt="High scores board" loading="lazy">
+  <figcaption>The High Scores board — initials, avatars, zero-padded glory.</figcaption></figure>
+</section>
+
+<section id="shelf">
+  <h2>09 · YOUR GAME SHELF</h2>
+  <p>Every game that gets played while you're in chat goes on <b>your
+  shelf</b> — a permanent, public collection of everything you've witnessed
+  here. Browse <a href="./">everyone's shelves</a>, or jump straight to
+  yours at <code>shelf.html?u=yourname</code> (chat shortcut:
+  <code>!shelf</code>). Shelf pages show your Twitch profile picture, your
+  collection count, and every box, spine out.</p>
+  <figure><img src="guide_assets/shelf.webp" alt="A viewer's game shelf" loading="lazy">
+  <figcaption>One viewer's shelf. The boxes are real scans, sized like the real cases.</figcaption></figure>
+</section>
+
+<section id="redeems">
+  <h2>10 · COIN REDEEMS (CHANNEL POINTS)</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Redeem</th><th>Coins</th><th>What happens</th></tr>
+    <tr><td><b>Game Info</b></td><td class="num"><span class="coin">50</span></td>
+        <td>An info card about the current game slides across the lower third.</td></tr>
+    <tr><td><b>Did You Know?</b></td><td class="num"><span class="coin">100</span></td>
+        <td>A trivia-fact card about the current game.</td></tr>
+    <tr><td><b>Name That Game</b></td><td class="num"><span class="coin">200</span></td>
+        <td>Starts an NTG round for everyone — you're buying the arcade a game.</td></tr>
+    <tr><td><b>Price Is Right</b></td><td class="num"><span class="coin">200</span></td>
+        <td>Starts a PIR round (give it ~40s to price the game).</td></tr>
+    <tr><td><b>Add Game to Backlog</b></td><td class="num"><span class="coin">500</span></td>
+        <td>Type a game → it lands on <a href="#backlog">the backlog</a> with your vote.
+        Unrecognised titles are refunded.</td></tr>
+    <tr><td><b>Check-In</b></td><td class="num"><span class="coin">—</span></td>
+        <td>Daily check-in: <span class="tok">50 Tokens</span> × your streak, podium
+        bonus for the first three.</td></tr>
+    <tr><td><b>Game Request</b></td><td class="num"><span class="coin">—</span></td>
+        <td>Puts your game in <a href="#queue">the queue</a>.</td></tr>
+    <tr><td><b>Spin the Wheel / Wheel of Nostalgia</b></td><td class="num"><span class="coin">—</span></td>
+        <td>Spins the platform wheel — fate picks what gets played next.</td></tr>
+  </table></div>
+  <figure><img src="guide_assets/wheel.webp" alt="Wheel of Nostalgia" loading="lazy">
+  <figcaption>The Wheel of Nostalgia — argue with the result, it won't care.</figcaption></figure>
+  <p class="muted">Redeem prices for the marked rows are set in the Twitch
+  dashboard and can shift; the table above lists the fixed ones.</p>
+</section>
+
+<section id="commands">
+  <h2>11 · COMMAND REFERENCE</h2>
+  <div class="callout green">Commands are <b>not case-sensitive</b> —
+  <code>!Guess</code>, <code>!TOKENS</code> and <code>!tokens</code> all work.</div>
+  <div class="tablewrap"><table>
+    <tr><th>Command</th><th>What it does</th></tr>
+    <tr><td><code>!tokens</code> <span class="muted">(!bal)</span></td><td>Your Token balance.</td></tr>
+    <tr><td><code>!tokenboard</code> <span class="muted">(!tlb)</span></td><td>Top 5 Token earners this season + shows the board on stream.</td></tr>
+    <tr><td><code>!alltime</code> <span class="muted">(!atb)</span></td><td>Top 5 Token earners ever.</td></tr>
+    <tr><td><code>!spend queueskip</code></td><td>600 Tokens — your latest request jumps the queue.</td></tr>
+    <tr><td><code>!spend backlog &lt;game&gt; [xN]</code></td><td>75 Tokens a vote for the backlog.</td></tr>
+    <tr><td><code>!backlogs</code></td><td>The backlog top 5 + page link.</td></tr>
+    <tr><td><code>!backlogedit &lt;game&gt;</code></td><td>Re-point your latest backlog vote (free, 15 min).</td></tr>
+    <tr><td><code>!powerup &lt;amount|all&gt;</code></td><td>Feed the Power Meter (min 10).</td></tr>
+    <tr><td><code>!goal</code></td><td>Meter progress + pops the gauge.</td></tr>
+    <tr><td><code>!duel &lt;user&gt; &lt;amount&gt;</code></td><td>Challenge someone (10–500 Tokens).</td></tr>
+    <tr><td><code>!duelaccept</code> / <code>!dueldecline</code></td><td>Answer a challenge (60s).</td></tr>
+    <tr><td><code>!guess &lt;price&gt;</code></td><td>Your Price Is Right guess — <code>$</code> optional.</td></tr>
+    <tr><td><code>!shelf</code></td><td>Your game-shelf count + link.</td></tr>
+    <tr><td><code>!queue</code> <span class="muted">(!q)</span></td><td>The current game queue.</td></tr>
+    <tr><td><code>!qcd</code></td><td>Your Game Request cooldown.</td></tr>
+    <tr><td><code>!888</code></td><td>Roll for VIP — exactly 888 takes the crown.</td></tr>
+    <tr><td><code>!checkin</code></td><td>Check-in info / streak status.</td></tr>
+    <tr><td><code>!gamelist</code> <span class="muted">(!list)</span></td><td>The full game library site.</td></tr>
+    <tr><td><code>!ra</code></td><td>The live RetroAchievements page.</td></tr>
+    <tr><td><code>!song</code></td><td>What's playing.</td></tr>
+    <tr><td><code>!followage</code></td><td>How long you've followed.</td></tr>
+    <tr><td><code>!font</code> <span class="muted">(!fonts)</span></td><td>Pick your personal chat-overlay font.</td></tr>
+    <tr><td><code>!lurk</code></td><td>Announce a respectable lurk.</td></tr>
+    <tr><td><code>!discord</code> <span class="muted">(!disc)</span></td><td>The community Discord.</td></tr>
+    <tr><td><code>!retrosai</code> <span class="muted">(!rs)</span></td><td>What the RetroSai console actually is.</td></tr>
+    <tr><td><code>!dashboard</code> <span class="muted">(!dash)</span></td><td>The RetroSai dashboard theme (free download).</td></tr>
+    <tr><td><code>!features</code> <span class="muted">(!guide)</span></td><td>Links this page.</td></tr>
+    <tr><td><code>!help &lt;command&gt;</code></td><td>Details on one command.</td></tr>
+    <tr><td><code>!commands</code></td><td>The quick list in chat.</td></tr>
+  </table></div>
+</section>
+
+<section id="sites">
+  <h2>12 · ALL THE RETROSAI PAGES</h2>
+  <p>Everything the stream publishes lives on its own page — bookmark away:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Page</th><th>What's on it</th></tr>
+    <tr><td><a href="https://saieno.github.io/retrosai-gamelist/">Game Library</a></td>
+        <td>The full RetroSai library — every platform, every game that can be
+        requested. Chat shortcut: <code>!gamelist</code>.</td></tr>
+    <tr><td><a href="https://saieno.github.io/live-game-queue/">Live Game Queue</a></td>
+        <td>The current request queue, updated while the stream runs — check
+        where your game sits from anywhere.</td></tr>
+    <tr><td><a href="https://saieno.github.io/retrosai-backlog/">Backlog</a></td>
+        <td>Chat's most-wanted pile, ranked by votes, with cover art and
+        played/retired history. See <a href="#backlog">how to vote</a>.</td></tr>
+    <tr><td><a href="./">Game Shelves</a></td>
+        <td>Every viewer's personal collection of games they were here for —
+        find yours at <code>shelf.html?u=yourname</code>.</td></tr>
+    <tr><td><a href="https://saieno.github.io/retrosai-achievements/">Achievements</a></td>
+        <td>RetroSai's live RetroAchievements record — every unlock, every
+        mastery, updated as they pop on stream. Chat shortcut: <code>!ra</code>.</td></tr>
+    <tr><td><a href="https://twitch.tv/retrosaieno">twitch.tv/RetroSaieno</a></td>
+        <td>Where all of this actually happens.</td></tr>
+  </table></div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="./">Game Shelves</a>
+    <a href="https://saieno.github.io/live-game-queue/">Live Queue</a>
+    <a href="https://saieno.github.io/retrosai-backlog/">Backlog</a>
+    <a href="https://saieno.github.io/retrosai-achievements/">Achievements</a>
+    <a href="https://saieno.github.io/retrosai-gamelist/">Game Library</a>
+    <a href="https://twitch.tv/retrosaieno">Twitch</a>
+  </div>
+  <div>RetroSai Arcade Guide · updated 2026-09-01 · overlay screenshots are the real thing.</div>
+</footer>
+
+</div>
+</body>
+</html>
