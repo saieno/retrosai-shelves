@@ -163,12 +163,12 @@
   {
    "art": "art/sony-playstation-2/ratchet-clank.webp",
    "art_kind": "box",
-   "count": 83,
+   "count": 85,
    "platform": "Sony PlayStation 2",
    "title": "Ratchet & Clank"
   }
  ],
- "generated_at": 1788224100,
+ "generated_at": 1788225300,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -6680,6 +6680,13 @@
     "2026-08-31"
    ]
   ],
+  "therenegadejester": [
+   [
+    23,
+    1788225289,
+    "2026-08-31"
+   ]
+  ],
   "theroyjoy": [
    [
     21,
@@ -7086,6 +7093,13 @@
     "2026-08-31"
    ]
   ],
+  "zaramaru": [
+   [
+    23,
+    1788224685,
+    "2026-08-31"
+   ]
+  ],
   "zeirway": [
    [
     20,
@@ -7162,12 +7176,12 @@
   "art_box": 23,
   "art_cart": 0,
   "art_none": 1,
-  "entries": 1337,
+  "entries": 1339,
   "first_ts": 1788197811,
   "games": 24,
-  "last_ts": 1788223839,
+  "last_ts": 1788225289,
   "platforms": 14,
-  "viewers": 149
+  "viewers": 151
  },
  "tagline": "Every game you were in the room for."
 }
