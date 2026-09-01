@@ -219,12 +219,12 @@
   {
    "art": "art/microsoft-xbox-one/mortal-shell-ii.webp",
    "art_kind": "box",
-   "count": 72,
+   "count": 74,
    "platform": "Microsoft Xbox One",
    "title": "Mortal Shell II"
   }
  ],
- "generated_at": 1788237900,
+ "generated_at": 1788239100,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -1624,6 +1624,11 @@
    ]
   ],
   "courtney_a_ok": [
+   [
+    31,
+    1788238701,
+    "2026-08-31"
+   ],
    [
     27,
     1788232900,
@@ -5707,6 +5712,11 @@
    ]
   ],
   "mrbeanpfc": [
+   [
+    31,
+    1788238701,
+    "2026-08-31"
+   ],
    [
     17,
     1788204906,
@@ -10486,10 +10496,10 @@
   "art_box": 31,
   "art_cart": 0,
   "art_none": 1,
-  "entries": 1973,
+  "entries": 1975,
   "first_ts": 1788197811,
   "games": 32,
-  "last_ts": 1788237734,
+  "last_ts": 1788238701,
   "platforms": 15,
   "viewers": 193
  },
