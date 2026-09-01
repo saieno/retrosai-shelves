@@ -51,7 +51,7 @@
   {
    "art": "art/nintendo-gamecube/mario-kart-double-dash.webp",
    "art_kind": "box",
-   "count": 73,
+   "count": 76,
    "platform": "Nintendo GameCube",
    "title": "Mario Kart: Double Dash!!"
   },
@@ -175,7 +175,7 @@
    "title": "Ratchet & Clank"
   }
  ],
- "generated_at": 1788227700,
+ "generated_at": 1788228900,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -5241,6 +5241,13 @@
     "2026-08-31"
    ]
   ],
+  "rs25": [
+   [
+    7,
+    1788228188,
+    "2026-08-31"
+   ]
+  ],
   "salariedorgy": [
    [
     7,
@@ -5791,6 +5798,13 @@
    [
     8,
     1788198502,
+    "2026-08-31"
+   ]
+  ],
+  "shebrews": [
+   [
+    7,
+    1788228188,
     "2026-08-31"
    ]
   ],
@@ -7495,6 +7509,13 @@
     "2026-08-31"
    ]
   ],
+  "zedricklamar": [
+   [
+    7,
+    1788228188,
+    "2026-08-31"
+   ]
+  ],
   "zeirway": [
    [
     21,
@@ -7571,12 +7592,12 @@
   "art_box": 24,
   "art_cart": 0,
   "art_none": 1,
-  "entries": 1415,
+  "entries": 1418,
   "first_ts": 1788197811,
   "games": 25,
-  "last_ts": 1788227584,
+  "last_ts": 1788228188,
   "platforms": 14,
-  "viewers": 155
+  "viewers": 158
  },
  "tagline": "Every game you were in the room for."
 }
