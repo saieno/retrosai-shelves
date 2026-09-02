@@ -61,6 +61,7 @@
   "flyingdutchmanmario": "https://static-cdn.jtvnw.net/jtv_user_pictures/e8a4f2eb-ee18-4671-86db-b7ce1b72c9ba-profile_image-300x300.png",
   "fruhara": "https://static-cdn.jtvnw.net/jtv_user_pictures/bd7da076-c588-469e-842c-3bb90b49f7d3-profile_image-300x300.png",
   "ftakano": "https://static-cdn.jtvnw.net/jtv_user_pictures/2adb3236-e358-4ad0-9134-229145d2cd37-profile_image-300x300.png",
+  "fuyu_fleur": "https://static-cdn.jtvnw.net/jtv_user_pictures/8da5694c-ceec-495b-a85c-4e8655076b9c-profile_image-300x300.png",
   "gamehawk55": "https://static-cdn.jtvnw.net/jtv_user_pictures/67deacae-2eeb-473d-a1c2-e26165714feb-profile_image-300x300.png",
   "gatto": "https://static-cdn.jtvnw.net/jtv_user_pictures/093202cb-3153-49cf-aea0-4e6de93843c6-profile_image-300x300.png",
   "georgegelinas": "https://static-cdn.jtvnw.net/jtv_user_pictures/1a208a50-58f7-425e-b748-fbdf8827dad9-profile_image-300x300.png",
@@ -108,6 +109,7 @@
   "mastermax165": "https://static-cdn.jtvnw.net/jtv_user_pictures/5c6c4d8a-aac0-45e8-84b2-1915c4e90ce5-profile_image-300x300.png",
   "mathgss1": "https://static-cdn.jtvnw.net/jtv_user_pictures/9fdd3cfc-877f-4344-8e55-9133b2b48042-profile_image-300x300.png",
   "mcgames": "https://static-cdn.jtvnw.net/jtv_user_pictures/d53db35e-b88a-4601-8818-a6cd61f31a7b-profile_image-300x300.png",
+  "millhouse1119": "https://static-cdn.jtvnw.net/jtv_user_pictures/120ecebc-4763-4f98-b4f8-82d4ca8bdd23-profile_image-300x300.jpeg",
   "mistressmercy": "https://static-cdn.jtvnw.net/jtv_user_pictures/25fc0829-4ce0-4d9f-a303-bbe02beb8ae4-profile_image-300x300.jpeg",
   "mistyrosey": "https://static-cdn.jtvnw.net/jtv_user_pictures/7044e01a-ba3b-4b94-bc57-c598348563e0-profile_image-300x300.png",
   "moongoddess_13": "https://static-cdn.jtvnw.net/jtv_user_pictures/e7d95fad-7d62-4450-98d0-fa4c07e18d71-profile_image-300x300.png",
@@ -197,6 +199,7 @@
   "vanosdelgaia": "https://static-cdn.jtvnw.net/jtv_user_pictures/057c58f2-4dff-4aa9-9920-56e4155c8cf8-profile_image-300x300.png",
   "w1ckedwookie500": "https://static-cdn.jtvnw.net/jtv_user_pictures/6de02ba8-f23e-4c7b-a6b2-655bbe60f6fb-profile_image-300x300.png",
   "wegoboom_gaming": "https://static-cdn.jtvnw.net/jtv_user_pictures/7a6c7e29-ad17-4b75-8009-730be46dff55-profile_image-300x300.png",
+  "whiteskaar": "https://static-cdn.jtvnw.net/jtv_user_pictures/fdd3fc10-ecde-469a-a6fd-2d595379e166-profile_image-300x300.png",
   "x33843": "https://static-cdn.jtvnw.net/jtv_user_pictures/3e11fe45-7f0d-4fb2-962d-a5644a0995d9-profile_image-300x300.png",
   "xaertes": "https://static-cdn.jtvnw.net/jtv_user_pictures/27b7ba94-4e48-4de1-b73a-cac1232f880c-profile_image-300x300.png",
   "xekard": "https://static-cdn.jtvnw.net/jtv_user_pictures/a6eeec18-ed20-4d93-835b-6abb84dd47c3-profile_image-300x300.png",
@@ -471,12 +474,19 @@
   {
    "art": "art/sony-playstation-2/ratchet-clank-going-commando.webp",
    "art_kind": "box",
-   "count": 40,
+   "count": 44,
    "platform": "Sony PlayStation 2",
    "title": "Ratchet & Clank: Going Commando"
+  },
+  {
+   "art": "art/nintendo-wii/soul-eater-monotone-princess.webp",
+   "art_kind": "box",
+   "count": 47,
+   "platform": "Nintendo Wii",
+   "title": "Soul Eater: Monotone Princess"
   }
  ],
- "generated_at": 1788365100,
+ "generated_at": 1788366300,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -568,6 +578,11 @@
    ]
   ],
   "ascendingphase": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -823,6 +838,11 @@
   ],
   "at3chnicality": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -938,6 +958,11 @@
    ]
   ],
   "bak3rstreet": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -1281,6 +1306,11 @@
   ],
   "berserk_dark_cacao": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -1565,6 +1595,11 @@
   ],
   "blackramgxgaming": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -1778,6 +1813,11 @@
   ],
   "caiyanoregiggles": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -1921,6 +1961,11 @@
    ]
   ],
   "contagiousbrawler": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -2202,6 +2247,16 @@
    ]
   ],
   "crovera420": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
+    37,
+    1788365126,
+    "2026-09-02"
+   ],
    [
     34,
     1788237522,
@@ -2678,6 +2733,11 @@
   ],
   "dedizen": [
    [
+    38,
+    1788365488,
+    "2026-09-02"
+   ],
+   [
     1,
     1788206308,
     "2026-08-31"
@@ -2903,6 +2963,11 @@
   ],
   "el_crumpet": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364765,
     "2026-09-02"
@@ -2969,6 +3034,11 @@
    ]
   ],
   "eldritchwawa": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -3162,6 +3232,11 @@
   ],
   "ellionsyn": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -3329,6 +3404,11 @@
    ]
   ],
   "fruhara": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -3547,7 +3627,19 @@
     "2026-08-31"
    ]
   ],
+  "fuyu_fleur": [
+   [
+    38,
+    1788365488,
+    "2026-09-02"
+   ]
+  ],
   "gamehawk55": [
+   [
+    38,
+    1788365730,
+    "2026-09-02"
+   ],
    [
     34,
     1788237522,
@@ -3837,6 +3929,11 @@
    ]
   ],
   "glytchgames": [
+   [
+    38,
+    1788365488,
+    "2026-09-02"
+   ],
    [
     31,
     1788234277,
@@ -4128,6 +4225,16 @@
    ]
   ],
   "guiniguy": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
+    37,
+    1788365247,
+    "2026-09-02"
+   ],
    [
     34,
     1788237522,
@@ -4678,6 +4785,11 @@
   ],
   "iamjenthefriend": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -5205,6 +5317,11 @@
   ],
   "jedi_megaman": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -5283,6 +5400,11 @@
    ]
   ],
   "jonvaldr": [
+   [
+    38,
+    1788365730,
+    "2026-09-02"
+   ],
    [
     34,
     1788237522,
@@ -5542,6 +5664,11 @@
   ],
   "kyriebug": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -5733,6 +5860,11 @@
    ]
   ],
   "larrykernel": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -6103,6 +6235,11 @@
   ],
   "m_mendez09": [
    [
+    38,
+    1788365851,
+    "2026-09-02"
+   ],
+   [
     34,
     1788237522,
     "2026-08-31"
@@ -6366,7 +6503,19 @@
     "2026-09-02"
    ]
   ],
+  "millhouse1119": [
+   [
+    38,
+    1788365730,
+    "2026-09-02"
+   ]
+  ],
   "mistressmercy": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -6510,6 +6659,11 @@
   ],
   "mistyrosey": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -6553,6 +6707,11 @@
    ]
   ],
   "motu_247365": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -6987,6 +7146,11 @@
   ],
   "notsumei": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -7154,6 +7318,11 @@
   ],
   "number_blue_": [
    [
+    38,
+    1788365851,
+    "2026-09-02"
+   ],
+   [
     12,
     1788230372,
     "2026-08-31"
@@ -7214,6 +7383,11 @@
    ]
   ],
   "p1tchmen": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -7407,6 +7581,11 @@
   ],
   "panda_pause": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -7523,6 +7702,11 @@
    ]
   ],
   "partoferic": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -7781,6 +7965,11 @@
   ],
   "purplevoided": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -8000,6 +8189,11 @@
   ],
   "redchet": [
    [
+    37,
+    1788365126,
+    "2026-09-02"
+   ],
+   [
     35,
     1788362473,
     "2026-09-02"
@@ -8050,6 +8244,11 @@
    ]
   ],
   "reunitebedpan": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -8254,6 +8453,11 @@
    ]
   ],
   "rigswreck": [
+   [
+    38,
+    1788365609,
+    "2026-09-02"
+   ],
    [
     34,
     1788237522,
@@ -8929,6 +9133,11 @@
   ],
   "shadikennn": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -9461,6 +9670,11 @@
   ],
   "sicilianqueen420": [
    [
+    38,
+    1788365851,
+    "2026-09-02"
+   ],
+   [
     34,
     1788237522,
     "2026-08-31"
@@ -9817,6 +10031,11 @@
   ],
   "star_lord90tv": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -10167,6 +10386,11 @@
   ],
   "supergamestation": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -10473,6 +10697,16 @@
    ]
   ],
   "that_one_persona": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
+    37,
+    1788365126,
+    "2026-09-02"
+   ],
    [
     34,
     1788237522,
@@ -11196,6 +11430,11 @@
   ],
   "thor_q": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364633,
     "2026-09-02"
@@ -11241,6 +11480,11 @@
    ]
   ],
   "tjayrocket": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -11410,6 +11654,11 @@
    ]
   ],
   "twotuxi": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -11586,8 +11835,20 @@
   ],
   "wegoboom_gaming": [
    [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
+   [
     37,
     1788364644,
+    "2026-09-02"
+   ]
+  ],
+  "whiteskaar": [
+   [
+    38,
+    1788365851,
     "2026-09-02"
    ]
   ],
@@ -11619,6 +11880,11 @@
    ]
   ],
   "xaertes": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -11763,6 +12029,11 @@
    ]
   ],
   "yanakama07": [
+   [
+    38,
+    1788365470,
+    "2026-09-02"
+   ],
    [
     37,
     1788364633,
@@ -11912,16 +12183,16 @@
  },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 38,
-  "art_box": 38,
+  "art": 39,
+  "art_box": 39,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 2203,
+  "entries": 2254,
   "first_ts": 1788197811,
-  "games": 38,
-  "last_ts": 1788364885,
+  "games": 39,
+  "last_ts": 1788365851,
   "platforms": 18,
-  "viewers": 207
+  "viewers": 210
  },
  "tagline": "Every game you were in the room for."
 }
