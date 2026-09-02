@@ -420,9 +420,16 @@
    "count": 77,
    "platform": "Microsoft Xbox One",
    "title": "Mortal Shell II"
+  },
+  {
+   "art": "art/sega-dreamcast/jet-grind-radio.webp",
+   "art_kind": "box",
+   "count": 2,
+   "platform": "Sega Dreamcast",
+   "title": "Jet Grind Radio"
   }
  ],
- "generated_at": 1788341701,
+ "generated_at": 1788361500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -4190,6 +4197,11 @@
   ],
   "iamjenthefriend": [
    [
+    32,
+    1788361267,
+    "2026-09-02"
+   ],
+   [
     31,
     1788237522,
     "2026-08-31"
@@ -5727,6 +5739,11 @@
    ]
   ],
   "mistressmercy": [
+   [
+    32,
+    1788361388,
+    "2026-09-02"
+   ],
    [
     9,
     1788231088,
@@ -10709,14 +10726,14 @@
  },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 32,
-  "art_box": 32,
+  "art": 33,
+  "art_box": 33,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 1978,
+  "entries": 1980,
   "first_ts": 1788197811,
-  "games": 32,
-  "last_ts": 1788239669,
+  "games": 33,
+  "last_ts": 1788361388,
   "platforms": 15,
   "viewers": 195
  },
