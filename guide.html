@@ -217,7 +217,8 @@
     of a game (usually the one on screen first), which can take ~40 seconds.</li>
     <li>The cart art and question appear: you have <b>60 seconds</b> to guess
     with <code>!guess 24.99</code> — with or without the <code>$</code>, both
-    are fine.</li>
+    are fine. <b>Your first guess is the one that counts</b> — a second one is
+    ignored, so think before you type.</li>
     <li><b>Closest without going over wins</b> <span class="tok">200
     Tokens</span> — land within $1.00 of the real price and you get a
     <span class="tok">+100</span> bonus.</li>
@@ -282,7 +283,7 @@
   <p>The queue on the right side of the stream is the list of games chat has
   asked RetroSai to play, in order.</p>
   <ul>
-    <li><b>Getting a game in:</b> redeem <b>Game Request</b> with
+    <li><b>Getting a game in:</b> redeem <b>Game Queue Request</b> with
     <span class="coin">Coins</span> and type the game you want (there is a
     per-person cooldown — <code>!qcd</code> shows yours).</li>
     <li><b>Checking it:</b> <code>!queue</code> (or <code>!q</code>) reads the
@@ -367,7 +368,7 @@
     <tr><th>Redeem</th><th>Coins</th><th>What happens</th></tr>
     <tr><td><b>Game Info</b></td><td class="num"><span class="coin">50</span></td>
         <td>An info card about the current game slides across the lower third.</td></tr>
-    <tr><td><b>Did You Know?</b></td><td class="num"><span class="coin">100</span></td>
+    <tr><td><b>Did You Know?</b></td><td class="num"><span class="coin">50</span></td>
         <td>A trivia-fact card about the current game.</td></tr>
     <tr><td><b>Name That Game</b></td><td class="num"><span class="coin">200</span></td>
         <td>Starts an NTG round for everyone — you're buying the arcade a game.</td></tr>
@@ -379,7 +380,7 @@
     <tr><td><b>Check-In</b></td><td class="num"><span class="coin">—</span></td>
         <td>Daily check-in: <span class="tok">50 Tokens</span> × your streak, podium
         bonus for the first three.</td></tr>
-    <tr><td><b>Game Request</b></td><td class="num"><span class="coin">—</span></td>
+    <tr><td><b>Game Queue Request</b></td><td class="num"><span class="coin">—</span></td>
         <td>Puts your game in <a href="#queue">the queue</a>.</td></tr>
     <tr><td><b>Spin the Wheel / Wheel of Nostalgia</b></td><td class="num"><span class="coin">—</span></td>
         <td>Spins the platform wheel — fate picks what gets played next.</td></tr>
@@ -410,7 +411,7 @@
     <tr><td><code>!guess &lt;price&gt;</code></td><td>Your Price Is Right guess — <code>$</code> optional.</td></tr>
     <tr><td><code>!shelf</code></td><td>Your game-shelf count + link.</td></tr>
     <tr><td><code>!queue</code> <span class="muted">(!q)</span></td><td>The current game queue.</td></tr>
-    <tr><td><code>!qcd</code></td><td>Your Game Request cooldown.</td></tr>
+    <tr><td><code>!qcd</code></td><td>Your Game Queue Request cooldown.</td></tr>
     <tr><td><code>!888</code></td><td>Roll for VIP — exactly 888 takes the crown.</td></tr>
     <tr><td><code>!checkin</code></td><td>Check-in info / streak status.</td></tr>
     <tr><td><code>!gamelist</code> <span class="muted">(!list)</span></td><td>The full game library site.</td></tr>
