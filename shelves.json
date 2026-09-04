@@ -388,7 +388,7 @@
   {
    "art": "art/sony-playstation-4/elden-ring.webp",
    "art_kind": "box",
-   "count": 48,
+   "count": 52,
    "platform": "Sony PlayStation 4",
    "title": "Elden Ring"
   },
@@ -638,7 +638,7 @@
    "title": "Speed Punks"
   }
  ],
- "generated_at": 1788544500,
+ "generated_at": 1788545700,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -5947,6 +5947,11 @@
   ],
   "guiniguy": [
    [
+    23,
+    1788545328,
+    "2026-09-04"
+   ],
+   [
     5,
     1788375527,
     "2026-09-02"
@@ -7888,6 +7893,11 @@
    ]
   ],
   "kyriebug": [
+   [
+    23,
+    1788545328,
+    "2026-09-04"
+   ],
    [
     6,
     1788537553,
@@ -10944,6 +10954,11 @@
   ],
   "partoferic": [
    [
+    23,
+    1788544725,
+    "2026-09-04"
+   ],
+   [
     55,
     1788370848,
     "2026-09-02"
@@ -12200,6 +12215,11 @@
    ]
   ],
   "rooster1llusion": [
+   [
+    23,
+    1788545690,
+    "2026-09-04"
+   ],
    [
     51,
     1788366885,
@@ -17160,10 +17180,10 @@
   "art_box": 56,
   "art_cart": 0,
   "art_none": 3,
-  "entries": 3211,
+  "entries": 3215,
   "first_ts": 1788197811,
   "games": 59,
-  "last_ts": 1788544363,
+  "last_ts": 1788545690,
   "platforms": 25,
   "viewers": 228
  },
