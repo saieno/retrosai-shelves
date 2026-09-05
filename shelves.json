@@ -353,6 +353,8 @@
    "title": "Waku^2 Monster"
   },
   {
+   "art": "art/steam/iracing-arcade.webp",
+   "art_kind": "cart",
    "count": 42,
    "platform": "Steam",
    "title": "iRacing Arcade"
@@ -372,11 +374,15 @@
    "title": "Final Fantasy IV"
   },
   {
+   "art": "art/steam/final-fantasy-iv.webp",
+   "art_kind": "cart",
    "count": 43,
    "platform": "Steam",
    "title": "Final Fantasy IV"
   },
   {
+   "art": "art/steam/castlevania-revamped.webp",
+   "art_kind": "cart",
    "count": 41,
    "platform": "Steam",
    "title": "Castlevania ReVamped"
@@ -669,7 +675,7 @@
    "title": "Speed Punks"
   }
  ],
- "generated_at": 1788548100,
+ "generated_at": 1788577501,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -18093,10 +18099,10 @@
  },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 60,
+  "art": 63,
   "art_box": 60,
-  "art_cart": 0,
-  "art_none": 3,
+  "art_cart": 3,
+  "art_none": 0,
   "entries": 3391,
   "first_ts": 1788197811,
   "games": 63,
