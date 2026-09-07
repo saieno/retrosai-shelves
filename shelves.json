@@ -71,6 +71,7 @@
   "erdo_maestro": "https://static-cdn.jtvnw.net/jtv_user_pictures/3bd39d57-8f37-4c18-9485-95a9c44948c8-profile_image-300x300.png",
   "eternalarcade": "https://static-cdn.jtvnw.net/jtv_user_pictures/43f1ddaa-0058-40a6-8261-922178df91f3-profile_image-300x300.png",
   "finneasfire": "https://static-cdn.jtvnw.net/jtv_user_pictures/473d0be8-96f6-449e-920e-1a03745f1de6-profile_image-300x300.png",
+  "fitness__guru": "https://static-cdn.jtvnw.net/jtv_user_pictures/917a0218-aa82-468c-9817-b491e4cbfcf6-profile_image-300x300.jpeg",
   "flyingdutchmanmario": "https://static-cdn.jtvnw.net/jtv_user_pictures/e8a4f2eb-ee18-4671-86db-b7ce1b72c9ba-profile_image-300x300.png",
   "fronzel": "https://static-cdn.jtvnw.net/jtv_user_pictures/f2e80f34fedf400f-profile_image-300x300.png",
   "fruhara": "https://static-cdn.jtvnw.net/jtv_user_pictures/bd7da076-c588-469e-842c-3bb90b49f7d3-profile_image-300x300.png",
@@ -101,6 +102,7 @@
   "imbeccableimages": "https://static-cdn.jtvnw.net/jtv_user_pictures/7ebf544a-9674-4b9a-8ef3-014d4f9c5aa3-profile_image-300x300.png",
   "its_colby_": "https://static-cdn.jtvnw.net/jtv_user_pictures/775865b6-5de6-4660-9641-74b222ffdf06-profile_image-300x300.jpeg",
   "iwudacus": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d3bff1e-4734-4f53-9747-71fed6c09bac-profile_image-300x300.png",
+  "jadka82": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png",
   "jazzyxkitten": "https://static-cdn.jtvnw.net/jtv_user_pictures/040f103a-be58-475b-9693-4c72cc1027ab-profile_image-300x300.jpeg",
   "jedi_megaman": "https://static-cdn.jtvnw.net/jtv_user_pictures/9b12dbbb-b668-46fc-a4a4-512a2276b825-profile_image-300x300.png",
   "jellystarlite": "https://static-cdn.jtvnw.net/jtv_user_pictures/28c9d4d6-b3bf-448d-88d7-b3151fba9dce-profile_image-300x300.jpeg",
@@ -756,12 +758,12 @@
   {
    "art": "art/sony-playstation-2/final-fantasy-xi-online.webp",
    "art_kind": "box",
-   "count": 36,
+   "count": 48,
    "platform": "Sony PlayStation 2",
    "title": "Final Fantasy XI Online"
   }
  ],
- "generated_at": 1788803100,
+ "generated_at": 1788804300,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -2871,6 +2873,11 @@
   ],
   "cascaly1": [
    [
+    73,
+    1788803477,
+    "2026-09-07"
+   ],
+   [
     60,
     1788371163,
     "2026-09-02"
@@ -3652,6 +3659,11 @@
    ]
   ],
   "crovera420": [
+   [
+    73,
+    1788803115,
+    "2026-09-07"
+   ],
    [
     28,
     1788547173,
@@ -5597,6 +5609,13 @@
     "2026-09-07"
    ]
   ],
+  "fitness__guru": [
+   [
+    73,
+    1788804200,
+    "2026-09-07"
+   ]
+  ],
   "flyingdutchmanmario": [
    [
     32,
@@ -5612,6 +5631,11 @@
    ]
   ],
   "fruhara": [
+   [
+    73,
+    1788803839,
+    "2026-09-07"
+   ],
    [
     7,
     1788797009,
@@ -8079,6 +8103,11 @@
   ],
   "ilija_supertzar": [
    [
+    73,
+    1788803597,
+    "2026-09-07"
+   ],
+   [
     28,
     1788547173,
     "2026-09-04"
@@ -8570,6 +8599,13 @@
     24,
     1788543036,
     "2026-09-04"
+   ]
+  ],
+  "jadka82": [
+   [
+    73,
+    1788803477,
+    "2026-09-07"
    ]
   ],
   "jazzyxkitten": [
@@ -9788,6 +9824,11 @@
    ]
   ],
   "levistasia": [
+   [
+    73,
+    1788803477,
+    "2026-09-07"
+   ],
    [
     24,
     1788544363,
@@ -11763,6 +11804,11 @@
   ],
   "notsumei": [
    [
+    73,
+    1788803597,
+    "2026-09-07"
+   ],
+   [
     5,
     1788375527,
     "2026-09-02"
@@ -12800,6 +12846,11 @@
   ],
   "pmo659": [
    [
+    73,
+    1788803597,
+    "2026-09-07"
+   ],
+   [
     7,
     1788797087,
     "2026-09-07"
@@ -13379,6 +13430,11 @@
    ]
   ],
   "redchet": [
+   [
+    73,
+    1788803356,
+    "2026-09-07"
+   ],
    [
     54,
     1788365126,
@@ -14176,6 +14232,11 @@
   ],
   "rooster1llusion": [
    [
+    73,
+    1788803959,
+    "2026-09-07"
+   ],
+   [
     28,
     1788547173,
     "2026-09-04"
@@ -14745,6 +14806,11 @@
    ]
   ],
   "scytheblade234": [
+   [
+    73,
+    1788803236,
+    "2026-09-07"
+   ],
    [
     24,
     1788542851,
@@ -20037,12 +20103,12 @@
   "art_box": 70,
   "art_cart": 4,
   "art_none": 0,
-  "entries": 3757,
+  "entries": 3769,
   "first_ts": 1788197811,
   "games": 74,
-  "last_ts": 1788802994,
+  "last_ts": 1788804200,
   "platforms": 29,
-  "viewers": 240
+  "viewers": 242
  },
  "tagline": "Every game you were in the room for."
 }
