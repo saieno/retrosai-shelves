@@ -65,6 +65,7 @@
   "epibox": "https://static-cdn.jtvnw.net/jtv_user_pictures/99fa54f9-ae6c-406c-9279-fe7c73076da2-profile_image-300x300.png",
   "erdo_maestro": "https://static-cdn.jtvnw.net/jtv_user_pictures/3bd39d57-8f37-4c18-9485-95a9c44948c8-profile_image-300x300.png",
   "eternalarcade": "https://static-cdn.jtvnw.net/jtv_user_pictures/43f1ddaa-0058-40a6-8261-922178df91f3-profile_image-300x300.png",
+  "finneasfire": "https://static-cdn.jtvnw.net/jtv_user_pictures/473d0be8-96f6-449e-920e-1a03745f1de6-profile_image-300x300.png",
   "flyingdutchmanmario": "https://static-cdn.jtvnw.net/jtv_user_pictures/e8a4f2eb-ee18-4671-86db-b7ce1b72c9ba-profile_image-300x300.png",
   "fronzel": "https://static-cdn.jtvnw.net/jtv_user_pictures/f2e80f34fedf400f-profile_image-300x300.png",
   "fruhara": "https://static-cdn.jtvnw.net/jtv_user_pictures/bd7da076-c588-469e-842c-3bb90b49f7d3-profile_image-300x300.png",
@@ -219,6 +220,7 @@
   "w1ckedwookie500": "https://static-cdn.jtvnw.net/jtv_user_pictures/6de02ba8-f23e-4c7b-a6b2-655bbe60f6fb-profile_image-300x300.png",
   "wegoboom_gaming": "https://static-cdn.jtvnw.net/jtv_user_pictures/7a6c7e29-ad17-4b75-8009-730be46dff55-profile_image-300x300.png",
   "whiteskaar": "https://static-cdn.jtvnw.net/jtv_user_pictures/fdd3fc10-ecde-469a-a6fd-2d595379e166-profile_image-300x300.png",
+  "willfullychaotic": "https://static-cdn.jtvnw.net/jtv_user_pictures/5345fb79-3f86-4bde-9882-ea6223fa96ef-profile_image-300x300.png",
   "willow": "https://static-cdn.jtvnw.net/jtv_user_pictures/c50a1b92-773c-4a4d-801d-57cb9c917191-profile_image-300x300.jpeg",
   "x33843": "https://static-cdn.jtvnw.net/jtv_user_pictures/3e11fe45-7f0d-4fb2-962d-a5644a0995d9-profile_image-300x300.png",
   "xaertes": "https://static-cdn.jtvnw.net/jtv_user_pictures/27b7ba94-4e48-4de1-b73a-cac1232f880c-profile_image-300x300.png",
@@ -673,9 +675,16 @@
    "count": 55,
    "platform": "Sony PlayStation 1",
    "title": "Speed Punks"
+  },
+  {
+   "art": "art/steam/taxi-racer-london-2.webp",
+   "art_kind": "cart",
+   "count": 20,
+   "platform": "Steam",
+   "title": "Taxi Racer London 2"
   }
  ],
- "generated_at": 1788769041,
+ "generated_at": 1788794700,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -862,6 +871,11 @@
    ]
   ],
   "ascendingphase": [
+   [
+    63,
+    1788794677,
+    "2026-09-07"
+   ],
    [
     27,
     1788547173,
@@ -3131,6 +3145,11 @@
   ],
   "courtney_a_ok": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     27,
     1788547173,
     "2026-09-04"
@@ -4191,6 +4210,11 @@
   ],
   "donatedstoner": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     27,
     1788547173,
     "2026-09-04"
@@ -4530,6 +4554,11 @@
    ]
   ],
   "eldritchwawa": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     27,
     1788547173,
@@ -5089,6 +5118,13 @@
     "2026-08-31"
    ]
   ],
+  "finneasfire": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ]
+  ],
   "flyingdutchmanmario": [
    [
     31,
@@ -5104,6 +5140,11 @@
    ]
   ],
   "fruhara": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     27,
     1788547173,
@@ -7032,6 +7073,11 @@
   ],
   "iamjenthefriend": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     27,
     1788547173,
     "2026-09-04"
@@ -8305,6 +8351,11 @@
   ],
   "kyriebug": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     27,
     1788547173,
     "2026-09-04"
@@ -8596,6 +8647,11 @@
    ]
   ],
   "larrykernel": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     27,
     1788547173,
@@ -9597,6 +9653,11 @@
   ],
   "mistressmercy": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     24,
     1788545753,
     "2026-09-04"
@@ -10352,6 +10413,11 @@
    ]
   ],
   "nataliejdogg": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     23,
     1788542851,
@@ -12284,6 +12350,11 @@
   ],
   "reunitebedpan": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     27,
     1788547173,
     "2026-09-04"
@@ -12612,6 +12683,11 @@
    ]
   ],
   "rigswreck": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     27,
     1788547173,
@@ -14622,6 +14698,11 @@
   ],
   "spacexmike": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     24,
     1788545931,
     "2026-09-04"
@@ -14769,6 +14850,11 @@
    ]
   ],
   "star_lord90tv": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     27,
     1788547173,
@@ -16036,6 +16122,11 @@
   ],
   "thedogmatix": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     27,
     1788547173,
     "2026-09-04"
@@ -16742,6 +16833,11 @@
   ],
   "thirdgenerationnobody": [
    [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
+   [
     53,
     1788364633,
     "2026-09-02"
@@ -16959,6 +17055,11 @@
    ]
   ],
   "tjayrocket": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     27,
     1788547173,
@@ -17252,6 +17353,11 @@
    ]
   ],
   "twotuxi": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ],
    [
     5,
     1788375527,
@@ -17694,6 +17800,13 @@
     "2026-09-02"
    ]
   ],
+  "willfullychaotic": [
+   [
+    63,
+    1788794570,
+    "2026-09-07"
+   ]
+  ],
   "willow": [
    [
     5,
@@ -18099,16 +18212,16 @@
  },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 63,
+  "art": 64,
   "art_box": 60,
-  "art_cart": 3,
+  "art_cart": 4,
   "art_none": 0,
-  "entries": 3391,
+  "entries": 3411,
   "first_ts": 1788197811,
-  "games": 63,
-  "last_ts": 1788547620,
+  "games": 64,
+  "last_ts": 1788794677,
   "platforms": 25,
-  "viewers": 231
+  "viewers": 233
  },
  "tagline": "Every game you were in the room for."
 }
