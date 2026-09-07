@@ -174,7 +174,8 @@
     trivia pays <span class="tok">25</span>, Name That Game pays
     <span class="tok">150 / 75</span> for 1st / 2nd, Price Is Right pays
     <span class="tok">200</span> (+<span class="tok">100</span> for a
-    near-exact price).</li>
+    near-exact price), and Higher or Lower pays <span class="tok">40</span>
+    to everyone who calls it.</li>
     <li><b>Winning duels</b> — take the other player's wager, up to
     <span class="tok">500</span> a pop.</li>
   </ul>
@@ -207,9 +208,9 @@
 
 <section id="games">
   <h2>04 · THE CHAT GAMES</h2>
-  <p>All three run right on the stream overlay. Price Is Right and Name That
-  Game are started by <span class="coin">Coin</span> redeems (200 each), so
-  chat decides when a round happens.</p>
+  <p>All four run right on the stream overlay. Price Is Right, Name That
+  Game and Higher or Lower are started by <span class="coin">Coin</span>
+  redeems (200 each), so chat decides when a round happens.</p>
 
   <h3>🏷️ Price Is Right — 200 Coins</h3>
   <ol>
@@ -251,6 +252,34 @@
     <figcaption>Early round: still a mystery.</figcaption></figure>
     <figure><img src="guide_assets/ntg-win.webp" alt="Name That Game reveal" loading="lazy">
     <figcaption>The reveal, with the winners' podium.</figcaption></figure>
+  </div>
+
+  <h3>⚖️ Higher or Lower — 200 Coins</h3>
+  <ol>
+    <li>Two games from the library go up side by side. Game <b>A</b> shows
+    its real price; game <b>B</b> shows a question mark. It never uses the
+    game on screen, and lining the pair up can take ~40 seconds (same pricing
+    wait as Price Is Right).</li>
+    <li>You have <b>45 seconds</b>: is B worth <b>more or less</b> than A?
+    <b>Vote in plain chat</b> — just the word: <code>higher</code> or
+    <code>lower</code> (<code>more</code> / <code>less</code> work too), or
+    name the game you think is worth more with <code>A</code> or
+    <code>B</code>. <b>Your first vote is the one that counts.</b></li>
+    <li>Everyone who called it right gets <span class="tok">40 Tokens</span>
+    — no race, no podium, so a whole chat can win at once. Both games are
+    priced the same way (loose cart or disc, complete in box, or sealed) and
+    the picture shows which.</li>
+  </ol>
+  <div class="callout">
+    <b>Nothing goes in front of the word.</b> A message that is only
+    <code>higher</code> counts; a sentence that happens to contain it does
+    not. If the two prices ever match, everyone who voted wins.
+  </div>
+  <div class="cols2">
+    <figure><img src="guide_assets/hol-open.webp" alt="Higher or Lower round open" loading="lazy">
+    <figcaption>A round open: A's price is up, B is the question.</figcaption></figure>
+    <figure><img src="guide_assets/hol-reveal.webp" alt="Higher or Lower reveal" loading="lazy">
+    <figcaption>The reveal: both prices, the split, the winners.</figcaption></figure>
   </div>
 
   <h3>🧠 Trivia — free</h3>
@@ -370,10 +399,18 @@
         <td>An info card about the current game slides across the lower third.</td></tr>
     <tr><td><b>Did You Know?</b></td><td class="num"><span class="coin">50</span></td>
         <td>A trivia-fact card about the current game.</td></tr>
+    <tr><td><b>Game Details</b></td><td class="num"><span class="coin">150</span></td>
+        <td>Slides the <b>Game Details</b> panel in for ~20 seconds: year,
+        developer, publisher, genre, players, rating, the box blurb and
+        RetroSai's RetroAchievements progress on the game on screen. Refunded
+        if nothing is running.</td></tr>
     <tr><td><b>Name That Game</b></td><td class="num"><span class="coin">200</span></td>
         <td>Starts an NTG round for everyone — you're buying the arcade a game.</td></tr>
     <tr><td><b>Price Is Right</b></td><td class="num"><span class="coin">200</span></td>
         <td>Starts a PIR round (give it ~40s to price the game).</td></tr>
+    <tr><td><b>Higher or Lower</b></td><td class="num"><span class="coin">200</span></td>
+        <td>Starts a <a href="#games">Higher or Lower</a> round — two games,
+        one price shown, chat votes which is worth more.</td></tr>
     <tr><td><b>Add Game to Backlog</b></td><td class="num"><span class="coin">500</span></td>
         <td>Type a game → it lands on <a href="#backlog">the backlog</a> with your vote.
         Unrecognised titles are refunded.</td></tr>
@@ -385,14 +422,17 @@
     <tr><td><b>Wheel of Nostalgia</b></td><td class="num"><span class="coin">50,000</span></td>
         <td>Spins the platform wheel — fate picks what gets played next.</td></tr>
   </table></div>
+  <figure><img src="guide_assets/details.webp" alt="Game Details panel" loading="lazy">
+  <figcaption>The Game Details panel — 150 Coins slides it in for the game on screen.</figcaption></figure>
   <figure><img src="guide_assets/wheel.webp" alt="Wheel of Nostalgia" loading="lazy">
   <figcaption>The Wheel of Nostalgia — argue with the result, it won't care.</figcaption></figure>
   <p><b>No game on screen, no game redeems.</b> Price Is Right, Name That Game,
-  Game Info, Did You Know? and the Wheel are paused during intros, outros,
+  Higher or Lower, Game Info, Did You Know?, Game Details and the Wheel are
+  paused during intros, outros,
   breaks, reaction segments and raid landings — redeem one then and it is
   refused and refunded, with one line in chat saying so.</p>
   <p class="muted">Check-In, Game Queue Request and the Wheel are priced in the
-  Twitch dashboard and can shift; the other five are fixed.</p>
+  Twitch dashboard and can shift; the other seven are fixed.</p>
 </section>
 
 <section id="commands">
@@ -413,6 +453,7 @@
     <tr><td><code>!duel &lt;user&gt; &lt;amount&gt;</code></td><td>Challenge someone (10–500 Tokens).</td></tr>
     <tr><td><code>!duelaccept</code> / <code>!dueldecline</code></td><td>Answer a challenge (60s).</td></tr>
     <tr><td><code>!guess &lt;price&gt;</code></td><td>Your Price Is Right guess — <code>$</code> optional.</td></tr>
+    <tr><td><code>higher</code> / <code>lower</code> <span class="muted">(plain chat)</span></td><td>Your Higher or Lower vote — just the word; <code>more</code> / <code>less</code> or <code>A</code> / <code>B</code> work too. First vote counts.</td></tr>
     <tr><td><code>!shelf</code></td><td>Your game-shelf count + link.</td></tr>
     <tr><td><code>!queue</code> <span class="muted">(!q)</span></td><td>The current game queue.</td></tr>
     <tr><td><code>!qcd</code></td><td>Your Game Queue Request cooldown.</td></tr>
@@ -442,7 +483,7 @@
     <a href="https://saieno.github.io/retrosai-gamelist/">Game Library</a>
     <a href="https://twitch.tv/retrosaieno">Twitch</a>
   </div>
-  <div>RetroSai Arcade Guide · updated 2026-09-01 · overlay screenshots are the real thing.</div>
+  <div>RetroSai Arcade Guide · updated 2026-09-07 · overlay screenshots are the real thing.</div>
 </footer>
 
 </div>
