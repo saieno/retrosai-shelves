@@ -86,10 +86,12 @@
   "ginger_tech_": "https://static-cdn.jtvnw.net/jtv_user_pictures/38f41b8d-d71a-438b-b7e8-f2740c1e1ff8-profile_image-300x300.png",
   "glytchgames": "https://static-cdn.jtvnw.net/jtv_user_pictures/74a088b9-4533-4bb5-8a6a-defdcfc31d96-profile_image-300x300.png",
   "gogogamer182": "https://static-cdn.jtvnw.net/jtv_user_pictures/667e1f7b-9d4d-40f6-95da-80459c7d3fd9-profile_image-300x300.jpeg",
+  "goliath83_": "https://static-cdn.jtvnw.net/jtv_user_pictures/ad0fe3c2-0f16-4f0d-8d44-2866f09340d8-profile_image-300x300.png",
   "goronmegazord": "https://static-cdn.jtvnw.net/jtv_user_pictures/9444255e-0468-4530-bb5e-e2775485996d-profile_image-300x300.png",
   "great_ren_streams": "https://static-cdn.jtvnw.net/jtv_user_pictures/3eac27a8-e7b1-441b-93ef-27fadb405362-profile_image-300x300.png",
   "guiniguy": "https://static-cdn.jtvnw.net/jtv_user_pictures/a76f4c96-3948-4246-ac08-058c9419bfe3-profile_image-300x300.png",
   "gypsy_darling": "https://static-cdn.jtvnw.net/jtv_user_pictures/f535976f-4936-4df5-81bc-5b610e252597-profile_image-300x300.png",
+  "haggardhessian": "https://static-cdn.jtvnw.net/jtv_user_pictures/6c39187e-275e-452f-80bd-427af64d6054-profile_image-300x300.png",
   "hank_hill_x": "https://static-cdn.jtvnw.net/jtv_user_pictures/9583f7fd-6517-4c34-8511-9f7d7cd51c58-profile_image-300x300.png",
   "harold_the_hatter": "https://static-cdn.jtvnw.net/jtv_user_pictures/7c5f16fa-84c6-4cb0-b25c-f4d8b87574e4-profile_image-300x300.png",
   "henryhjr": "https://static-cdn.jtvnw.net/jtv_user_pictures/089f12d2-92df-45c6-9363-c7429b500133-profile_image-300x300.jpeg",
@@ -104,6 +106,7 @@
   "iwudacus": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d3bff1e-4734-4f53-9747-71fed6c09bac-profile_image-300x300.png",
   "jadka82": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png",
   "jazzyxkitten": "https://static-cdn.jtvnw.net/jtv_user_pictures/040f103a-be58-475b-9693-4c72cc1027ab-profile_image-300x300.jpeg",
+  "jdbrechtel": "https://static-cdn.jtvnw.net/jtv_user_pictures/7b80dc21-208c-4cf5-bfdb-9dbde86a3e99-profile_image-300x300.png",
   "jedi_megaman": "https://static-cdn.jtvnw.net/jtv_user_pictures/9b12dbbb-b668-46fc-a4a4-512a2276b825-profile_image-300x300.png",
   "jellystarlite": "https://static-cdn.jtvnw.net/jtv_user_pictures/28c9d4d6-b3bf-448d-88d7-b3151fba9dce-profile_image-300x300.jpeg",
   "jonvaldr": "https://static-cdn.jtvnw.net/jtv_user_pictures/e7baec14-8bc1-4e7c-a6b7-8559b1143880-profile_image-300x300.png",
@@ -218,6 +221,7 @@
   "tiwaz_rebel": "https://static-cdn.jtvnw.net/jtv_user_pictures/32991434-63eb-4b04-bf84-81d3e82896c5-profile_image-300x300.png",
   "tjayrocket": "https://static-cdn.jtvnw.net/jtv_user_pictures/ff9450b0-2eaa-4b43-83dc-76f8986224ed-profile_image-300x300.png",
   "trashcat_heckin_chonker": "https://static-cdn.jtvnw.net/user-default-pictures-uv/dbdc9198-def8-11e9-8681-784f43822e80-profile_image-300x300.png",
+  "trashrandicoot": "https://static-cdn.jtvnw.net/jtv_user_pictures/b842f107-9532-4107-a5f5-90d7bb11b0ec-profile_image-300x300.jpeg",
   "trichome79": "https://static-cdn.jtvnw.net/jtv_user_pictures/bfe6c36d-3365-4b1e-abb5-3ede34b47a92-profile_image-300x300.jpeg",
   "triple_06": "https://static-cdn.jtvnw.net/jtv_user_pictures/96d79f00-327b-4793-8266-8d307799512b-profile_image-300x300.png",
   "twotuxi": "https://static-cdn.jtvnw.net/jtv_user_pictures/774e35f5-262f-4bd1-81e0-0dc0d2b92b20-profile_image-300x300.png",
@@ -758,12 +762,12 @@
   {
    "art": "art/sony-playstation-2/final-fantasy-xi-online.webp",
    "art_kind": "box",
-   "count": 49,
+   "count": 57,
    "platform": "Sony PlayStation 2",
    "title": "Final Fantasy XI Online"
   }
  ],
- "generated_at": 1788805500,
+ "generated_at": 1788806700,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -1676,6 +1680,11 @@
    ]
   ],
   "baraquartz": [
+   [
+    73,
+    1788805889,
+    "2026-09-07"
+   ],
    [
     49,
     1788232333,
@@ -6709,6 +6718,13 @@
     "2026-08-31"
    ]
   ],
+  "goliath83_": [
+   [
+    73,
+    1788805768,
+    "2026-09-07"
+   ]
+  ],
   "goronmegazord": [
    [
     70,
@@ -7182,6 +7198,11 @@
   ],
   "gypsy_darling": [
    [
+    73,
+    1788806251,
+    "2026-09-07"
+   ],
+   [
     28,
     1788547173,
     "2026-09-04"
@@ -7460,6 +7481,13 @@
     32,
     1788197811,
     "2026-08-31"
+   ]
+  ],
+  "haggardhessian": [
+   [
+    73,
+    1788805647,
+    "2026-09-07"
    ]
   ],
   "hank_hill_x": [
@@ -8623,6 +8651,13 @@
     51,
     1788236283,
     "2026-08-31"
+   ]
+  ],
+  "jdbrechtel": [
+   [
+    73,
+    1788805768,
+    "2026-09-07"
    ]
   ],
   "jedi_megaman": [
@@ -9871,6 +9906,11 @@
   ],
   "lilpockivt": [
    [
+    73,
+    1788805527,
+    "2026-09-07"
+   ],
+   [
     41,
     1788209244,
     "2026-08-31"
@@ -11015,6 +11055,11 @@
    ]
   ],
   "motu_247365": [
+   [
+    73,
+    1788805768,
+    "2026-09-07"
+   ],
    [
     28,
     1788547173,
@@ -19120,6 +19165,13 @@
     "2026-09-02"
    ]
   ],
+  "trashrandicoot": [
+   [
+    73,
+    1788805647,
+    "2026-09-07"
+   ]
+  ],
   "trichome79": [
    [
     31,
@@ -20108,12 +20160,12 @@
   "art_box": 70,
   "art_cart": 4,
   "art_none": 0,
-  "entries": 3770,
+  "entries": 3778,
   "first_ts": 1788197811,
   "games": 74,
-  "last_ts": 1788804924,
+  "last_ts": 1788806251,
   "platforms": 29,
-  "viewers": 242
+  "viewers": 246
  },
  "tagline": "Every game you were in the room for."
 }
