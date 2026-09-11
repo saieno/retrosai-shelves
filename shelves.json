@@ -377,7 +377,7 @@
   },
   {
    "art": "art/steam/iracing-arcade.webp",
-   "art_kind": "cart",
+   "art_kind": "box",
    "count": 42,
    "platform": "Steam",
    "title": "iRacing Arcade"
@@ -398,14 +398,14 @@
   },
   {
    "art": "art/steam/final-fantasy-iv.webp",
-   "art_kind": "cart",
+   "art_kind": "box",
    "count": 43,
    "platform": "Steam",
    "title": "Final Fantasy IV"
   },
   {
    "art": "art/steam/castlevania-revamped.webp",
-   "art_kind": "cart",
+   "art_kind": "box",
    "count": 41,
    "platform": "Steam",
    "title": "Castlevania ReVamped"
@@ -699,7 +699,7 @@
   },
   {
    "art": "art/steam/taxi-racer-london-2.webp",
-   "art_kind": "cart",
+   "art_kind": "box",
    "count": 23,
    "platform": "Steam",
    "title": "Taxi Racer London 2"
@@ -768,7 +768,7 @@
    "title": "Final Fantasy XI Online"
   }
  ],
- "generated_at": 1788807900,
+ "generated_at": 1789119392,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -20165,8 +20165,8 @@
  "site": "RetroSai Shelves",
  "stats": {
   "art": 74,
-  "art_box": 70,
-  "art_cart": 4,
+  "art_box": 74,
+  "art_cart": 0,
   "art_none": 0,
   "entries": 3779,
   "first_ts": 1788197811,
