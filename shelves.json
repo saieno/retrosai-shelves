@@ -95,6 +95,7 @@
   "guiniguy": "https://static-cdn.jtvnw.net/jtv_user_pictures/a76f4c96-3948-4246-ac08-058c9419bfe3-profile_image-300x300.png",
   "gypsy_darling": "https://static-cdn.jtvnw.net/jtv_user_pictures/f535976f-4936-4df5-81bc-5b610e252597-profile_image-300x300.png",
   "haggardhessian": "https://static-cdn.jtvnw.net/jtv_user_pictures/6c39187e-275e-452f-80bd-427af64d6054-profile_image-300x300.png",
+  "handalfthebae": "https://static-cdn.jtvnw.net/jtv_user_pictures/9955087f-932c-4c0c-bce2-559fca320170-profile_image-300x300.png",
   "hank_hill_x": "https://static-cdn.jtvnw.net/jtv_user_pictures/9583f7fd-6517-4c34-8511-9f7d7cd51c58-profile_image-300x300.png",
   "harold_the_hatter": "https://static-cdn.jtvnw.net/jtv_user_pictures/7c5f16fa-84c6-4cb0-b25c-f4d8b87574e4-profile_image-300x300.png",
   "henryhjr": "https://static-cdn.jtvnw.net/jtv_user_pictures/089f12d2-92df-45c6-9363-c7429b500133-profile_image-300x300.jpeg",
@@ -782,12 +783,12 @@
   {
    "art": "art/steam/final-fantasy-vii.webp",
    "art_kind": "box",
-   "count": 82,
+   "count": 83,
    "platform": "Steam",
    "title": "Final Fantasy VII"
   }
  ],
- "generated_at": 1789158300,
+ "generated_at": 1789159500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -7626,6 +7627,13 @@
     73,
     1788805647,
     "2026-09-07"
+   ]
+  ],
+  "handalfthebae": [
+   [
+    74,
+    1789158442,
+    "2026-09-11"
    ]
   ],
   "hank_hill_x": [
@@ -20625,12 +20633,12 @@
   "art_box": 75,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 3861,
+  "entries": 3862,
   "first_ts": 1788197811,
   "games": 75,
-  "last_ts": 1789158201,
+  "last_ts": 1789158442,
   "platforms": 29,
-  "viewers": 261
+  "viewers": 262
  },
  "tagline": "Every game you were in the room for."
 }
