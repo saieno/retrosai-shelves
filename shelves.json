@@ -30,6 +30,7 @@
   "blupeesandrupees": "https://static-cdn.jtvnw.net/jtv_user_pictures/5db37de9-07f8-442a-aded-75719fd73d30-profile_image-300x300.png",
   "brandisandre": "https://static-cdn.jtvnw.net/jtv_user_pictures/f932e133-658c-4805-8927-835e474e3c44-profile_image-300x300.png",
   "breadman_leon": "https://static-cdn.jtvnw.net/jtv_user_pictures/9a15a7cf-1b39-4ad6-b5a9-8e8ab1f1a549-profile_image-300x300.png",
+  "briarknowledge": "https://static-cdn.jtvnw.net/jtv_user_pictures/a8bd767e-a43e-4a9a-92e9-8993035904e3-profile_image-300x300.png",
   "busybeebry": "https://static-cdn.jtvnw.net/jtv_user_pictures/283771f4-ee11-4212-bc5c-616d206d184b-profile_image-300x300.png",
   "caiyanoregiggles": "https://static-cdn.jtvnw.net/jtv_user_pictures/a6a37007-0f50-4e20-8313-e65521a174ae-profile_image-300x300.png",
   "cascaly1": "https://static-cdn.jtvnw.net/jtv_user_pictures/4d949146-1639-4fd7-9c54-2fe6ccfac889-profile_image-300x300.png",
@@ -779,12 +780,12 @@
   {
    "art": "art/steam/final-fantasy-vii.webp",
    "art_kind": "box",
-   "count": 56,
+   "count": 64,
    "platform": "Steam",
    "title": "Final Fantasy VII"
   }
  ],
- "generated_at": 1789151100,
+ "generated_at": 1789152300,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -2093,6 +2094,11 @@
   ],
   "berserk_dark_cacao": [
    [
+    74,
+    1789151444,
+    "2026-09-11"
+   ],
+   [
     73,
     1788802994,
     "2026-09-07"
@@ -2773,6 +2779,13 @@
     60,
     1788370848,
     "2026-09-02"
+   ]
+  ],
+  "briarknowledge": [
+   [
+    74,
+    1789151926,
+    "2026-09-11"
    ]
   ],
   "busybeebry": [
@@ -6215,6 +6228,11 @@
   ],
   "gamehawk55": [
    [
+    74,
+    1789151806,
+    "2026-09-11"
+   ],
+   [
     28,
     1788547173,
     "2026-09-04"
@@ -8490,6 +8508,11 @@
    ]
   ],
   "illfinity": [
+   [
+    74,
+    1789151564,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -11065,6 +11088,11 @@
   ],
   "mistyrosey": [
    [
+    74,
+    1789151444,
+    "2026-09-11"
+   ],
+   [
     5,
     1788375527,
     "2026-09-02"
@@ -11495,6 +11523,11 @@
    ]
   ],
   "myartismyarsenal": [
+   [
+    74,
+    1789152288,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -16437,6 +16470,11 @@
   ],
   "spacexmike": [
    [
+    74,
+    1789151685,
+    "2026-09-11"
+   ],
+   [
     64,
     1788794570,
     "2026-09-07"
@@ -17641,6 +17679,11 @@
    ]
   ],
   "th3_mupp3t": [
+   [
+    74,
+    1789152168,
+    "2026-09-11"
+   ],
    [
     29,
     1788227397,
@@ -20486,12 +20529,12 @@
   "art_box": 75,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 3835,
+  "entries": 3843,
   "first_ts": 1788197811,
   "games": 75,
-  "last_ts": 1789150840,
+  "last_ts": 1789152288,
   "platforms": 29,
-  "viewers": 258
+  "viewers": 259
  },
  "tagline": "Every game you were in the room for."
 }
