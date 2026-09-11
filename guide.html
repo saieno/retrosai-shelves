@@ -174,8 +174,10 @@
     trivia pays <span class="tok">25</span>, Name That Game pays
     <span class="tok">150 / 75</span> for 1st / 2nd, Price Is Right pays
     <span class="tok">200</span> (+<span class="tok">100</span> for a
-    near-exact price), and Higher or Lower pays <span class="tok">40</span>
-    to everyone who calls it.</li>
+    near-exact price), Higher or Lower pays <span class="tok">40</span>
+    to everyone who calls it, and Guess That Game pays
+    <span class="tok">500</span> down to <span class="tok">50</span>
+    depending on how early you name it.</li>
     <li><b>Winning duels</b> — take the other player's wager, up to
     <span class="tok">500</span> a pop.</li>
   </ul>
@@ -208,9 +210,10 @@
 
 <section id="games">
   <h2>04 · THE CHAT GAMES</h2>
-  <p>All four run right on the stream overlay. Price Is Right, Name That
-  Game and Higher or Lower are started by <span class="coin">Coin</span>
-  redeems (200 each), so chat decides when a round happens.</p>
+  <p>All five run right on the stream overlay. Price Is Right, Name That
+  Game, Higher or Lower and Guess That Game are started by
+  <span class="coin">Coin</span> redeems, so chat decides when a round
+  happens.</p>
 
   <h3>🏷️ Price Is Right — 200 Coins</h3>
   <ol>
@@ -281,6 +284,33 @@
     <figure><img src="guide_assets/hol-reveal.webp" alt="Higher or Lower reveal" loading="lazy">
     <figcaption>The reveal: both prices, the split, the winners.</figcaption></figure>
   </div>
+
+  <h3>🔎 Guess That Game — 500 Coins</h3>
+  <ol>
+    <li><b>Six clues, 20 seconds each</b>, about one game from the library. It
+    starts with a tiny window of a gameplay screenshot and a one-line hint
+    ("A 1995 single-player role-playing game"), then the window pulls back
+    and facts pile up: developer, publisher, platform, players, rating, a
+    masked description with every name blacked out, a did-you-know fact.
+    Clue 6 fades in the cart, the logo and the box.</li>
+    <li><b>Guess in plain chat, as often as you like.</b> No command — just
+    type the name. Your <b>first correct answer</b> is the one that counts,
+    and nothing confirms it mid-round: the panel only shows how many people
+    have solved it so far.</li>
+    <li>The earlier you name it, the more you earn: <span class="tok">500</span>
+    on clue 1, then <span class="tok">400 / 300 / 200 / 100</span>, and
+    <span class="tok">50</span> on the final reveal. Everyone who gets it is
+    paid — there is no race for a podium.</li>
+  </ol>
+  <div class="callout">
+    <b>It never uses the game on screen</b>, and the panel dresses in the
+    colours of whatever console the stream is on — not the mystery game's,
+    so the frame gives nothing away.
+  </div>
+  <figure><img src="guide_assets/gtg-clue.webp" alt="Guess That Game, clue three" loading="lazy">
+  <figcaption>Clue 3 of 6: a wider window of the screenshot, the masked description, the facts so far.</figcaption></figure>
+  <figure><img src="guide_assets/gtg-reveal.webp" alt="Guess That Game reveal" loading="lazy">
+  <figcaption>The answer card: cart, logo, box, the title and every solver with the clue they landed on.</figcaption></figure>
 
   <h3>🧠 Trivia — free</h3>
   <p>Trivia fires during ad breaks (so there is always something to do): a
@@ -411,6 +441,9 @@
     <tr><td><b>Higher or Lower</b></td><td class="num"><span class="coin">200</span></td>
         <td>Starts a <a href="#games">Higher or Lower</a> round — two games,
         one price shown, chat votes which is worth more.</td></tr>
+    <tr><td><b>Guess That Game</b></td><td class="num"><span class="coin">500</span></td>
+        <td>Starts a <a href="#games">Guess That Game</a> round — six clues
+        about one game, guess in plain chat, earlier is worth more.</td></tr>
     <tr><td><b>Add Game to Backlog</b></td><td class="num"><span class="coin">500</span></td>
         <td>Type a game → it lands on <a href="#backlog">the backlog</a> with your vote.
         Unrecognised titles are refunded.</td></tr>
@@ -427,12 +460,12 @@
   <figure><img src="guide_assets/wheel.webp" alt="Wheel of Nostalgia" loading="lazy">
   <figcaption>The Wheel of Nostalgia — argue with the result, it won't care.</figcaption></figure>
   <p><b>No game on screen, no game redeems.</b> Price Is Right, Name That Game,
-  Higher or Lower, Game Info, Did You Know?, Game Details and the Wheel are
-  paused during intros, outros,
+  Higher or Lower, Guess That Game, Game Info, Did You Know?, Game Details
+  and the Wheel are paused during intros, outros,
   breaks, reaction segments and raid landings — redeem one then and it is
   refused and refunded, with one line in chat saying so.</p>
   <p class="muted">Check-In, Game Queue Request and the Wheel are priced in the
-  Twitch dashboard and can shift; the other seven are fixed.</p>
+  Twitch dashboard and can shift; the other eight are fixed.</p>
 </section>
 
 <section id="commands">
@@ -454,6 +487,7 @@
     <tr><td><code>!duelaccept</code> / <code>!dueldecline</code></td><td>Answer a challenge (60s).</td></tr>
     <tr><td><code>!guess &lt;price&gt;</code></td><td>Your Price Is Right guess — <code>$</code> optional.</td></tr>
     <tr><td><code>higher</code> / <code>lower</code> <span class="muted">(plain chat)</span></td><td>Your Higher or Lower vote — just the word; <code>more</code> / <code>less</code> or <code>A</code> / <code>B</code> work too. First vote counts.</td></tr>
+    <tr><td>a game's name <span class="muted">(plain chat)</span></td><td>Your Guess That Game guess — as many as you like; your first correct one counts, paid by the clue it lands on.</td></tr>
     <tr><td><code>!shelf</code></td><td>Your game-shelf count + link.</td></tr>
     <tr><td><code>!queue</code> <span class="muted">(!q)</span></td><td>The current game queue.</td></tr>
     <tr><td><code>!qcd</code></td><td>Your Game Queue Request cooldown.</td></tr>
@@ -483,7 +517,7 @@
     <a href="https://saieno.github.io/retrosai-gamelist/">Game Library</a>
     <a href="https://twitch.tv/retrosaieno">Twitch</a>
   </div>
-  <div>RetroSai Arcade Guide · updated 2026-09-07 · overlay screenshots are the real thing.</div>
+  <div>RetroSai Arcade Guide · updated 2026-09-11 · overlay screenshots are the real thing.</div>
 </footer>
 
 </div>
