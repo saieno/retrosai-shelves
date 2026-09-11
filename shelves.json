@@ -130,6 +130,7 @@
   "lfuns": "https://static-cdn.jtvnw.net/jtv_user_pictures/90628309-584f-488e-b0e4-3cd80be59d89-profile_image-300x300.png",
   "lidiavtuber": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d53e5e5-51b7-4416-9a0c-4c28a1c46ca9-profile_image-300x300.png",
   "lilpockivt": "https://static-cdn.jtvnw.net/jtv_user_pictures/40cbcdde-77d1-4836-bebc-bc7f299e2945-profile_image-300x300.png",
+  "littlecynic": "https://static-cdn.jtvnw.net/jtv_user_pictures/fed587b0-af27-404f-809f-5070b3368e50-profile_image-300x300.png",
   "lordseliph": "https://static-cdn.jtvnw.net/jtv_user_pictures/b8e0667e-eb1b-403d-a51d-59f7a8aad838-profile_image-300x300.png",
   "loreaxe253": "https://static-cdn.jtvnw.net/jtv_user_pictures/eeecb4f3-7ab8-4d21-bf57-87805247cc71-profile_image-300x300.png",
   "ls_sandy": "https://static-cdn.jtvnw.net/jtv_user_pictures/5e81a8ec-e3d3-439e-867e-64c31bba5f8b-profile_image-300x300.png",
@@ -780,12 +781,12 @@
   {
    "art": "art/steam/final-fantasy-vii.webp",
    "art_kind": "box",
-   "count": 64,
+   "count": 68,
    "platform": "Steam",
    "title": "Final Fantasy VII"
   }
  ],
- "generated_at": 1789152300,
+ "generated_at": 1789153500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -4663,6 +4664,11 @@
    ]
   ],
   "doc_jerriko": [
+   [
+    74,
+    1789153254,
+    "2026-09-11"
+   ],
    [
     28,
     1788547173,
@@ -9096,6 +9102,11 @@
   ],
   "justjame__": [
    [
+    74,
+    1789152771,
+    "2026-09-11"
+   ],
+   [
     30,
     1788229396,
     "2026-08-31"
@@ -10109,6 +10120,13 @@
     39,
     1788205131,
     "2026-08-31"
+   ]
+  ],
+  "littlecynic": [
+   [
+    74,
+    1789153254,
+    "2026-09-11"
    ]
   ],
   "lordseliph": [
@@ -12386,6 +12404,11 @@
    ]
   ],
   "opulentmyzery": [
+   [
+    74,
+    1789153495,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -20529,12 +20552,12 @@
   "art_box": 75,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 3843,
+  "entries": 3847,
   "first_ts": 1788197811,
   "games": 75,
-  "last_ts": 1789152288,
+  "last_ts": 1789153495,
   "platforms": 29,
-  "viewers": 259
+  "viewers": 260
  },
  "tagline": "Every game you were in the room for."
 }
