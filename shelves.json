@@ -781,12 +781,12 @@
   {
    "art": "art/steam/final-fantasy-vii.webp",
    "art_kind": "box",
-   "count": 73,
+   "count": 74,
    "platform": "Steam",
    "title": "Final Fantasy VII"
   }
  ],
- "generated_at": 1789154700,
+ "generated_at": 1789155900,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -3507,6 +3507,11 @@
    ]
   ],
   "courtney_a_ok": [
+   [
+    74,
+    1789154943,
+    "2026-09-11"
+   ],
    [
     7,
     1788797009,
@@ -20577,10 +20582,10 @@
   "art_box": 75,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 3852,
+  "entries": 3853,
   "first_ts": 1788197811,
   "games": 75,
-  "last_ts": 1789154460,
+  "last_ts": 1789154943,
   "platforms": 29,
   "viewers": 260
  },
