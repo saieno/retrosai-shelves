@@ -69,6 +69,7 @@
   "epibox": "https://static-cdn.jtvnw.net/jtv_user_pictures/99fa54f9-ae6c-406c-9279-fe7c73076da2-profile_image-300x300.png",
   "erdo_maestro": "https://static-cdn.jtvnw.net/jtv_user_pictures/3bd39d57-8f37-4c18-9485-95a9c44948c8-profile_image-300x300.png",
   "eternalarcade": "https://static-cdn.jtvnw.net/jtv_user_pictures/43f1ddaa-0058-40a6-8261-922178df91f3-profile_image-300x300.png",
+  "fenanigans": "https://static-cdn.jtvnw.net/jtv_user_pictures/cdb86792-cb01-4fb8-9c84-495ab443666a-profile_image-300x300.png",
   "finneasfire": "https://static-cdn.jtvnw.net/jtv_user_pictures/473d0be8-96f6-449e-920e-1a03745f1de6-profile_image-300x300.png",
   "fitness__guru": "https://static-cdn.jtvnw.net/jtv_user_pictures/917a0218-aa82-468c-9817-b491e4cbfcf6-profile_image-300x300.jpeg",
   "flyingdutchmanmario": "https://static-cdn.jtvnw.net/jtv_user_pictures/e8a4f2eb-ee18-4671-86db-b7ce1b72c9ba-profile_image-300x300.png",
@@ -114,6 +115,7 @@
   "kanarietta": "https://static-cdn.jtvnw.net/jtv_user_pictures/e49b0e4f-3c28-459d-9b0d-9c783b4fa26c-profile_image-300x300.png",
   "kawaiimeowmeow": "https://static-cdn.jtvnw.net/jtv_user_pictures/5f9a991b-30ee-441f-b7ea-60d39ca770c3-profile_image-300x300.png",
   "keanu_thieves": "https://static-cdn.jtvnw.net/jtv_user_pictures/f43480a3-7eb3-404b-abbb-79b08cda4187-profile_image-300x300.jpeg",
+  "kelderoc": "https://static-cdn.jtvnw.net/jtv_user_pictures/593560fa-0ef3-4821-afd0-2ed308711a96-profile_image-300x300.png",
   "kerrplunk_": "https://static-cdn.jtvnw.net/jtv_user_pictures/e06bebeb-d8b2-447e-aa04-61e11a4f2fa9-profile_image-300x300.png",
   "krausergetsnaked4k": "https://static-cdn.jtvnw.net/jtv_user_pictures/bd35909e-5247-44f8-9036-3fe515e74799-profile_image-300x300.png",
   "kuwanger_x": "https://static-cdn.jtvnw.net/jtv_user_pictures/73c89851-3e2b-4c53-910c-7ec17b399832-profile_image-300x300.png",
@@ -769,12 +771,12 @@
   {
    "art": "art/steam/final-fantasy-vii.webp",
    "art_kind": "box",
-   "count": 26,
+   "count": 37,
    "platform": "Steam",
    "title": "Final Fantasy VII"
   }
  ],
- "generated_at": 1789147500,
+ "generated_at": 1789148700,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -1961,6 +1963,11 @@
   ],
   "belovedmidna": [
    [
+    74,
+    1789148548,
+    "2026-09-11"
+   ],
+   [
     5,
     1788375527,
     "2026-09-02"
@@ -2648,6 +2655,11 @@
    ]
   ],
   "blitzbrom": [
+   [
+    74,
+    1789147584,
+    "2026-09-11"
+   ],
    [
     29,
     1788227397,
@@ -3691,6 +3703,11 @@
   ],
   "crovera420": [
    [
+    74,
+    1789147704,
+    "2026-09-11"
+   ],
+   [
     73,
     1788803115,
     "2026-09-07"
@@ -4277,6 +4294,11 @@
    ]
   ],
   "dango_rangus": [
+   [
+    74,
+    1789148186,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -5596,6 +5618,11 @@
   ],
   "erdo_maestro": [
    [
+    74,
+    1789147584,
+    "2026-09-11"
+   ],
+   [
     6,
     1788538816,
     "2026-09-04"
@@ -5636,6 +5663,13 @@
     8,
     1788219850,
     "2026-08-31"
+   ]
+  ],
+  "fenanigans": [
+   [
+    74,
+    1789147825,
+    "2026-09-11"
    ]
   ],
   "finneasfire": [
@@ -6937,6 +6971,11 @@
    ]
   ],
   "guiniguy": [
+   [
+    74,
+    1789147704,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -9051,6 +9090,13 @@
     50,
     1788234832,
     "2026-08-31"
+   ]
+  ],
+  "kelderoc": [
+   [
+    74,
+    1789147584,
+    "2026-09-11"
    ]
   ],
   "kerrplunk_": [
@@ -13194,6 +13240,11 @@
   ],
   "purplevoided": [
    [
+    74,
+    1789148307,
+    "2026-09-11"
+   ],
+   [
     65,
     1788795521,
     "2026-09-07"
@@ -13623,6 +13674,11 @@
    ]
   ],
   "reunitebedpan": [
+   [
+    74,
+    1789148186,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -17554,6 +17610,11 @@
   ],
   "that_one_persona": [
    [
+    74,
+    1789147825,
+    "2026-09-11"
+   ],
+   [
     73,
     1788802472,
     "2026-09-07"
@@ -20306,12 +20367,12 @@
   "art_box": 75,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 3805,
+  "entries": 3816,
   "first_ts": 1788197811,
   "games": 75,
-  "last_ts": 1789147463,
+  "last_ts": 1789148548,
   "platforms": 29,
-  "viewers": 248
+  "viewers": 250
  },
  "tagline": "Every game you were in the room for."
 }
