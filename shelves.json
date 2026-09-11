@@ -161,6 +161,7 @@
   "philadelphiacolons": "https://static-cdn.jtvnw.net/jtv_user_pictures/913a0f35-a535-4be8-af55-48060a7f93b4-profile_image-300x300.png",
   "pjb_420": "https://static-cdn.jtvnw.net/jtv_user_pictures/e24fe980-6b5b-499c-bc08-4c92905bf07e-profile_image-300x300.png",
   "pmo659": "https://static-cdn.jtvnw.net/jtv_user_pictures/d4743491-ae5d-41c1-a369-ae3e488fccb0-profile_image-300x300.jpeg",
+  "poe__the__raven": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d672734-39a2-42d3-adb2-b3922fae771f-profile_image-300x300.png",
   "possibly_ashley": "https://static-cdn.jtvnw.net/jtv_user_pictures/a2bbda9b-6c97-4698-90c5-75d319fa07e3-profile_image-300x300.png",
   "puelz": "https://static-cdn.jtvnw.net/jtv_user_pictures/db5d87fb-9b6c-4bdb-b1eb-9866559bd81f-profile_image-300x300.png",
   "purplevoided": "https://static-cdn.jtvnw.net/jtv_user_pictures/b313cc7e-bd22-4f8e-baca-d8f02cf9aafb-profile_image-300x300.png",
@@ -193,6 +194,7 @@
   "soleindecision": "https://static-cdn.jtvnw.net/jtv_user_pictures/soleindecision-profile_image-1b9e7cdcbbfe18bb-300x300.jpeg",
   "spacexmike": "https://static-cdn.jtvnw.net/jtv_user_pictures/2e235e5c-9bbc-46c9-8644-b8382fed1505-profile_image-300x300.png",
   "spencermcelrea": "https://static-cdn.jtvnw.net/jtv_user_pictures/b913e07f-c434-4384-83c0-fc8230fce77e-profile_image-300x300.png",
+  "spookygirl_boo": "https://static-cdn.jtvnw.net/jtv_user_pictures/816a3468-ef6a-407b-ad24-acb067c581fa-profile_image-300x300.png",
   "spoophy": "https://static-cdn.jtvnw.net/jtv_user_pictures/5a72c3e0-1702-4b80-a87a-8ae277588f36-profile_image-300x300.png",
   "squaresoftgoldenjrpgera": "https://static-cdn.jtvnw.net/jtv_user_pictures/64723ea4-966c-4a74-8cdb-380aa4676555-profile_image-300x300.png",
   "star_lord90tv": "https://static-cdn.jtvnw.net/jtv_user_pictures/ca92bcf7-baa4-4700-b606-a8375034cb7a-profile_image-300x300.png",
@@ -771,12 +773,12 @@
   {
    "art": "art/steam/final-fantasy-vii.webp",
    "art_kind": "box",
-   "count": 37,
+   "count": 44,
    "platform": "Steam",
    "title": "Final Fantasy VII"
   }
  ],
- "generated_at": 1789148700,
+ "generated_at": 1789149900,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -9108,6 +9110,11 @@
   ],
   "krausergetsnaked4k": [
    [
+    74,
+    1789149754,
+    "2026-09-11"
+   ],
+   [
     40,
     1788208506,
     "2026-08-31"
@@ -10748,6 +10755,11 @@
    ]
   ],
   "mistressmercy": [
+   [
+    74,
+    1789149633,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -13037,6 +13049,13 @@
     7,
     1788797087,
     "2026-09-07"
+   ]
+  ],
+  "poe__the__raven": [
+   [
+    74,
+    1789148910,
+    "2026-09-11"
    ]
   ],
   "possibly_ashley": [
@@ -15657,6 +15676,11 @@
   ],
   "shaun_da_bomb": [
    [
+    74,
+    1789149754,
+    "2026-09-11"
+   ],
+   [
     65,
     1788795038,
     "2026-09-07"
@@ -16432,6 +16456,13 @@
     "2026-08-31"
    ]
   ],
+  "spookygirl_boo": [
+   [
+    74,
+    1789149633,
+    "2026-09-11"
+   ]
+  ],
   "spoophy": [
    [
     41,
@@ -16881,6 +16912,11 @@
    ]
   ],
   "stellardeth": [
+   [
+    74,
+    1789149392,
+    "2026-09-11"
+   ],
    [
     73,
     1788802472,
@@ -19947,6 +19983,11 @@
   ],
   "x33843": [
    [
+    74,
+    1789149633,
+    "2026-09-11"
+   ],
+   [
     73,
     1788802472,
     "2026-09-07"
@@ -20367,12 +20408,12 @@
   "art_box": 75,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 3816,
+  "entries": 3823,
   "first_ts": 1788197811,
   "games": 75,
-  "last_ts": 1789148548,
+  "last_ts": 1789149754,
   "platforms": 29,
-  "viewers": 250
+  "viewers": 252
  },
  "tagline": "Every game you were in the room for."
 }
