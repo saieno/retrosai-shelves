@@ -261,6 +261,7 @@
   "triple_06": "https://static-cdn.jtvnw.net/jtv_user_pictures/96d79f00-327b-4793-8266-8d307799512b-profile_image-300x300.png",
   "twotuxi": "https://static-cdn.jtvnw.net/jtv_user_pictures/774e35f5-262f-4bd1-81e0-0dc0d2b92b20-profile_image-300x300.png",
   "uhleesuhplays": "https://static-cdn.jtvnw.net/jtv_user_pictures/dde81bec-39c3-4dcf-a84b-8f0b849d7ce5-profile_image-300x300.png",
+  "uksagamerz": "https://static-cdn.jtvnw.net/jtv_user_pictures/87957df7-9277-4de2-96cb-668fb4dbe6c2-profile_image-300x300.png",
   "uncleqc": "https://static-cdn.jtvnw.net/jtv_user_pictures/fb139b4d-a149-40f5-b82a-403d905fc6e7-profile_image-300x300.png",
   "vaatirabbit": "https://static-cdn.jtvnw.net/jtv_user_pictures/99afe8f2-30ab-49cf-a1c8-013c36dacee0-profile_image-300x300.png",
   "vanosdelgaia": "https://static-cdn.jtvnw.net/jtv_user_pictures/057c58f2-4dff-4aa9-9920-56e4155c8cf8-profile_image-300x300.png",
@@ -930,12 +931,12 @@
   {
    "art": "art/nintendo-64/kirby-64-the-crystal-shards.webp",
    "art_kind": "box",
-   "count": 50,
+   "count": 53,
    "platform": "Nintendo 64",
    "title": "Kirby 64: The Crystal Shards"
   }
  ],
- "generated_at": 1789178100,
+ "generated_at": 1789179300,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -12656,6 +12657,11 @@
    ]
   ],
   "malebox_": [
+   [
+    92,
+    1789178442,
+    "2026-09-11"
+   ],
    [
     91,
     1789177596,
@@ -24390,6 +24396,11 @@
   ],
   "trapunzelxxx": [
    [
+    92,
+    1789179046,
+    "2026-09-11"
+   ],
+   [
     80,
     1788806854,
     "2026-09-07"
@@ -24635,6 +24646,13 @@
     59,
     1788237008,
     "2026-08-31"
+   ]
+  ],
+  "uksagamerz": [
+   [
+    92,
+    1789178925,
+    "2026-09-11"
    ]
   ],
   "uncleqc": [
@@ -25547,12 +25565,12 @@
   "art_box": 93,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 4807,
+  "entries": 4810,
   "first_ts": 1788197811,
   "games": 93,
-  "last_ts": 1789178079,
+  "last_ts": 1789179046,
   "platforms": 30,
-  "viewers": 283
+  "viewers": 284
  },
  "tagline": "Every game you were in the room for."
 }
