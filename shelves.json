@@ -527,7 +527,7 @@
   {
    "art": "art/microsoft-xbox-one/mouse-p-i-for-hire.webp",
    "art_kind": "box",
-   "count": 63,
+   "count": 64,
    "platform": "Microsoft Xbox One",
    "title": "Mouse: P.I. For Hire"
   },
@@ -1001,7 +1001,7 @@
    "title": "Megamania"
   }
  ],
- "generated_at": 1789188900,
+ "generated_at": 1789233300,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -22937,6 +22937,11 @@
   ],
   "stellardeth": [
    [
+    33,
+    1789189314,
+    "2026-09-12"
+   ],
+   [
     84,
     1789166926,
     "2026-09-11"
@@ -27718,10 +27723,10 @@
   "art_box": 101,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 5224,
+  "entries": 5225,
   "first_ts": 1788197811,
   "games": 101,
-  "last_ts": 1789188831,
+  "last_ts": 1789189314,
   "platforms": 31,
   "viewers": 293
  },
