@@ -931,12 +931,12 @@
   {
    "art": "art/nintendo-64/kirby-64-the-crystal-shards.webp",
    "art_kind": "box",
-   "count": 53,
+   "count": 56,
    "platform": "Nintendo 64",
    "title": "Kirby 64: The Crystal Shards"
   }
  ],
- "generated_at": 1789179300,
+ "generated_at": 1789180500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -6877,6 +6877,11 @@
    ]
   ],
   "erdo_maestro": [
+   [
+    92,
+    1789180255,
+    "2026-09-11"
+   ],
    [
     81,
     1789147584,
@@ -12965,6 +12970,11 @@
   ],
   "mastermax165": [
    [
+    92,
+    1789180134,
+    "2026-09-11"
+   ],
+   [
     28,
     1788547173,
     "2026-09-04"
@@ -16550,6 +16560,11 @@
    ]
   ],
   "purplevoided": [
+   [
+    92,
+    1789179892,
+    "2026-09-11"
+   ],
    [
     34,
     1789173729,
@@ -25565,10 +25580,10 @@
   "art_box": 93,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 4810,
+  "entries": 4813,
   "first_ts": 1788197811,
   "games": 93,
-  "last_ts": 1789179046,
+  "last_ts": 1789180255,
   "platforms": 30,
   "viewers": 284
  },
