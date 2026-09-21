@@ -86,6 +86,7 @@
   "fuyu_fleur": "https://static-cdn.jtvnw.net/jtv_user_pictures/8da5694c-ceec-495b-a85c-4e8655076b9c-profile_image-300x300.png",
   "gamehawk55": "https://static-cdn.jtvnw.net/jtv_user_pictures/67deacae-2eeb-473d-a1c2-e26165714feb-profile_image-300x300.png",
   "gatto": "https://static-cdn.jtvnw.net/jtv_user_pictures/093202cb-3153-49cf-aea0-4e6de93843c6-profile_image-300x300.png",
+  "gavitrongaming": "https://static-cdn.jtvnw.net/jtv_user_pictures/5ef5fae9-b483-4ac1-a903-76b094c24041-profile_image-300x300.png",
   "georgegelinas": "https://static-cdn.jtvnw.net/jtv_user_pictures/1a208a50-58f7-425e-b748-fbdf8827dad9-profile_image-300x300.png",
   "ghost416": "https://static-cdn.jtvnw.net/jtv_user_pictures/daadbecb-39d7-4fcd-8f8a-a6b8801a6f56-profile_image-300x300.png",
   "ghost_raccoon07": "https://static-cdn.jtvnw.net/jtv_user_pictures/6c4747d8-7da8-4d19-9532-c32e50e7a74d-profile_image-300x300.png",
@@ -155,6 +156,7 @@
   "mastermax165": "https://static-cdn.jtvnw.net/jtv_user_pictures/5c6c4d8a-aac0-45e8-84b2-1915c4e90ce5-profile_image-300x300.png",
   "mathgss1": "https://static-cdn.jtvnw.net/jtv_user_pictures/9fdd3cfc-877f-4344-8e55-9133b2b48042-profile_image-300x300.png",
   "mcgames": "https://static-cdn.jtvnw.net/jtv_user_pictures/d53db35e-b88a-4601-8818-a6cd61f31a7b-profile_image-300x300.png",
+  "medtech85": "https://static-cdn.jtvnw.net/user-default-pictures-uv/215b7342-def9-11e9-9a66-784f43822e80-profile_image-300x300.png",
   "millhouse1119": "https://static-cdn.jtvnw.net/jtv_user_pictures/120ecebc-4763-4f98-b4f8-82d4ca8bdd23-profile_image-300x300.jpeg",
   "mistressmercy": "https://static-cdn.jtvnw.net/jtv_user_pictures/25fc0829-4ce0-4d9f-a303-bbe02beb8ae4-profile_image-300x300.jpeg",
   "mistyrosey": "https://static-cdn.jtvnw.net/jtv_user_pictures/7044e01a-ba3b-4b94-bc57-c598348563e0-profile_image-300x300.png",
@@ -174,6 +176,7 @@
   "notsumei": "https://static-cdn.jtvnw.net/jtv_user_pictures/4f7c058a-2c16-41d7-9a42-5daaca426fbf-profile_image-300x300.png",
   "noxmagnuz": "https://static-cdn.jtvnw.net/jtv_user_pictures/ca967583-7105-4ccc-bb04-f7e98a28b9fc-profile_image-300x300.png",
   "number_blue_": "https://static-cdn.jtvnw.net/jtv_user_pictures/1f5108e1-d5dd-48fe-80ea-639e36639a1f-profile_image-300x300.jpeg",
+  "obi_juan_kenobi0": "https://static-cdn.jtvnw.net/jtv_user_pictures/cfc5cf1b-8fbe-4814-aca6-aa803e3ac9ee-profile_image-300x300.png",
   "ogyoungwaffle": "https://static-cdn.jtvnw.net/jtv_user_pictures/ee56ce32-c96f-4742-84d2-6b1091f4530f-profile_image-300x300.png",
   "onejayexe": "https://static-cdn.jtvnw.net/jtv_user_pictures/90fbc01d-f60f-4ca7-a288-711b054dd5b9-profile_image-300x300.png",
   "opulentmyzery": "https://static-cdn.jtvnw.net/jtv_user_pictures/63e437fe-86e6-4a15-8ba0-80b4062ab910-profile_image-300x300.png",
@@ -255,6 +258,7 @@
   "therealmsnoname": "https://static-cdn.jtvnw.net/jtv_user_pictures/c9542f12-1185-4526-a62d-c9a90d2119d1-profile_image-300x300.png",
   "therenegadejester": "https://static-cdn.jtvnw.net/jtv_user_pictures/1789c82b-7aa6-462c-a517-1a8ab474aeae-profile_image-300x300.png",
   "theroyjoy": "https://static-cdn.jtvnw.net/jtv_user_pictures/4a6ce674-c181-489d-aa75-c70fca72e7f5-profile_image-300x300.png",
+  "thexenocraze": "https://static-cdn.jtvnw.net/jtv_user_pictures/54ee98c4-19df-4991-9b67-d9325a644e63-profile_image-300x300.png",
   "thirdgenerationnobody": "https://static-cdn.jtvnw.net/jtv_user_pictures/7f22b399-f04b-47e3-98e2-222e1a8d40b4-profile_image-300x300.png",
   "thor_q": "https://static-cdn.jtvnw.net/jtv_user_pictures/504bf7c4-e24b-4184-adcc-997b38396919-profile_image-300x300.png",
   "tinycavegoblin": "https://static-cdn.jtvnw.net/jtv_user_pictures/6448de59-96f3-4cec-b85f-d26210b21412-profile_image-300x300.jpeg",
@@ -998,9 +1002,16 @@
    "count": 43,
    "platform": "Atari 5200",
    "title": "Megamania"
+  },
+  {
+   "art": "art/sega-genesis/street-smart.webp",
+   "art_kind": "box",
+   "count": 23,
+   "platform": "Sega Genesis",
+   "title": "Street Smart"
   }
  ],
- "generated_at": 1790002500,
+ "generated_at": 1790004325,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -2544,6 +2555,11 @@
    ]
   ],
   "berserk_dark_cacao": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     33,
     1789187382,
@@ -6675,6 +6691,11 @@
   ],
   "eldritchwawa": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -7979,6 +8000,11 @@
   ],
   "ftakano": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     34,
     1789170516,
     "2026-09-11"
@@ -8313,6 +8339,13 @@
     60,
     1788237371,
     "2026-08-31"
+   ]
+  ],
+  "gavitrongaming": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
    ]
   ],
   "georgegelinas": [
@@ -9043,6 +9076,11 @@
    ]
   ],
   "guiniguy": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -9780,6 +9818,11 @@
   ],
   "haggardhessian": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     81,
     1788805647,
     "2026-09-07"
@@ -10080,6 +10123,11 @@
    ]
   ],
   "iamjenthefriend": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -11272,6 +11320,11 @@
   ],
   "jedi_megaman": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186899,
     "2026-09-11"
@@ -11937,6 +11990,11 @@
   ],
   "kyriebug": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -12413,6 +12471,11 @@
    ]
   ],
   "larrykernel": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -13702,6 +13765,11 @@
   ],
   "malebox_": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -14306,6 +14374,13 @@
     61,
     1788362935,
     "2026-09-02"
+   ]
+  ],
+  "medtech85": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
    ]
   ],
   "millhouse1119": [
@@ -15652,6 +15727,11 @@
   ],
   "nataliejdogg": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     82,
     1789147343,
     "2026-09-11"
@@ -16122,6 +16202,11 @@
   ],
   "notsumei": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     96,
     1789182512,
     "2026-09-11"
@@ -16539,6 +16624,13 @@
     1,
     1788206336,
     "2026-08-31"
+   ]
+  ],
+  "obi_juan_kenobi0": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
    ]
   ],
   "ogyoungwaffle": [
@@ -18426,6 +18518,11 @@
   ],
   "reunitebedpan": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -18944,6 +19041,11 @@
    ]
   ],
   "rigswreck": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     89,
     1789174622,
@@ -19741,6 +19843,11 @@
    ]
   ],
   "salariedorgy": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -22422,6 +22529,11 @@
   ],
   "star_lord90tv": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -22935,6 +23047,11 @@
    ]
   ],
   "stellardeth": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     33,
     1789189314,
@@ -24059,6 +24176,11 @@
    ]
   ],
   "that_one_persona": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -25782,6 +25904,11 @@
   ],
   "theroyjoy": [
    [
+    101,
+    1790004315,
+    "2026-09-21"
+   ],
+   [
     82,
     1789154219,
     "2026-09-11"
@@ -25825,6 +25952,13 @@
     40,
     1788198020,
     "2026-08-31"
+   ]
+  ],
+  "thexenocraze": [
+   [
+    101,
+    1790004315,
+    "2026-09-21"
    ]
   ],
   "thirdgenerationnobody": [
@@ -27718,16 +27852,16 @@
  },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 101,
-  "art_box": 101,
+  "art": 102,
+  "art_box": 102,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 5225,
+  "entries": 5248,
   "first_ts": 1788197811,
-  "games": 101,
-  "last_ts": 1789189314,
+  "games": 102,
+  "last_ts": 1790004315,
   "platforms": 31,
-  "viewers": 293
+  "viewers": 297
  },
  "tagline": "Every game you were in the room for."
 }
