@@ -211,6 +211,7 @@
   "rooster1llusion": "https://static-cdn.jtvnw.net/jtv_user_pictures/a56cf31c-4aa0-4d29-aad3-e58a2ea167db-profile_image-300x300.png",
   "rs25": "https://static-cdn.jtvnw.net/jtv_user_pictures/435968fd-8ea9-4792-bcba-014730c01adc-profile_image-300x300.png",
   "rubicn64": "https://static-cdn.jtvnw.net/jtv_user_pictures/7dc88fd3-bf11-4d89-ac02-58880982a3a5-profile_image-300x300.jpeg",
+  "ryujin_suffers": "https://static-cdn.jtvnw.net/jtv_user_pictures/a698d441-f018-4792-9670-cec65cbc9d6d-profile_image-300x300.png",
   "salariedorgy": "https://static-cdn.jtvnw.net/user-default-pictures-uv/cdd517fe-def4-11e9-948e-784f43822e80-profile_image-300x300.png",
   "saltybydesign": "https://static-cdn.jtvnw.net/jtv_user_pictures/f98948db-af8a-415d-92ed-241cbcafa4a9-profile_image-300x300.png",
   "sconebonevideo": "https://static-cdn.jtvnw.net/jtv_user_pictures/50a4cbe1-7c7d-4a23-94dc-0e65f440a995-profile_image-300x300.png",
@@ -1100,12 +1101,12 @@
   {
    "art": "art/sony-playstation-2/onimusha-warlords.webp",
    "art_kind": "box",
-   "count": 33,
+   "count": 39,
    "platform": "Sony PlayStation 2",
    "title": "Onimusha: Warlords"
   }
  ],
- "generated_at": 1790010900,
+ "generated_at": 1790011525,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -7953,6 +7954,11 @@
    ]
   ],
   "fruhara": [
+   [
+    114,
+    1790011035,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -21185,6 +21191,13 @@
     "2026-09-11"
    ]
   ],
+  "ryujin_suffers": [
+   [
+    114,
+    1790011156,
+    "2026-09-21"
+   ]
+  ],
   "salariedorgy": [
    [
     114,
@@ -22054,6 +22067,11 @@
    ]
   ],
   "seanwillplay": [
+   [
+    114,
+    1790011276,
+    "2026-09-21"
+   ],
    [
     33,
     1789186174,
@@ -26376,6 +26394,11 @@
   ],
   "thedogmatix": [
    [
+    114,
+    1790011035,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -27731,6 +27754,11 @@
   ],
   "thirdgenerationnobody": [
    [
+    114,
+    1790010914,
+    "2026-09-21"
+   ],
+   [
     82,
     1789158201,
     "2026-09-11"
@@ -29049,6 +29077,11 @@
   ],
   "vikingraven": [
    [
+    114,
+    1790011276,
+    "2026-09-21"
+   ],
+   [
     6,
     1788538575,
     "2026-09-04"
@@ -29746,12 +29779,12 @@
   "art_box": 115,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 5606,
+  "entries": 5612,
   "first_ts": 1788197811,
   "games": 115,
-  "last_ts": 1790010794,
+  "last_ts": 1790011276,
   "platforms": 32,
-  "viewers": 300
+  "viewers": 301
  },
  "tagline": "Every game you were in the room for."
 }
