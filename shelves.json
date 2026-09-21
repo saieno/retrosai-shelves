@@ -117,6 +117,7 @@
   "ilija_supertzar": "https://static-cdn.jtvnw.net/jtv_user_pictures/19c67270-bc0c-4e3e-9873-75983ce94c80-profile_image-300x300.png",
   "illfinity": "https://static-cdn.jtvnw.net/jtv_user_pictures/e7f7fa17-8b41-4844-945a-19a571621d44-profile_image-300x300.png",
   "imbeccableimages": "https://static-cdn.jtvnw.net/jtv_user_pictures/7ebf544a-9674-4b9a-8ef3-014d4f9c5aa3-profile_image-300x300.png",
+  "insanity_kit": "https://static-cdn.jtvnw.net/jtv_user_pictures/4a1c9a67-03ad-4435-8274-63c5c0713db4-profile_image-300x300.png",
   "ir0nmandan": "https://static-cdn.jtvnw.net/jtv_user_pictures/e12a0457-3e08-4b55-b37d-1cdae6bebdbb-profile_image-300x300.png",
   "its_colby_": "https://static-cdn.jtvnw.net/jtv_user_pictures/775865b6-5de6-4660-9641-74b222ffdf06-profile_image-300x300.jpeg",
   "itsdragonish": "https://static-cdn.jtvnw.net/jtv_user_pictures/1d9df339-b8d4-4d99-8c5d-5742e0164c66-profile_image-300x300.png",
@@ -151,6 +152,7 @@
   "lordseliph": "https://static-cdn.jtvnw.net/jtv_user_pictures/b8e0667e-eb1b-403d-a51d-59f7a8aad838-profile_image-300x300.png",
   "loreaxe253": "https://static-cdn.jtvnw.net/jtv_user_pictures/eeecb4f3-7ab8-4d21-bf57-87805247cc71-profile_image-300x300.png",
   "ls_sandy": "https://static-cdn.jtvnw.net/jtv_user_pictures/5e81a8ec-e3d3-439e-867e-64c31bba5f8b-profile_image-300x300.png",
+  "lunavexi": "https://static-cdn.jtvnw.net/jtv_user_pictures/f5c33490-5e29-47d1-be50-f7e553767422-profile_image-300x300.png",
   "luvinrubicon": "https://static-cdn.jtvnw.net/jtv_user_pictures/2d7df3a5-6ccc-4855-ac11-ea3209596f23-profile_image-300x300.png",
   "lyssabit": "https://static-cdn.jtvnw.net/jtv_user_pictures/c7027c98-9a61-41c8-bf2b-0be3d6444883-profile_image-300x300.png",
   "m_mendez09": "https://static-cdn.jtvnw.net/jtv_user_pictures/c8fb0e1b-8d53-453a-bf52-dd1cac8881b0-profile_image-300x300.png",
@@ -780,7 +782,7 @@
   {
    "art": "art/nintendo-gamecube/paper-mario-the-thousand-year-door.webp",
    "art_kind": "box",
-   "count": 78,
+   "count": 94,
    "platform": "Nintendo GameCube",
    "title": "Paper Mario: The Thousand-Year Door"
   },
@@ -1081,7 +1083,7 @@
   {
    "art": "art/sony-playstation-4/p-t.webp",
    "art_kind": "box",
-   "count": 38,
+   "count": 39,
    "platform": "Sony PlayStation 4",
    "title": "P.T."
   },
@@ -1121,7 +1123,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1790013325,
+ "generated_at": 1790014500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -2980,6 +2982,11 @@
   ],
   "big_tx": [
    [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
+   [
     111,
     1790013049,
     "2026-09-21"
@@ -3738,6 +3745,11 @@
    ]
   ],
   "busybeebry": [
+   [
+    68,
+    1790014293,
+    "2026-09-21"
+   ],
    [
     60,
     1788236509,
@@ -6242,6 +6254,11 @@
   ],
   "dedizen": [
    [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
+   [
     111,
     1790013049,
     "2026-09-21"
@@ -6882,6 +6899,11 @@
    ]
   ],
   "dook_silver": [
+   [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
    [
     111,
     1790013049,
@@ -8056,6 +8078,11 @@
   ],
   "fitness__guru": [
    [
+    68,
+    1790014172,
+    "2026-09-21"
+   ],
+   [
     110,
     1790012013,
     "2026-09-21"
@@ -8996,6 +9023,11 @@
    ]
   ],
   "gavitrongaming": [
+   [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
    [
     111,
     1790013049,
@@ -10667,6 +10699,11 @@
   ],
   "haggardhessian": [
    [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
+   [
     111,
     1790013049,
     "2026-09-21"
@@ -12233,6 +12270,13 @@
     "2026-09-02"
    ]
   ],
+  "insanity_kit": [
+   [
+    68,
+    1790014052,
+    "2026-09-21"
+   ]
+  ],
   "ir0nmandan": [
    [
     29,
@@ -12773,6 +12817,11 @@
    ]
   ],
   "kamodobone": [
+   [
+    68,
+    1790014172,
+    "2026-09-21"
+   ],
    [
     33,
     1789188710,
@@ -14579,6 +14628,13 @@
     8,
     1788219971,
     "2026-08-31"
+   ]
+  ],
+  "lunavexi": [
+   [
+    68,
+    1790014172,
+    "2026-09-21"
    ]
   ],
   "luvinrubicon": [
@@ -19737,6 +19793,11 @@
   ],
   "reaperredacted": [
    [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
+   [
     111,
     1790013049,
     "2026-09-21"
@@ -19871,6 +19932,11 @@
   ],
   "redstar_adventure": [
    [
+    68,
+    1790014172,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186174,
     "2026-09-11"
@@ -19921,6 +19987,11 @@
    ]
   ],
   "retromybits": [
+   [
+    68,
+    1790014052,
+    "2026-09-21"
+   ],
    [
     92,
     1789177555,
@@ -24921,6 +24992,11 @@
   ],
   "stellardeth": [
    [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
+   [
     111,
     1790013049,
     "2026-09-21"
@@ -29221,6 +29297,11 @@
   ],
   "unidentifiedcleaver36": [
    [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
+   [
     111,
     1790013049,
     "2026-09-21"
@@ -29731,6 +29812,16 @@
   ],
   "x33843": [
    [
+    68,
+    1790013774,
+    "2026-09-21"
+   ],
+   [
+    111,
+    1790013448,
+    "2026-09-21"
+   ],
+   [
     84,
     1789166926,
     "2026-09-11"
@@ -30211,12 +30302,12 @@
   "art_box": 117,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 5695,
+  "entries": 5712,
   "first_ts": 1788197811,
   "games": 117,
-  "last_ts": 1790013086,
+  "last_ts": 1790014293,
   "platforms": 32,
-  "viewers": 302
+  "viewers": 304
  },
  "tagline": "Every game you were in the room for."
 }
