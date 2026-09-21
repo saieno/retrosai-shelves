@@ -10,6 +10,7 @@
   "ascendingphase": "https://static-cdn.jtvnw.net/jtv_user_pictures/f301eecb-21db-4117-8c9b-3b0badce45f5-profile_image-300x300.png",
   "asromeburns": "https://static-cdn.jtvnw.net/jtv_user_pictures/2b297c91-e287-49cc-880e-6d38ff6aee33-profile_image-300x300.png",
   "at3chnicality": "https://static-cdn.jtvnw.net/jtv_user_pictures/at3chnicality-profile_image-9c91e1f19b9b79d3-300x300.jpeg",
+  "aussiefezz": "https://static-cdn.jtvnw.net/jtv_user_pictures/3323fe7f-1971-47c7-bb7c-17ca50c7228b-profile_image-300x300.png",
   "axedanner": "https://static-cdn.jtvnw.net/jtv_user_pictures/957796ad-706c-4ef9-9c1f-202bed8624ee-profile_image-300x300.png",
   "aybaybeee": "https://static-cdn.jtvnw.net/jtv_user_pictures/9014b7bc-a205-4334-867a-d8e52f10eb21-profile_image-300x300.jpeg",
   "aysiehd": "https://static-cdn.jtvnw.net/jtv_user_pictures/e4031c7f-6564-42ec-913b-f2cccd26da8c-profile_image-300x300.png",
@@ -176,6 +177,7 @@
   "notsumei": "https://static-cdn.jtvnw.net/jtv_user_pictures/4f7c058a-2c16-41d7-9a42-5daaca426fbf-profile_image-300x300.png",
   "noxmagnuz": "https://static-cdn.jtvnw.net/jtv_user_pictures/ca967583-7105-4ccc-bb04-f7e98a28b9fc-profile_image-300x300.png",
   "number_blue_": "https://static-cdn.jtvnw.net/jtv_user_pictures/1f5108e1-d5dd-48fe-80ea-639e36639a1f-profile_image-300x300.jpeg",
+  "nutysquirrelturd": "https://static-cdn.jtvnw.net/jtv_user_pictures/973a66a0-a18f-4136-9b92-6e9f5263aba7-profile_image-300x300.png",
   "obi_juan_kenobi0": "https://static-cdn.jtvnw.net/jtv_user_pictures/cfc5cf1b-8fbe-4814-aca6-aa803e3ac9ee-profile_image-300x300.png",
   "ogyoungwaffle": "https://static-cdn.jtvnw.net/jtv_user_pictures/ee56ce32-c96f-4742-84d2-6b1091f4530f-profile_image-300x300.png",
   "onejayexe": "https://static-cdn.jtvnw.net/jtv_user_pictures/90fbc01d-f60f-4ca7-a288-711b054dd5b9-profile_image-300x300.png",
@@ -274,6 +276,7 @@
   "uhleesuhplays": "https://static-cdn.jtvnw.net/jtv_user_pictures/dde81bec-39c3-4dcf-a84b-8f0b849d7ce5-profile_image-300x300.png",
   "uksagamerz": "https://static-cdn.jtvnw.net/jtv_user_pictures/87957df7-9277-4de2-96cb-668fb4dbe6c2-profile_image-300x300.png",
   "uncleqc": "https://static-cdn.jtvnw.net/jtv_user_pictures/fb139b4d-a149-40f5-b82a-403d905fc6e7-profile_image-300x300.png",
+  "unidentifiedcleaver36": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png",
   "vaatirabbit": "https://static-cdn.jtvnw.net/jtv_user_pictures/99afe8f2-30ab-49cf-a1c8-013c36dacee0-profile_image-300x300.png",
   "valkyharvestheartvt": "https://static-cdn.jtvnw.net/jtv_user_pictures/380d03c5-e4bb-467c-8647-9cc7f4e9f241-profile_image-300x300.png",
   "vanosdelgaia": "https://static-cdn.jtvnw.net/jtv_user_pictures/057c58f2-4dff-4aa9-9920-56e4155c8cf8-profile_image-300x300.png",
@@ -1004,14 +1007,21 @@
    "title": "Megamania"
   },
   {
+   "art": "art/sony-playstation-3/diablo-iii-reaper-of-souls-ultimate-evil-edition.webp",
+   "art_kind": "box",
+   "count": 35,
+   "platform": "Sony PlayStation 3",
+   "title": "Diablo III: Reaper of Souls: Ultimate Evil Edition"
+  },
+  {
    "art": "art/sega-genesis/street-smart.webp",
    "art_kind": "box",
-   "count": 23,
+   "count": 25,
    "platform": "Sega Genesis",
    "title": "Street Smart"
   }
  ],
- "generated_at": 1790004325,
+ "generated_at": 1790005500,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -1902,6 +1912,13 @@
     "2026-09-02"
    ]
   ],
+  "aussiefezz": [
+   [
+    101,
+    1790004765,
+    "2026-09-21"
+   ]
+  ],
   "axedanner": [
    [
     37,
@@ -2033,6 +2050,11 @@
    ]
   ],
   "bak3rstreet": [
+   [
+    101,
+    1790005247,
+    "2026-09-21"
+   ],
    [
     84,
     1789166926,
@@ -2557,6 +2579,11 @@
   "berserk_dark_cacao": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -2807,6 +2834,11 @@
    ]
   ],
   "big_tx": [
+   [
+    101,
+    1790004885,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -3926,6 +3958,16 @@
   ],
   "contagiousbrawler": [
    [
+    101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
+    1790004403,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -4377,6 +4419,11 @@
    ]
   ],
   "courtney_a_ok": [
+   [
+    101,
+    1790004765,
+    "2026-09-21"
+   ],
    [
     33,
     1789186153,
@@ -6692,6 +6739,11 @@
   "eldritchwawa": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -8001,6 +8053,11 @@
   "ftakano": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -8344,6 +8401,11 @@
   "gavitrongaming": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ]
@@ -9078,6 +9140,11 @@
   "guiniguy": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -9514,6 +9581,11 @@
   ],
   "gypsy_darling": [
    [
+    101,
+    1790004765,
+    "2026-09-21"
+   ],
+   [
     84,
     1789167937,
     "2026-09-11"
@@ -9819,6 +9891,11 @@
   "haggardhessian": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -10125,6 +10202,11 @@
   "iamjenthefriend": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -11321,6 +11403,11 @@
   "jedi_megaman": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -11991,6 +12078,11 @@
   "kyriebug": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -12473,6 +12565,11 @@
   "larrykernel": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -13766,6 +13863,11 @@
   "malebox_": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -14379,6 +14481,11 @@
   "medtech85": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ]
@@ -15728,6 +15835,11 @@
   "nataliejdogg": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -16203,6 +16315,11 @@
   "notsumei": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -16626,9 +16743,21 @@
     "2026-08-31"
    ]
   ],
+  "nutysquirrelturd": [
+   [
+    101,
+    1790005488,
+    "2026-09-21"
+   ]
+  ],
   "obi_juan_kenobi0": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ]
@@ -18024,6 +18153,11 @@
   ],
   "purplevoided": [
    [
+    101,
+    1790005488,
+    "2026-09-21"
+   ],
+   [
     93,
     1789179892,
     "2026-09-11"
@@ -18519,6 +18653,11 @@
   "reunitebedpan": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -19043,6 +19182,11 @@
   "rigswreck": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -19685,6 +19829,11 @@
   ],
   "rs25": [
    [
+    101,
+    1790005247,
+    "2026-09-21"
+   ],
+   [
     33,
     1789186153,
     "2026-09-11"
@@ -19845,6 +19994,11 @@
   "salariedorgy": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -21252,6 +21406,16 @@
   ],
   "shaun_da_bomb": [
    [
+    101,
+    1790004644,
+    "2026-09-21"
+   ],
+   [
+    102,
+    1790004403,
+    "2026-09-21"
+   ],
+   [
     82,
     1789149754,
     "2026-09-11"
@@ -22254,6 +22418,11 @@
   ],
   "spacexmike": [
    [
+    101,
+    1790004765,
+    "2026-09-21"
+   ],
+   [
     82,
     1789151685,
     "2026-09-11"
@@ -22530,6 +22699,11 @@
   "star_lord90tv": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -23049,6 +23223,11 @@
   "stellardeth": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -24178,6 +24357,11 @@
   "that_one_persona": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -25905,6 +26089,11 @@
   "theroyjoy": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ],
@@ -25957,6 +26146,11 @@
   "thexenocraze": [
    [
     101,
+    1790004580,
+    "2026-09-21"
+   ],
+   [
+    102,
     1790004315,
     "2026-09-21"
    ]
@@ -26946,6 +27140,13 @@
     "2026-09-04"
    ]
   ],
+  "unidentifiedcleaver36": [
+   [
+    101,
+    1790004765,
+    "2026-09-21"
+   ]
+  ],
   "vaatirabbit": [
    [
     96,
@@ -27852,16 +28053,16 @@
  },
  "site": "RetroSai Shelves",
  "stats": {
-  "art": 102,
-  "art_box": 102,
+  "art": 103,
+  "art_box": 103,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 5248,
+  "entries": 5285,
   "first_ts": 1788197811,
-  "games": 102,
-  "last_ts": 1790004315,
+  "games": 103,
+  "last_ts": 1790005488,
   "platforms": 31,
-  "viewers": 297
+  "viewers": 300
  },
  "tagline": "Every game you were in the room for."
 }
