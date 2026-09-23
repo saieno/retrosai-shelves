@@ -128,6 +128,7 @@
   "itsclairbear": "https://static-cdn.jtvnw.net/jtv_user_pictures/c0885fda-deed-4ed9-b7a7-c127ba0a64ac-profile_image-300x300.png",
   "itsdragonish": "https://static-cdn.jtvnw.net/jtv_user_pictures/1d9df339-b8d4-4d99-8c5d-5742e0164c66-profile_image-300x300.png",
   "iwudacus": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d3bff1e-4734-4f53-9747-71fed6c09bac-profile_image-300x300.png",
+  "jacnotjac": "https://static-cdn.jtvnw.net/jtv_user_pictures/06328c16-517d-4e1a-8f0e-df06c28a7cf9-profile_image-300x300.png",
   "jadka82": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png",
   "jazzyxkitten": "https://static-cdn.jtvnw.net/jtv_user_pictures/040f103a-be58-475b-9693-4c72cc1027ab-profile_image-300x300.jpeg",
   "jdbrechtel": "https://static-cdn.jtvnw.net/jtv_user_pictures/7b80dc21-208c-4cf5-bfdb-9dbde86a3e99-profile_image-300x300.png",
@@ -384,7 +385,7 @@
   {
    "art": "art/microsoft-xbox-one/halo-the-master-chief-collection.webp",
    "art_kind": "box",
-   "count": 35,
+   "count": 40,
    "platform": "Microsoft Xbox One",
    "title": "Halo: The Master Chief Collection"
   },
@@ -1229,7 +1230,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1790180100,
+ "generated_at": 1790180973,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -10023,6 +10024,11 @@
   ],
   "gavitrongaming": [
    [
+    9,
+    1790180422,
+    "2026-09-23"
+   ],
+   [
     110,
     1790020238,
     "2026-09-21"
@@ -13693,6 +13699,13 @@
     26,
     1788543036,
     "2026-09-04"
+   ]
+  ],
+  "jacnotjac": [
+   [
+    9,
+    1790180543,
+    "2026-09-23"
    ]
   ],
   "jadka82": [
@@ -18452,6 +18465,11 @@
    ]
   ],
   "mrbeanpfc": [
+   [
+    9,
+    1790180663,
+    "2026-09-23"
+   ],
    [
     83,
     1789156512,
@@ -32137,6 +32155,11 @@
   ],
   "twotuxi": [
    [
+    9,
+    1790180301,
+    "2026-09-23"
+   ],
+   [
     82,
     1788802472,
     "2026-09-07"
@@ -33015,6 +33038,11 @@
   ],
   "x33843": [
    [
+    9,
+    1790180784,
+    "2026-09-23"
+   ],
+   [
     108,
     1790018393,
     "2026-09-21"
@@ -33540,12 +33568,12 @@
   "art_box": 130,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6332,
+  "entries": 6337,
   "first_ts": 1788197811,
   "games": 130,
-  "last_ts": 1790180060,
+  "last_ts": 1790180784,
   "platforms": 33,
-  "viewers": 320
+  "viewers": 321
  },
  "tagline": "Every game you were in the room for."
 }
