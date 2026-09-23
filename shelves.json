@@ -127,6 +127,7 @@
   "its_colby_": "https://static-cdn.jtvnw.net/jtv_user_pictures/775865b6-5de6-4660-9641-74b222ffdf06-profile_image-300x300.jpeg",
   "itsclairbear": "https://static-cdn.jtvnw.net/jtv_user_pictures/c0885fda-deed-4ed9-b7a7-c127ba0a64ac-profile_image-300x300.png",
   "itsdragonish": "https://static-cdn.jtvnw.net/jtv_user_pictures/1d9df339-b8d4-4d99-8c5d-5742e0164c66-profile_image-300x300.png",
+  "itsvaleriagaming": "https://static-cdn.jtvnw.net/jtv_user_pictures/0717c2e8-32b4-4953-9dfb-e0c6b009651e-profile_image-300x300.png",
   "iwudacus": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d3bff1e-4734-4f53-9747-71fed6c09bac-profile_image-300x300.png",
   "jacnotjac": "https://static-cdn.jtvnw.net/jtv_user_pictures/06328c16-517d-4e1a-8f0e-df06c28a7cf9-profile_image-300x300.png",
   "jadka82": "https://static-cdn.jtvnw.net/user-default-pictures-uv/13e5fa74-defa-11e9-809c-784f43822e80-profile_image-300x300.png",
@@ -208,6 +209,7 @@
   "poe__the__raven": "https://static-cdn.jtvnw.net/jtv_user_pictures/5d672734-39a2-42d3-adb2-b3922fae771f-profile_image-300x300.png",
   "possibly_ashley": "https://static-cdn.jtvnw.net/jtv_user_pictures/a2bbda9b-6c97-4698-90c5-75d319fa07e3-profile_image-300x300.png",
   "posterboyben": "https://static-cdn.jtvnw.net/jtv_user_pictures/f57e1f46-a5c6-4bf7-99c5-0508382c36ee-profile_image-300x300.jpeg",
+  "proootagonist": "https://static-cdn.jtvnw.net/jtv_user_pictures/fed6c811-2e11-4c50-af6c-577271b7c0aa-profile_image-300x300.png",
   "puelz": "https://static-cdn.jtvnw.net/jtv_user_pictures/db5d87fb-9b6c-4bdb-b1eb-9866559bd81f-profile_image-300x300.png",
   "purplevoided": "https://static-cdn.jtvnw.net/jtv_user_pictures/b313cc7e-bd22-4f8e-baca-d8f02cf9aafb-profile_image-300x300.png",
   "reaperredacted": "https://static-cdn.jtvnw.net/jtv_user_pictures/def5a663-3cb6-426e-be2d-a95f958accba-profile_image-300x300.png",
@@ -385,7 +387,7 @@
   {
    "art": "art/microsoft-xbox-one/halo-the-master-chief-collection.webp",
    "art_kind": "box",
-   "count": 49,
+   "count": 55,
    "platform": "Microsoft Xbox One",
    "title": "Halo: The Master Chief Collection"
   },
@@ -1230,7 +1232,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1790182773,
+ "generated_at": 1790183700,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -13719,6 +13721,13 @@
     "2026-09-11"
    ]
   ],
+  "itsvaleriagaming": [
+   [
+    9,
+    1790183197,
+    "2026-09-23"
+   ]
+  ],
   "iwudacus": [
    [
     27,
@@ -14225,6 +14234,11 @@
    ]
   ],
   "kamodobone": [
+   [
+    9,
+    1790182835,
+    "2026-09-23"
+   ],
    [
     106,
     1790016877,
@@ -17424,6 +17438,11 @@
   ],
   "mistressmercy": [
    [
+    9,
+    1790182956,
+    "2026-09-23"
+   ],
+   [
     106,
     1790016877,
     "2026-09-21"
@@ -19116,6 +19135,11 @@
    ]
   ],
   "neiloch": [
+   [
+    9,
+    1790183439,
+    "2026-09-23"
+   ],
    [
     110,
     1790020238,
@@ -21399,6 +21423,13 @@
     97,
     1789183275,
     "2026-09-11"
+   ]
+  ],
+  "proootagonist": [
+   [
+    9,
+    1790183680,
+    "2026-09-23"
    ]
   ],
   "puelz": [
@@ -28871,6 +28902,11 @@
   ],
   "th3_mupp3t": [
    [
+    9,
+    1790183077,
+    "2026-09-23"
+   ],
+   [
     35,
     1789188227,
     "2026-09-11"
@@ -33613,12 +33649,12 @@
   "art_box": 130,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6346,
+  "entries": 6352,
   "first_ts": 1788197811,
   "games": 130,
-  "last_ts": 1790182715,
+  "last_ts": 1790183680,
   "platforms": 33,
-  "viewers": 321
+  "viewers": 323
  },
  "tagline": "Every game you were in the room for."
 }
