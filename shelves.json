@@ -150,6 +150,7 @@
   "krausergetsnaked4k": "https://static-cdn.jtvnw.net/jtv_user_pictures/2a2a4647-3eeb-4fb9-bc9e-e07577a40c95-profile_image-300x300.png",
   "kuwanger_x": "https://static-cdn.jtvnw.net/jtv_user_pictures/73c89851-3e2b-4c53-910c-7ec17b399832-profile_image-300x300.png",
   "kyriebug": "https://static-cdn.jtvnw.net/jtv_user_pictures/7b4a2624-a130-4d35-a275-df7938e1693e-profile_image-300x300.png",
+  "l0u7": "https://static-cdn.jtvnw.net/jtv_user_pictures/f28fd322-74e1-4bda-88a5-3d54258336c7-profile_image-300x300.png",
   "larrykernel": "https://static-cdn.jtvnw.net/jtv_user_pictures/2541009d-8c67-4461-b855-476360da996f-profile_image-300x300.png",
   "lawnmowermanjobe": "https://static-cdn.jtvnw.net/jtv_user_pictures/84cb8e20-8f27-42ee-9e97-c11884bbf819-profile_image-300x300.png",
   "leganzar": "https://static-cdn.jtvnw.net/jtv_user_pictures/be5c09be-7366-4698-a02c-c95fd00fc731-profile_image-300x300.png",
@@ -1061,7 +1062,7 @@
   {
    "art": "art/microsoft-xbox/halo.webp",
    "art_kind": "box",
-   "count": 66,
+   "count": 70,
    "platform": "Microsoft Xbox",
    "title": "Halo"
   },
@@ -1241,7 +1242,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1790190900,
+ "generated_at": 1790191773,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -13480,6 +13481,11 @@
   ],
   "illfinity": [
    [
+    105,
+    1790191043,
+    "2026-09-23"
+   ],
+   [
     9,
     1790182715,
     "2026-09-23"
@@ -15299,6 +15305,13 @@
     42,
     1788197811,
     "2026-08-31"
+   ]
+  ],
+  "l0u7": [
+   [
+    105,
+    1790191043,
+    "2026-09-23"
    ]
   ],
   "larrykernel": [
@@ -26161,6 +26174,11 @@
   ],
   "shroomnotic": [
    [
+    105,
+    1790190923,
+    "2026-09-23"
+   ],
+   [
     111,
     1790020238,
     "2026-09-21"
@@ -32524,6 +32542,11 @@
   ],
   "trapunzelxxx": [
    [
+    105,
+    1790191164,
+    "2026-09-23"
+   ],
+   [
     94,
     1789179046,
     "2026-09-11"
@@ -34047,12 +34070,12 @@
   "art_box": 131,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6429,
+  "entries": 6433,
   "first_ts": 1788197811,
   "games": 131,
-  "last_ts": 1790190681,
+  "last_ts": 1790191164,
   "platforms": 33,
-  "viewers": 325
+  "viewers": 326
  },
  "tagline": "Every game you were in the room for."
 }
