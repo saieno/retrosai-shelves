@@ -1061,7 +1061,7 @@
   {
    "art": "art/microsoft-xbox/halo.webp",
    "art_kind": "box",
-   "count": 59,
+   "count": 60,
    "platform": "Microsoft Xbox",
    "title": "Halo"
   },
@@ -1241,7 +1241,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1790189100,
+ "generated_at": 1790189973,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -11090,6 +11090,11 @@
    ]
   ],
   "guiniguy": [
+   [
+    105,
+    1790189474,
+    "2026-09-23"
+   ],
    [
     9,
     1790179860,
@@ -34012,10 +34017,10 @@
   "art_box": 131,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6422,
+  "entries": 6423,
   "first_ts": 1788197811,
   "games": 131,
-  "last_ts": 1790188509,
+  "last_ts": 1790189474,
   "platforms": 33,
   "viewers": 325
  },
