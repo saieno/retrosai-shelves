@@ -47,6 +47,7 @@
   "clipless_grenade": "https://static-cdn.jtvnw.net/jtv_user_pictures/1fb63948-1a9b-471c-a0b8-2a6849c5a872-profile_image-300x300.png",
   "cmykolours": "https://static-cdn.jtvnw.net/jtv_user_pictures/98d24a26-a17c-4945-9cc5-07566f331e94-profile_image-300x300.jpeg",
   "codename230": "https://static-cdn.jtvnw.net/jtv_user_pictures/a87f24f2-4a5e-4784-8002-1bdc203eb2cf-profile_image-300x300.jpeg",
+  "coffee_n_scones": "https://static-cdn.jtvnw.net/jtv_user_pictures/3bede165-7c8f-4dbc-b047-8d76fe9a29db-profile_image-300x300.jpeg",
   "contagiousbrawler": "https://static-cdn.jtvnw.net/jtv_user_pictures/3092493f-6614-442c-b526-c05c2f9a019a-profile_image-300x300.png",
   "courtney_a_ok": "https://static-cdn.jtvnw.net/user-default-pictures-uv/41780b5a-def8-11e9-94d9-784f43822e80-profile_image-300x300.png",
   "cptjimraynor89": "https://static-cdn.jtvnw.net/jtv_user_pictures/6a5a0375-a45a-408e-a336-87ab3751b0bc-profile_image-300x300.png",
@@ -387,7 +388,7 @@
   {
    "art": "art/microsoft-xbox-one/halo-the-master-chief-collection.webp",
    "art_kind": "box",
-   "count": 55,
+   "count": 56,
    "platform": "Microsoft Xbox One",
    "title": "Halo: The Master Chief Collection"
   },
@@ -1232,7 +1233,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1790183700,
+ "generated_at": 1790184573,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -4577,6 +4578,13 @@
     107,
     1790018278,
     "2026-09-21"
+   ]
+  ],
+  "coffee_n_scones": [
+   [
+    9,
+    1790184284,
+    "2026-09-23"
    ]
   ],
   "contagiousbrawler": [
@@ -33649,12 +33657,12 @@
   "art_box": 130,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6352,
+  "entries": 6353,
   "first_ts": 1788197811,
   "games": 130,
-  "last_ts": 1790183680,
+  "last_ts": 1790184284,
   "platforms": 33,
-  "viewers": 323
+  "viewers": 324
  },
  "tagline": "Every game you were in the room for."
 }
