@@ -241,6 +241,7 @@
   "shaun_da_bomb": "https://static-cdn.jtvnw.net/jtv_user_pictures/0ca410e3-702c-428e-b2be-2da92808a0d3-profile_image-300x300.png",
   "shebrews": "https://static-cdn.jtvnw.net/jtv_user_pictures/b5033b55-6407-497c-9add-41b4fa0676ae-profile_image-300x300.png",
   "shinyyesi": "https://static-cdn.jtvnw.net/jtv_user_pictures/ae1a9875-ac25-4a7d-8d28-e2fa61072d84-profile_image-300x300.png",
+  "shredcase": "https://static-cdn.jtvnw.net/jtv_user_pictures/ac8f80ec-cc5b-4cc3-bd33-6f664eadd529-profile_image-300x300.png",
   "shroomnotic": "https://static-cdn.jtvnw.net/jtv_user_pictures/9e843094-3e69-4eaa-be85-afbdf3be6b5f-profile_image-300x300.png",
   "shrum": "https://static-cdn.jtvnw.net/jtv_user_pictures/a6246792-6e6b-40c2-80ba-44ff09e010f3-profile_image-300x300.png",
   "sicilianqueen420": "https://static-cdn.jtvnw.net/jtv_user_pictures/730df6fe-5ff1-45eb-b69e-61b3e5c6bf3d-profile_image-300x300.png",
@@ -1060,7 +1061,7 @@
   {
    "art": "art/microsoft-xbox/halo.webp",
    "art_kind": "box",
-   "count": 48,
+   "count": 51,
    "platform": "Microsoft Xbox",
    "title": "Halo"
   },
@@ -1240,7 +1241,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1790185500,
+ "generated_at": 1790186373,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -6933,6 +6934,11 @@
    ]
   ],
   "dedizen": [
+   [
+    105,
+    1790186094,
+    "2026-09-23"
+   ],
    [
     111,
     1790020238,
@@ -15907,6 +15913,11 @@
    ]
   ],
   "levistasia": [
+   [
+    105,
+    1790185612,
+    "2026-09-23"
+   ],
    [
     83,
     1789156150,
@@ -26041,6 +26052,13 @@
     "2026-08-31"
    ]
   ],
+  "shredcase": [
+   [
+    105,
+    1790185853,
+    "2026-09-23"
+   ]
+  ],
   "shroomnotic": [
    [
     111,
@@ -33914,12 +33932,12 @@
   "art_box": 131,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6403,
+  "entries": 6406,
   "first_ts": 1788197811,
   "games": 131,
-  "last_ts": 1790185370,
+  "last_ts": 1790186094,
   "platforms": 33,
-  "viewers": 324
+  "viewers": 325
  },
  "tagline": "Every game you were in the room for."
 }
