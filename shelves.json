@@ -36,6 +36,7 @@
   "brandisandre": "https://static-cdn.jtvnw.net/jtv_user_pictures/f932e133-658c-4805-8927-835e474e3c44-profile_image-300x300.png",
   "breadman_leon": "https://static-cdn.jtvnw.net/jtv_user_pictures/9a15a7cf-1b39-4ad6-b5a9-8e8ab1f1a549-profile_image-300x300.png",
   "briarknowledge": "https://static-cdn.jtvnw.net/jtv_user_pictures/a8bd767e-a43e-4a9a-92e9-8993035904e3-profile_image-300x300.png",
+  "bulbasaur_savie": "https://static-cdn.jtvnw.net/jtv_user_pictures/19427970-3465-41d2-8494-47f8ec004066-profile_image-300x300.png",
   "busybeebry": "https://static-cdn.jtvnw.net/jtv_user_pictures/283771f4-ee11-4212-bc5c-616d206d184b-profile_image-300x300.png",
   "caiyanoregiggles": "https://static-cdn.jtvnw.net/jtv_user_pictures/a6a37007-0f50-4e20-8313-e65521a174ae-profile_image-300x300.png",
   "calcitra": "https://static-cdn.jtvnw.net/jtv_user_pictures/7ef63750-1860-4eb0-ab45-07fc31958389-profile_image-300x300.jpeg",
@@ -77,6 +78,7 @@
   "dopefish": "https://static-cdn.jtvnw.net/jtv_user_pictures/dopefish-profile_image-009ec5ac86552af5-300x300.png",
   "doraeme123": "https://static-cdn.jtvnw.net/jtv_user_pictures/62348c88-9bde-4e79-bd5d-c51edc99b7ff-profile_image-300x300.png",
   "drbuttercar": "https://static-cdn.jtvnw.net/jtv_user_pictures/004ffbb3-4133-4e90-95bf-2bd1238399d3-profile_image-300x300.png",
+  "dreadgnomes": "https://static-cdn.jtvnw.net/jtv_user_pictures/32b6df85-9c2d-4b2f-9975-4a41fede4167-profile_image-300x300.png",
   "dudecakes": "https://static-cdn.jtvnw.net/jtv_user_pictures/c28ca8d5-e431-4a3f-9c86-3c195873be14-profile_image-300x300.png",
   "el_crumpet": "https://static-cdn.jtvnw.net/jtv_user_pictures/1b921672-46a7-4dab-950f-a9f3386427e8-profile_image-300x300.png",
   "eldritchwawa": "https://static-cdn.jtvnw.net/jtv_user_pictures/db5a3383-3e26-41f9-99e0-b9b78e24d743-profile_image-300x300.png",
@@ -585,14 +587,14 @@
   {
    "art": "art/microsoft-xbox-360/prey.webp",
    "art_kind": "box",
-   "count": 45,
+   "count": 51,
    "platform": "Microsoft Xbox 360",
    "title": "Prey"
   },
   {
    "art": "art/sony-playstation-2/kingdom-hearts-ii.webp",
    "art_kind": "box",
-   "count": 80,
+   "count": 83,
    "platform": "Sony PlayStation 2",
    "title": "Kingdom Hearts II"
   },
@@ -1255,7 +1257,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1791562035,
+ "generated_at": 1791563100,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -3620,6 +3622,11 @@
   ],
   "binarygrind": [
    [
+    36,
+    1791562300,
+    "2026-10-09"
+   ],
+   [
     37,
     1791561683,
     "2026-10-09"
@@ -4148,6 +4155,13 @@
     85,
     1789151926,
     "2026-09-11"
+   ]
+  ],
+  "bulbasaur_savie": [
+   [
+    36,
+    1791562526,
+    "2026-10-09"
    ]
   ],
   "busybeebry": [
@@ -7162,6 +7176,16 @@
   ],
   "derpytater143": [
    [
+    36,
+    1791562300,
+    "2026-10-09"
+   ],
+   [
+    37,
+    1791562285,
+    "2026-10-09"
+   ],
+   [
     109,
     1790017190,
     "2026-09-21"
@@ -8057,6 +8081,13 @@
     104,
     1790176925,
     "2026-09-23"
+   ]
+  ],
+  "dreadgnomes": [
+   [
+    37,
+    1791562044,
+    "2026-10-09"
    ]
   ],
   "dudecakes": [
@@ -10674,6 +10705,11 @@
   ],
   "glytchgames": [
    [
+    36,
+    1791562647,
+    "2026-10-09"
+   ],
+   [
     107,
     1790185145,
     "2026-09-23"
@@ -11797,6 +11833,16 @@
    ]
   ],
   "gypsy_darling": [
+   [
+    36,
+    1791562300,
+    "2026-10-09"
+   ],
+   [
+    37,
+    1791562165,
+    "2026-10-09"
+   ],
    [
     107,
     1790185145,
@@ -27381,6 +27427,11 @@
   ],
   "spookygirl_boo": [
    [
+    36,
+    1791562300,
+    "2026-10-09"
+   ],
+   [
     37,
     1791561562,
     "2026-10-09"
@@ -34454,12 +34505,12 @@
   "art_box": 132,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6504,
+  "entries": 6513,
   "first_ts": 1788197811,
   "games": 132,
-  "last_ts": 1791561683,
+  "last_ts": 1791562647,
   "platforms": 34,
-  "viewers": 334
+  "viewers": 336
  },
  "tagline": "Every game you were in the room for."
 }
