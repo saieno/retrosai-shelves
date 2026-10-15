@@ -587,7 +587,7 @@
   {
    "art": "art/microsoft-xbox-360/prey.webp",
    "art_kind": "box",
-   "count": 53,
+   "count": 56,
    "platform": "Microsoft Xbox 360",
    "title": "Prey"
   },
@@ -1257,7 +1257,7 @@
    "title": "Super Tempo"
   }
  ],
- "generated_at": 1791563835,
+ "generated_at": 1792038820,
  "page": "shelf",
  "page_size": 60,
  "shelves": {
@@ -10183,6 +10183,11 @@
    ]
   ],
   "gamehawk55": [
+   [
+    36,
+    1791564214,
+    "2026-10-09"
+   ],
    [
     107,
     1790185145,
@@ -24119,6 +24124,11 @@
   ],
   "rs25": [
    [
+    36,
+    1791563973,
+    "2026-10-09"
+   ],
+   [
     107,
     1790190681,
     "2026-09-23"
@@ -26385,6 +26395,11 @@
    ]
   ],
   "shinyyesi": [
+   [
+    36,
+    1791564093,
+    "2026-10-09"
+   ],
    [
     107,
     1790190681,
@@ -34515,10 +34530,10 @@
   "art_box": 132,
   "art_cart": 0,
   "art_none": 0,
-  "entries": 6515,
+  "entries": 6518,
   "first_ts": 1788197811,
   "games": 132,
-  "last_ts": 1791563611,
+  "last_ts": 1791564214,
   "platforms": 34,
   "viewers": 336
  },
